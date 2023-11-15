@@ -2,8 +2,7 @@
 
 ![image](les_problemes.jpg)
 
-okr
-mkljlijpojpojo
+
 Sujet 
 1. Etat de l'Art
     - Pour l'instant rien de trouver (GAN utilisant un modèole de spiking neural network)
