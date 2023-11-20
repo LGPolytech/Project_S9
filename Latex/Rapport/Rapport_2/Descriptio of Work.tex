@@ -9,7 +9,7 @@
 \usepackage{wallpaper}
 \usepackage{afterpage} 
 \usepackage{pagecolor} 
-\usepackage{biblatex} %Imports biblatex package
+\usepackage[nottoc]{tocbibind} % Put the bibliography in the ToC
 
 % Define colors
 \usepackage{xcolor}
@@ -37,6 +37,16 @@
 
 % Adjust page margins
 \geometry{a4paper, margin=1in}
+
+% make references clickable
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
 
 
 \begin{document}
@@ -96,7 +106,7 @@ Our project focuses on a specific problem within the broader domain of audio sig
 
 \subsection{The Reasons for Our Choice}
 
-When we read this
+When we read the survey \cite[about SNNs]{snn_survey}
 
 
 \subsection{Why Audio Set}
@@ -260,8 +270,11 @@ We will primarily work in Python and use the snnTorch package to work on SNNs. s
 \subsection{Computer resources}
 \subsection{Human resources}
 
-Let's cite! Einstein's journal paper \cite{einstein} and Dirac's
-book \cite{dirac} are physics-related items. 
+\pagebreak
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{ref}
 
 
 \end{document}
