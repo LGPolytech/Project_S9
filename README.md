@@ -1,5 +1,16 @@
 # Project_S9
 
+![image](les_problemes.jpg)
+
+
+Sujet 
+1. Etat de l'Art
+    - Pour l'instant rien de trouver (GAN utilisant un modèole de spiking neural network)
+2. Décrire ce qui nous attends
+    - Création d'un GAN
+    - Récupération d'une base de donnée de son de voix de personnes (avec des labels)
+3. Lister les éléments / les thématiques concernées
+4. Voir ce qui nous interesse et s'orienter dans cette direction
 ![image](Compte-rendu/Les_problemes.jpg)
 
 ## Notre plan
