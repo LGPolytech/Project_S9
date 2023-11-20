@@ -36,7 +36,7 @@ Sujet
         2. Fonctionnement
         3. Avantages / Inconvénients
         4. SNN torch
-    2. Les SNN appliqués à la classification audio
+    2. Les réseaux de neurones appliqués à la classification audio
         1. Définition
         2. Fonctionnement
         3. Avantages / Inconvénients
