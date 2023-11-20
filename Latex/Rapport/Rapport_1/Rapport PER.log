@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.1)  15 NOV 2023 08:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.1)  20 NOV 2023 11:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/loaiu/OneDrive - Université Nice Sophia Antipolis/MAM5/S1/Projet/Project_S9/Latex/Rapport PER"
-(c:/Users/loaiu/OneDrive - Université Nice Sophia Antipolis/MAM5/S1/Projet/Project_S9/Latex/Rapport PER.tex
+**"c:/Users/loaiu/OneDrive - Université Nice Sophia Antipolis/MAM5/S1/Projet/Project_S9/Latex/Rapport/Rapport_1/Rapport PER"
+(c:/Users/loaiu/OneDrive - Université Nice Sophia Antipolis/MAM5/S1/Projet/Project_S9/Latex/Rapport/Rapport_1/Rapport PER.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-23>
 (d:/TEX/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -310,14 +310,14 @@ Package rerunfilecheck Info: File `"Rapport PER".out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  9256 strings out of 474398
- 143511 string characters out of 5752194
+ 143565 string characters out of 5752194
  1934036 words of memory out of 5000000
  31236 multiletter control sequences out of 15000+600000
  562826 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,1206b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,7n,79p,1224b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "Rapport PER.pdf" (3 pages, 77357 bytes).
+Output written on "Rapport PER.pdf" (3 pages, 76992 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream

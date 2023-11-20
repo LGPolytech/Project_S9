@@ -1,0 +1,51 @@
+\contentsline {section}{\numberline {1}Introduction - General objective}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}An intro to NNS (how it works fast)}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Why NNS for our project}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}The chosen problem}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}The reasons for our choice}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Why audio set}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Exploratory approach - we start from nothing, then explain}{5}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Data used}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Choosing the type of training data}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Feasibility (audio > image - simpler)}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Choose database}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Copyright}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Time for pre-processing, cleaning ...}{5}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Uncertainties about data quality, ...}{5}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Open to other databases}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Chosen theme}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The NSS}{5}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Definition}{5}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}How it works}{5}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Advantages / Disadvantages}{5}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}SNN torch}{5}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}SNNs applied to audio classification}{5}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Definition}{5}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}How it works}{5}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Advantages / Disadvantages}{5}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Relevance of this choice}{5}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Defining the project's pros and cons}{5}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Cases of use to define the relevance of the project}{5}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}State of the art}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Finding what already exists}{5}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}In a simple neural network}{5}{subsubsection.4.1.1}%
+\contentsline {paragraph}{Trained on the same data set or not}{5}{paragraph*.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}In SNN}{6}{subsubsection.4.1.2}%
+\contentsline {paragraph}{Trained on the same data set or not}{6}{paragraph*.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Existing libraries, existing models}{6}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Results obtained as a basis for comparison}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Technical objectives of the project}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Technical objectives achievable with pre-existing ANNs}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Technical objectives with data}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Technical objectives with SNNs}{6}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Feasibility}{6}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Describing uncertainties}{6}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Looking for a working model}{6}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Estimate computation time}{6}{subsubsection.5.4.3}%
+\contentsline {section}{\numberline {6}Theoretical study}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Theoretical study on SNN}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Investigative approach}{6}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Matching with available resources}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Work time}{6}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Computer resources}{6}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Human resources}{6}{subsection.7.3}%
