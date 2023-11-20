@@ -40,6 +40,22 @@
             1. Entrainé sur le même set de données ou non
         3. Les librairies existantes, les modèles existants
     2. Résultats obtenus qui nous serviront de base pour comparer nos résultats
+5. Objectifs techniques du projet
+    1. Les objectifs techniques attaignables avec des ANN pré-existant
+    2. Les objectifs techniques avec les données
+    3. Les objectifs techniques avec des SNN
+    4. Faisabilité 
+        1. Décrire les incertitues
+        2. Chercher un modèle fonctionnel 
+        3. Estimer temps de calculs
+6. Etude théorique
+    1. Etude théorique sur les SNN
+    2. Approche d'investigation
+7. Adéquation avec les ressources disponibles
+    1. Temps de travail
+    2. Ressources informatiques
+    3. Ressources humaines
+
 
 
 ## Consignes 
