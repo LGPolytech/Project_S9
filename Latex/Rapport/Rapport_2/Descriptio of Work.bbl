@@ -1,7 +1,7 @@
 \begin{thebibliography}{1}
 
 \bibitem{snn_survey}
-Jason~K. Eshraghian, Max Ward, Emre Neftci, Xinxin Wang, Gregor Lenz, Girish Dwivedi, Mohammed Bennamoun, Doo~Seok Jeong, and Wei~D. Lu.
-\newblock Training spiking neural networks using lessons from deep learning.
+{\sc J.~K. Eshraghian, M.~Ward, E.~Neftci, X.~Wang, G.~Lenz, G.~Dwivedi, M.~Bennamoun, D.~S. Jeong, and W.~D. Lu}, {\em {Training Spiking Neural Networks Using Lessons From Deep Learning}}.
+\newblock \url{https://arxiv.org/abs/2109.12894}, 2021.
 
 \end{thebibliography}

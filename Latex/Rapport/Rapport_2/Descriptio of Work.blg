@@ -1,49 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Descriptio of Work.aux
-The style file: plain.bst
+The style file: siam.bst
 Database file #1: ref.bib
-Warning--empty journal in snn_survey
-Warning--empty year in snn_survey
 You've used 1 entry,
-            2118 wiz_defined-function locations,
-            500 strings with 4251 characters,
-and the built_in function-call counts, 472 in all, are:
-= -- 34
+            2030 wiz_defined-function locations,
+            503 strings with 4038 characters,
+and the built_in function-call counts, 480 in all, are:
+= -- 35
 > -- 48
 < -- 0
 + -- 19
 - -- 18
 * -- 46
-:= -- 93
+:= -- 91
 add.period$ -- 2
 call.type$ -- 1
 change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 10
-empty$ -- 18
+cite$ -- 1
+duplicate$ -- 9
+empty$ -- 23
 format.name$ -- 18
-if$ -- 81
+if$ -- 87
 int.to.chr$ -- 0
 int.to.str$ -- 1
-missing$ -- 1
+missing$ -- 0
 newline$ -- 7
 num.names$ -- 2
-pop$ -- 16
+pop$ -- 15
 preamble$ -- 1
 purify$ -- 11
 quote$ -- 0
-skip$ -- 6
+skip$ -- 7
 stack$ -- 0
 substring$ -- 5
-swap$ -- 0
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 4
-warning$ -- 2
+warning$ -- 0
 while$ -- 2
 width$ -- 2
-write$ -- 9
-(There were 2 warnings)
+write$ -- 11
