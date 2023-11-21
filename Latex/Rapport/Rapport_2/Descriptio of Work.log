@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.20)  21 NOV 2023 14:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.20)  21 NOV 2023 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
 (d:/TEX/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(d:/TEX/texlive/2023/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+(d:/TEX/texlive/2023/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count186
 \c@section=\count187
@@ -258,33 +258,38 @@ Package tocbibind Info: The document has section divisions on input line 50.
 
 Package tocbibind Note: Using section or other style headings.
 
+) (d:/TEX/texlive/2023/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count278
+\c@@ppsavesec=\count279
+\c@@ppsaveapp=\count280
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 48.
+Package hyperref Info: Option `colorlinks' set `true' on input line 49.
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count278
+\l__color_backend_stack_int=\count281
 \l__pdf_internal_box=\box54
 ) (./Descriptio of Work.aux)
 \openout1 = `"Descriptio of Work.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -305,12 +310,12 @@ LaTeX Font Info:    ... okay on input line 53.
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -322,16 +327,16 @@ LaTeX Font Info:    ... okay on input line 53.
 
 (d:/TEX/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count279
+\scratchcounter=\count282
 \scratchdimen=\dimen164
 \scratchbox=\box55
-\nofMPsegments=\count280
-\nofMParguments=\count281
+\nofMPsegments=\count283
+\nofMParguments=\count284
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count282
+\MPscratchCnt=\count285
 \MPscratchDim=\dimen165
-\MPnumerator=\count283
-\makeMPintoPDFobject=\count284
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
 \everyMPtoPDFconversion=\toks24
 ) (d:/TEX/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -345,86 +350,89 @@ Package grfext Info: Graphics extension search list:
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 53.
+Package hyperref Info: Link coloring ON on input line 51.
  (./Descriptio of Work.out) (./Descriptio of Work.out)
 \@outlinefile=\write3
 \openout3 = `"Descriptio of Work.out"'.
 
-<./image/bi.png, id=208, 2168.1pt x 1219.55624pt>
+<./image/bi.png, id=199, 2168.1pt x 1219.55624pt>
 File: ./image/bi.png Graphic file (type png)
 <use ./image/bi.png>
-Package pdftex.def Info: ./image/bi.png  used on input line 79.
+Package pdftex.def Info: ./image/bi.png  used on input line 77.
 (pdftex.def)             Requested size: 448.10246pt x 252.05763pt.
  [1
 
 {d:/TEX/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image/bi.png>] (./Descriptio of Work.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <10.95> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-)
-\tf@toc=\write4
-\openout4 = `"Descriptio of Work.toc"'.
-
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.85 \section{Introduction}
-                            [1] [2]
+l.48 ...{\numberline {8.1}Data}{8}{subsection.8.1}
+                                                  % [1])
+\tf@toc=\write4
+\openout4 = `"Descriptio of Work.toc"'.
+
+ [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 125.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 125.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 125.
+(Font)              <12> on input line 110.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 125.
+(hyperref)                removing `math shift' on input line 110.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 125.
+(hyperref)                removing `math shift' on input line 110.
 
-<image/def1.png, id=280, 1280.785pt x 451.6875pt>
+[3]
+<image/def1.png, id=277, 1280.785pt x 451.6875pt>
 File: image/def1.png Graphic file (type png)
 <use image/def1.png>
-Package pdftex.def Info: image/def1.png  used on input line 138.
+Package pdftex.def Info: image/def1.png  used on input line 123.
 (pdftex.def)             Requested size: 384.23846pt x 135.5073pt.
-<image/def2.png, id=281, 1280.785pt x 451.6875pt>
+<image/def2.png, id=278, 1280.785pt x 451.6875pt>
 File: image/def2.png Graphic file (type png)
 <use image/def2.png>
-Package pdftex.def Info: image/def2.png  used on input line 139.
+Package pdftex.def Info: image/def2.png  used on input line 124.
 (pdftex.def)             Requested size: 384.23846pt x 135.5073pt.
-[3 <./image/def1.png> <./image/def2.png>] [4] [5] [6] (./Descriptio of Work.bbl
+ [4 <./image/def1.png> <./image/def2.png>] [5] [6] [7]
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 268.
+ (d:/TEX/texlive/2023/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+) [8{d:/TEX/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./Descriptio of Work.bbl
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 4.
 
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 4.
-) [7] (./Descriptio of Work.aux)
+) [9] (./Descriptio of Work.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `"Descriptio of Work".out' has not changed.
-(rerunfilecheck)             Checksum: 766ED6338CF8E1A7AE3A2B164FD85D29;9517.
+(rerunfilecheck)             Checksum: 4549D9937E8C22312BAC2D1A2A1DFC51;8791.
  ) 
 Here is how much of TeX's memory you used:
- 10557 strings out of 474267
- 164909 string characters out of 5749458
- 1945558 words of memory out of 5000000
- 32566 multiletter control sequences out of 15000+600000
- 563725 words of font info for 55 fonts, out of 8000000 for 9000
+ 10689 strings out of 474267
+ 167395 string characters out of 5749458
+ 1943558 words of memory out of 5000000
+ 32690 multiletter control sequences out of 15000+600000
+ 564986 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,671b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "Descriptio of Work.pdf" (8 pages, 3489903 bytes).
+<d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb>
+Output written on "Descriptio of Work.pdf" (10 pages, 3506238 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
+ 376 PDF objects out of 1000 (max. 8388607)
+ 334 compressed objects within 4 object streams
  61 named destinations out of 1000 (max. 500000)
- 424 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 408 words of extra memory for PDF output out of 10000 (max. 10000000)
 
