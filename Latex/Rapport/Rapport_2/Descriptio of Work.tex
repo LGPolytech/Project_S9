@@ -10,9 +10,11 @@
 \usepackage{wallpaper}
 \usepackage{afterpage} 
 \usepackage{pagecolor} 
+\usepackage{multirow}
 \usepackage[nottoc]{tocbibind} % Put the bibliography in the ToC
 \usepackage{url}
 \usepackage[toc,page]{appendix}
+
 
 % Define colors
 \usepackage{xcolor}
@@ -248,14 +250,35 @@ Strong labels are precise and indicate the exact start and end times of the even
 
 \subsection{Open to other databases}
 
+In the case that we use for this classification purpose is not sufficient (for example when collecting all the data related to a unique label), We might try to complete it with other open-source label databases such as \href{https://www.freesound.org/}{Freesound} (\href{https://urbansounddataset.weebly.com/}{link2}), or \href{https://www.kaggle.com/}{Kaggle}.
+
 \section{State of the art}
-\subsection{Finding what already exists}
-\subsubsection{In a simple neural network}
-\paragraph{Trained on the same data set or not}
-\subsubsection{In SNN}
-\paragraph{Trained on the same data set or not}
-\subsubsection{Existing libraries, existing models}
-\subsection{Results obtained as a basis for comparison}
+
+While searching for existing work on the topic, we found that there are already some studies on the subject of audio classification using SNNs. We will present a couple of them here.
+\subsection{ANNs Used for Audio Classification}
+
+First of all, we made some researches to find some existing ANNs made for audio classification for comparison with the model we plan to build.
+We found the following models: 
+\begin{itemize}
+  \item A VGG model already trained of the Google AudioSet dataset \hyperref[item:vgg-audioset_audioset]{(GitHub)}.
+  \item Rearanged Resnet, inception, densenet pretrained models \hyperref[rethink-CNN-for-audio-classification]{(GitHub and research paper)}
+  \item An audio classifier that uses LSTM (made in class of Deep Learning): \hyperref[item:lstm-audio-classification]{(Google Colab)}
+  \item others: \href{https://medium.com/@aakash__/classifying-audio-using-pytorch-84861f3505ea}{1} \href{https://learn.microsoft.com/en-us/training/modules/intro-audio-classification-pytorch/4-speech-model}{2} \href{https://github.com/yeyupiaoling/AudioClassification-Pytorch}{3} \href{https://github.com/IBM/audioset-classification}{4}
+\end{itemize}
+
+\subsection{SNNs Used for Audio Classification}
+
+Secondly, we made some researches to find some existing SNNs made for audio classification, again, for comparison with the model we plan to build.
+We found the following models:
+\begin{itemize}
+  \item A spiking convolutional neural network (SCNN) for audio classification \hyperref[item:SCNN-audio-classification]{(GitHub)}.
+  \item A multi-layer SNN for audio classification using SpiNNaker \hyperref[item:spinnaker-audio-classification]{(GitHub)}.
+  \item Shadow training ("conversion" of an ANN to an SNN) \hyperref[item:shadow-training]{(GitHub and research paper)}.
+  \item Spiking used for image classification \hyperref[item:stereospike]{(GitHub and doc)}.
+  \item SNN simulators : \href{item:bindsNET_snntorch-lib}{BindsNET} and \href{item:nest_snntorch-lib}{NEST}
+\end{itemize}
+
+The results we may get from the aforementioned networks may serve as a basis of comparison for some of them.
 
 \section{Technical objectives of the project}
 \subsection{Technical objectives achievable with pre-existing ANNs}
@@ -372,12 +395,9 @@ We will work in parallel most of the time, each one focusing on a different aspe
 \begin{itemize}
   \item Google AudioSet : \url{https://research.google.com/audioset/}
         \label{item:google-audioset}
-
 \end{itemize}
 
-
-
-\subsection{Code}
+\subsection{Existing models}
 
 \begin{itemize}
   \item Sparsity through Spiking Convolutional Neural Network (SCNN) for Audio Classification at the Edge : \url{https://github.com/CongSheng/SpikingConvNN-AudioClassification/tree/main}
@@ -385,6 +405,27 @@ We will work in parallel most of the time, each one focusing on a different aspe
   \item Multilayer Spiking Neural Network for audio samples classification using SpiNNaker : \url{https://github.com/jpdominguez/Multilayer-SNN-for-audio-samples-classification-using-SpiNNaker}
         \label{item:spinnaker-audio-classification}
 
+  \item StereoSpike: Depth Learning With a Spiking Neural Network for image classification (CNN) : \url{https://github.com/urancon/stereospike} - \url{https://ieeexplore.ieee.org/document/9969606} \label{item:stereospike}
+  
+  \item Spiking Neural Networks Trained via Proxy (shadow training): \url{https://ieeexplore.ieee.org/document/9810220} \label{item:shadow-training}
+      
+  \item VGG model trained on Google's AudioSet dataset : \url{https://github.com/MaryamEbr/Audio-Classification-with-AudioSet-and-VGGish/tree/main} \label{item:vgg-audioset_audioset} - \url{https://research.google/pubs/pub45611/}
+
+  \item  Rethink CNNs for Audio Classification : \url{https://github.com/kamalesh0406/Audio-Classification/tree/master} - \url{https://arxiv.org/abs/2007.11154} \label{rethink-CNN-for-audio-classification}
+  
+  \item An LSTM model for audio classification we made in class of Deep Learning : \url{https://colab.research.google.com/drive/1kJ4hFfh3J13_nrtCMRrPoE_eIl5xUQWC?usp=sharing} \label{item:lstm-audio-classification} 
+  
+  \item BindsNET, a Python package for training and simulating spiking neural networks : \url{https://github.com/BindsNET/bindsnet} \label{item:bindsNET_snntorch-lib}
+  
+  \item NEST, a simulator for spiking neural network models that focuses on the dynamics, size and structure of neural systems rather than on the exact morphology of individual neurons : \url{https://www.nest-simulator.org/} \label{item:nest_snntorch-lib}
+
+\end{itemize}
+
+\subsection{Code}
+
+\begin{itemize}
+  \item A collection of scripts to analyze, prepare for and download Google's Audioset : \url{https://github.com/bakhtos/GoogleAudioSetScripts}
+  \label{item:google-audioset-reformatted}
 \end{itemize}
 
 \subsection{Links}
