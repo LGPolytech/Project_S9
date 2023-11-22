@@ -113,10 +113,12 @@ Spiking Neural Network (SNN) is a variant of artificial neural network that try 
   \begin{minipage}{0.45\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{image/def1.png}
+    \caption{SNN input}
   \end{minipage}\hfill
   \begin{minipage}{0.45\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{image/def2.png}
+    \caption{SNN output}
   \end{minipage}
 \end{figure}
 
@@ -247,7 +249,7 @@ Without parallelizing the code we used, we were able to download, format, and tr
 While lookin up to the data, we found that a lot of these sounds are taken out of context and other sounds are mixed with them (for example, \hyperref{https://www.youtube.com/watch?v=-0CamVQdP_Y}{}{}{this} sample is labeled with as a music sound but a person is talking at the end of the sample). Also, each sample can have one or multiple labels, which can be related to multi-clustering problems.
 Another problem we face is the fact that the data is always balanced (there exists a balanced version of the dataset) and that there are some Weak and Strong Label annotations.
 
-Strong labels are precise and indicate the exact start and end times of the event in the audio file whereas the Weak labels, only indicate the presence of a sound event somewhere in the audio file, without specifying the exact time. 
+Strong labels are precise and indicate the exact start and end times of the event in the audio file whereas the Weak labels, only indicate the presence of a sound event somewhere in the audio file, without specifying the exact time.
 \subsection{Open to other databases}
 
 In the case that we use for this classification purpose is not sufficient (for example when collecting all the data related to a unique label), We might try to complete it with other open-source label databases such as \href{https://www.freesound.org/}{Freesound} or \href{https://www.kaggle.com/}{Kaggle}.
@@ -259,7 +261,7 @@ While searching for existing work on the topic, we found that there are already 
 \subsection{ANNs Used for Audio Classification}
 
 First of all, we made some researches to find some existing ANNs made for audio classification for comparison with the model we plan to build.
-We found the following models: 
+We found the following models:
 \begin{itemize}
   \item A VGG model already trained of the Google AudioSet dataset \hyperref[item:vgg-audioset_audioset]{(GitHub)}.
   \item Rearanged Resnet, inception, densenet pretrained models \hyperref[rethink-CNN-for-audio-classification]{(GitHub and research paper)}
@@ -289,16 +291,29 @@ We should find pre-trained ANN's that can attain a good accuracy with AudioSet.
 
 \subsection{Technical objectives with data}
 
-  In its raw form, a sound is an analog signal, needing to be converted to digital. Analog signals are continuous waves. An analog wave has a discrete value at any given point in time. It’s impossible to convert every value to a digital representation because there are infinite points in a continuous wave. You must convert the audio signal to digital through sampling and quantization. In our case, since we extract the audio from Youtube, the conversion step is already done.
+In its raw form, a sound is an analog signal, needing to be converted to digital. Analog signals are continuous waves. An analog wave has a discrete value at any given point in time. It’s impossible to convert every value to a digital representation because there are infinite points in a continuous wave. You must convert the audio signal to digital through sampling and quantization. In our case, since we extract the audio from Youtube, the conversion step is already done.
 
-  After conversion, the next step is to extract useful features from the audio. You can extract many features, so you must focus on the specific problem you want to solve. Here are some critical features used for audio classification with ML:
+After conversion, the next step is to extract useful features from the audio. We can extract many features, so we must focus on the specific problem to solve. Some critical features used for audio classification with ML are:
 
-  Time domain features are extracted directly from the raw audio (waveform). Examples are the amplitude envelope, and the root mean square energy. Time domain features are not enough to represent the sound because they do not include frequency information.
+\begin{itemize}
 
-  Frequency domain features are also called the spectrum. Examples include band energy ratio, spectral flux, and spectral bandwidth. These features lack time representation. They are extracted from a time domain representation through Fourier transform. Fourier transform converts a waveform from a function of time to a function of frequency.
 
-  Time and frequency domain features extract a spectrogram from the waveform using a short-time Fourier transform, like Spectrogram or Mel Spectrogram. The spectrogram shows both the frequency and time domain. Spectrograms represent frequency linearly, but humans perceive sounds logarithmically. This means that humans can tell the difference between lower frequencies like 500-100 Hertz (Hz) but find it harder to differentiate between sounds at a higher frequency, from 10,000 Hz to 15,000 Hz. This difficulty is why the Mel-scale was introduced. A Mel Spectrogram is a spectrogram on the Mel-scale, which measures how different pitches sound to the listener. It maps pitches that, to listeners, sound equidistant.
+  \item Time domain features are extracted directly from the raw audio (waveform). Examples are the amplitude envelope, and the root mean square energy. Time domain features are not enough to represent the sound because they do not include frequency information.
 
+  \item Frequency domain features are also called the spectrum. Examples include band energy ratio, spectral flux, and spectral bandwidth. These features lack time representation. They are extracted from a time domain representation through Fourier transform. Fourier transform converts a waveform from a function of time to a function of frequency.
+
+  \item Time and frequency domain features extract a spectrogram from the waveform using a short-time Fourier transform, like Spectrogram or Mel Spectrogram. The spectrogram shows both the frequency and time domain. Spectrograms represent frequency linearly, but humans perceive sounds logarithmically. This means that humans can tell the difference between lower frequencies like 500-100 Hertz (Hz) but find it harder to differentiate between sounds at a higher frequency, from 10,000 Hz to 15,000 Hz. This difficulty is why the Mel-scale was introduced. A Mel Spectrogram is a spectrogram on the Mel-scale, which measures how different pitches sound to the listener. It maps pitches that, to listeners, sound equidistant.
+\end{itemize}
+
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{1\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{image/spectro.jpg}
+    \caption{Mel Spectrogram}
+  \end{minipage}\hfill
+\end{figure}
 
 \subsection{Technical objectives with SNNs}
 
@@ -345,35 +360,35 @@ There are also multiple ways to train a SNN:
 
 
 \begin{center}
-\begin{tabular}{ |p{5cm}||p{3cm}|p{3cm}|p{2cm}|  }
- \hline
- \multicolumn{4}{|c|}{Schedule} \\
- \hline
- Task& Duration  & When & Who\\
- \hline
-\textbf{Data collection/extraction}&&& \\
-From csv/Youtube to mp3 & 1-2 days& 22/11-24/11 & Loai\\
-&&&\\
-\textbf{Data preprocessing}&&&\\
-cleaning/enhancement/&&&\\
-augmentation& 3-4 days&24/11-28/11&\\
-&&&\\
-\textbf{Models implementation}&&&\\
-understanding snnTorch basics&1-2 days &24/11-25/11&\\
-&&&\\
-finding pretrained/creating and tuning models & 4-5 days & 26/11-01/12 &\\
-&&&\\
-\textbf{Training/tuning}&&&\\
-training&multiple weeks&&\\
-&&&\\
-extracting/synthetizing info&multiple weeks&&\\
-&&&\\
-\textbf{Working on the DOWs and presentation}&&&\\
-DOWs writing: continous work& 2 hours x 2 per week & &\\
-&&&\\
-slides for oral presentation& 2-3 days&27/11-29/11&\\
- \hline
-\end{tabular}
+  \begin{tabular}{ |p{5cm}||p{3cm}|p{3cm}|p{2cm}|  }
+    \hline
+    \multicolumn{4}{|c|}{Schedule}                                                            \\
+    \hline
+    Task                                          & Duration             & When        & Who  \\
+    \hline
+    \textbf{Data collection/extraction}           &                      &             &      \\
+    From csv/Youtube to mp3                       & 1-2 days             & 22/11-24/11 & Loai \\
+                                                  &                      &             &      \\
+    \textbf{Data preprocessing}                   &                      &             &      \\
+    cleaning/enhancement/                         &                      &             &      \\
+    augmentation                                  & 3-4 days             & 24/11-28/11 &      \\
+                                                  &                      &             &      \\
+    \textbf{Models implementation}                &                      &             &      \\
+    understanding snnTorch basics                 & 1-2 days             & 24/11-25/11 &      \\
+                                                  &                      &             &      \\
+    finding pretrained/creating and tuning models & 4-5 days             & 26/11-01/12 &      \\
+                                                  &                      &             &      \\
+    \textbf{Training/tuning}                      &                      &             &      \\
+    training                                      & multiple weeks       &             &      \\
+                                                  &                      &             &      \\
+    extracting/synthetizing info                  & multiple weeks       &             &      \\
+                                                  &                      &             &      \\
+    \textbf{Working on the DOWs and presentation} &                      &             &      \\
+    DOWs writing: continous work                  & 2 hours x 2 per week &             &      \\
+                                                  &                      &             &      \\
+    slides for oral presentation                  & 2-3 days             & 27/11-29/11 &      \\
+    \hline
+  \end{tabular}
 \end{center}
 
 
@@ -382,7 +397,7 @@ slides for oral presentation& 2-3 days&27/11-29/11&\\
 
 We will work with the following:
 \begin{itemize}
-  \item Hardwares: 2 laptops 
+  \item Hardwares: 2 laptops
   \item Softwares: Google Colab (primarily), Kaggle
 \end{itemize}
 
@@ -412,17 +427,17 @@ We will work in parallel most of the time, each one focusing on a different aspe
         \label{item:spinnaker-audio-classification}
 
   \item StereoSpike: Depth Learning With a Spiking Neural Network for image classification (CNN) : \url{https://github.com/urancon/stereospike} - \url{https://ieeexplore.ieee.org/document/9969606} \label{item:stereospike}
-  
+
   \item Spiking Neural Networks Trained via Proxy (shadow training): \url{https://ieeexplore.ieee.org/document/9810220} \label{item:shadow-training}
-      
+
   \item VGG model trained on Google's AudioSet dataset : \url{https://github.com/MaryamEbr/Audio-Classification-with-AudioSet-and-VGGish/tree/main} \label{item:vgg-audioset_audioset} - \url{https://research.google/pubs/pub45611/}
 
   \item  Rethink CNNs for Audio Classification : \url{https://github.com/kamalesh0406/Audio-Classification/tree/master} - \url{https://arxiv.org/abs/2007.11154} \label{rethink-CNN-for-audio-classification}
-  
-  \item An LSTM model for audio classification we made in class of Deep Learning : \url{https://colab.research.google.com/drive/1kJ4hFfh3J13_nrtCMRrPoE_eIl5xUQWC?usp=sharing} \label{item:lstm-audio-classification} 
-  
+
+  \item An LSTM model for audio classification we made in class of Deep Learning : \url{https://colab.research.google.com/drive/1kJ4hFfh3J13_nrtCMRrPoE_eIl5xUQWC?usp=sharing} \label{item:lstm-audio-classification}
+
   \item BindsNET, a Python package for training and simulating spiking neural networks : \url{https://github.com/BindsNET/bindsnet} \label{item:bindsNET_snntorch-lib}
-  
+
   \item NEST, a simulator for spiking neural network models that focuses on the dynamics, size and structure of neural systems rather than on the exact morphology of individual neurons : \url{https://www.nest-simulator.org/} \label{item:nest_snntorch-lib}
 
 \end{itemize}
@@ -431,10 +446,10 @@ We will work in parallel most of the time, each one focusing on a different aspe
 
 \begin{itemize}
   \item A collection of scripts to analyze, prepare for and download Google's Audioset : \url{https://github.com/bakhtos/GoogleAudioSetScripts}
-  \label{item:google-audioset-reformatted}
-\end{itemize}
+        \label{item:google-audioset-reformatted}
 
-\subsection{Links}
+  \item SNNtTorch, a Python package for performing gradient-based learning with spiking neural networks : \url{https://snntorch.readthedocs.io/en/latest/} \label{item:snntorch-lib}
+\end{itemize}
 
 \pagebreak
 
