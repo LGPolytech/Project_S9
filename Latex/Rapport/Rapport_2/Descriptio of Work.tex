@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage{geometry}
@@ -84,7 +85,7 @@
 
 \section{Introduction}
 
-In the constantly evolving landscape of neural network studies, the project outlined in this Description of Work (DoW) proposes to explore the field of spiking neural networks (SNNs). This effort combines both a study and a prospective implementation, with a focus on the emerging field of neuromorphic computing.
+In the constantly evolving landscape of neural network studies, the project outlined in this Description of Work (DoW) proposes to explore the field of spiking neural networks (SNNs). This effort will at term combine both a study and a prospective implementation, with a focus on the emerging field of neuromorphic computing.
 
 The overall goal of this project is to perform a thorough investigation and subsequent implementation of spiking neural networks. SNNs, which are inspired by the neural signaling patterns of the human brain, show promising potential in various applications, especially in real-time processing and pattern recognition.
 
@@ -92,41 +93,184 @@ Before getting into the specifics of our project, let us first give a brief over
 
 A Spiking Neural Network (or SNN) is a type of artificial neural network that mimics the functionality of biological neural networks. Unlike traditional neural networks (ANNs - Artificial Neural Networks), SNNs incorporate the concept of time into their operating model. The neurons in SNNs generate spikes of activity and communicate through these spikes (like brain neurons stimulating each other with electrical impulses), allowing them to process information in a more complex and potentially more efficient manner.
 
-This type of neural network seems to be overall less energy consuming than ANNs and potentially more efficient in terms of processing power (in practice, it will require creating an adapted hardware architecture to be able to take advantage of this potential). Therefore, it looks like the use of this type of neural network could be a viable solution to a problem of classification processing (especially in real time).
+This type of neural network is theoretically less energy consuming than some ANNs and potentially more efficient in terms of processing power (in practice, it will be necessary to create an adapted hardware architecture to take advantage of this potential). Therefore, it seems that the use of this type of neural network could be a viable solution to a classification processing problem (especially in real time ones).
 
+Our project focuses on a specific problem within the broader domain of audio classification.
 
-Our project focuses on a specific problem within the broader domain of audio signal processing.
-When we read the survey about $SNNs^{\cite{snn_survey}}$, it was understood that training this type of model would be more difficult to train than some ANNs due to the temporal dynamics involved in SNNs. This made us want to work on a type of data that would be less computationally or ressource intensive than images or videos, which is why we decided to work on audio data. This type of data also offers the advantage of being more adaptable to pre-recorded and real-time processing.
-In our case, we decided to focus our attention on the \hyperref[item:google-audioset]{Google AudioSet} database, which contains a large number of audio samples classified into different categories (struture defined later). 
-
-\subsection{Exploratory Approach - We Start from Nothing, Then Explain}
-
-Adopting an exploratory approach, we will begin this DoW with a more precise presentation of the dataset used and how it is constructed.
-We will then 
+Adopting an exploratory approach, we will begin this DoW with a more detailed presentation of the dataset used and its construction. After a brief introduction of our topic, we will review the state of the art in the field of SNNs and audio classification. We will then present the technical goals of our project and a simple theoretical study of SNNs. Finally, we will present the resources we have at our disposal to carry out this project, as well as a description of the work to be done. Finally, we will propose a schedule for the project.
 
 
 \section{Data used}
 \subsection{Choosing the type of training data}
+
+When we first read the survey about $SNNs^{\cite{snn_survey}}$, it was understood that training this type of model would be more difficult to train than some ANNs due to the temporal dynamics involved in SNNs. This made us want to work on a type of data that would be less computationally or ressource intensive than images or videos, which is why we decided to work on audio data. This type of data also offers the advantage of being more adaptable to pre-recorded and real-time processing.
+
+In our case, we decided to apply our analysis on the \hyperref[item:google-audioset]{Google AudioSet} database, which contains a large number of audio samples classified into different categories (structure defined later).
 \subsection{Feasibility (audio $>$ image - simpler)}
+
+\begin{itemize}
+  \item Ressource consumption (RAM, GPU, CPU, time)
+        \subitem Size of \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{this youtube video} in 360p: 8.68 MB
+        \subitem Size of the same video as an mp3
+\end{itemize}
+
+
 \subsection{Choose database}
 \subsubsection{Copyright}
 \subsubsection{Time for pre-processing, cleaning ...}
 \subsubsection{Uncertainties about data quality, ...}
 \subsection{Open to other databases}
 
+
 \section{Chosen theme}
 \subsection{The SNN}
 \subsubsection{Definition}
 Spiking Neural Network (SNN) is a variant of artificial neural network that try to mimic more closely the biological neural networks. More precisely, it tries to copy the functioning of neurons and synapses. As a result, rather than working with continually changing time values as ANNs do, SNNs work with discrete events that happen at defined times. SNNs take a set of spikes as input and produces a set of spikes as output
 
-\begin{center}
-  \includegraphics[scale=0.3]{image/def1.png}
-  \includegraphics[scale=0.3]{image/def2.png}
-\end{center}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{image/def1.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{image/def2.png}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{Advantages / Disadvantages}
+
+{\color{blue}
+  SNNs, when well constructed, offer the following benefits
+
+  - Energy efficiency: SNNs are highly energy efficient because they only consume energy when a spike is generated, unlike "classical" neural networks which consume energy continuously. This makes them ideal for low-power embedded devices.
+
+  - Event-driven processing: While ANNs typically operate on a fixed time interval, SNNs only process information when there is an input spike. This makes them highly efficient at processing information in an event-driven environment, such as processing visual or audio data.
+
+  - Temporal coding: SNNs are able to process information based on the timing of spikes, allowing them to encode temporal information and be temporally accurate. This is particularly useful for tasks that require the processing of sequential data, such as speech or gesture recognition.
+
+  - Robustness to noise: SNNs are inherently robust to noise and can effectively filter out irrelevant information. This makes them useful in environments where noise is a common problem, in our case when the audio is not well recorded.
+
+  - Neuroplasticity: SNNs are able to adapt to new inputs and change their behaviour over time, much like the brain. This allows them to learn and adapt to new tasks and environments, making them highly versatile.
+
+  Disadvantages:
+
+  - SNNs are difficult to train, mainly due to backpropagation issues
+
+  - There is currently no learning algorithm designed specifically for this task.
+
+  - Building a small SNN is impractical.
+}
 
 
 
+\subsubsection{snnTorch}
+We will primarily work in Python and use the snnTorch package to work on SNNs. snnTorch is a Python package for performing gradient-based learning with spiking neural networks. snnTorch is built on top of Pytorch and takes advantage of its GPU-accelerated tensor computation. Pre-defined spiking neuron models are integrated into the PyTorch framework and can be treated as recurrent activation units.
+
+
+\subsection{Neural networks applied to audio classification}
+\subsubsection{Definition}
+{\color{blue}
+  Audio classification is a machine learning and signal processing task that involves categorizing or labeling audio data into different predefined classes or categories. The goal is to automatically assign a label to an audio segment based on its content or characteristics. This can be useful in various applications such as speech recognition, music genre classification, environmental sound analysis, and more.
+
+  Applications:
+
+  Speech Recognition: Identifying spoken words or phrases in audio recordings.
+  Music Genre Classification: Categorizing music into different genres, such as rock, pop, jazz, etc.
+  Environmental Sound Analysis: Detecting and classifying sounds in the environment, such as sirens, footsteps, or car engines.
+  Anomaly Detection: Identifying unusual or unexpected sounds in a given context.
+}
 \subsubsection{How it works}
+{\color{blue}
+  The process of audio classification typically involves the following steps
+
+  Data collection: Collecting a dataset of audio samples, each labeled with its corresponding class or category.
+
+  Feature extraction: Transforming the raw audio data into a set of relevant features that can be used to represent the content of the audio. Common features include spectrogram representations, Mel Frequency Cepstral Coefficients (MFCCs), and other time or frequency domain features.
+
+  Model training: Using machine learning algorithms or deep learning architectures to train a model on the extracted features and their corresponding labels. Apart from neural networks, others algorithms can be used for audio classification such as support vector machines, decision trees, or random forests for example.
+
+  Validation and testing: Evaluate the performance of the trained model on a separate set of data that it has not seen before. This helps evaluate the model's ability to generalize to new, unseen examples.
+
+  Deployment: Integrate the trained model into applications or systems that require real-time or batch audio classification.
+}
+
+
+
+\subsubsection{Advantages / Disadvantages}
+PAS NECESSAIRE,
+
+
+
+
+\subsection{Relevance of this choice}
+\subsubsection{Defining the project's pros and cons}
+Pros :
+- SNN's can be effective to detect and recognize different types of audio (especially on embedded devices).
+
+Cons:
+- SNNs are new to us, we need to understand the package snnTorch.
+- SNNs might not be the best method to process audio data.
+
+
+\subsubsection{Cases of use to define the relevance of the project}
+Our final goal is primarily to compare the efficiency and energy use of SNNs compared to others networks (CNNs, RNNs, LSTMs...) in audio classification, and to evaluate if SNNs are a good solution in our case.
+
+
+\section{State of the art}
+\subsection{Finding what already exists}
+\subsubsection{In a simple neural network}
+\paragraph{Trained on the same data set or not}
+\subsubsection{In SNN}
+\paragraph{Trained on the same data set or not}
+\subsubsection{Existing libraries, existing models}
+\subsection{Results obtained as a basis for comparison}
+
+\section{Technical objectives of the project}
+\subsection{Technical objectives achievable with pre-existing ANNs}
+
+
+
+
+\subsection{Technical objectives with data}
+{\color{blue}
+  How AI and ML Understand and Classify Audio
+
+  In its raw form, a sound is an analog signal — to process it, we have to convert it to digital. Analog signals are continuous waves. An analog wave has a discrete value at any given point in time. It’s impossible to convert every value to a digital representation because there are infinite points in a continuous wave. You must convert the audio signal to digital through sampling and quantization.
+
+  Sampling means recoding these points at specific time intervals or frequencies. This interval is the sample rate. The higher the sample rate, the less information lost and the fewer errors. However, if the sample rate is too high, it increases the audio file size without significantly improving the audio.
+
+  Quantization means rounding the amplitude sampled at each interval to the nearest bit. The greater the bit depth, the lower the quantization. The larger the bit depth, the more memory it takes, so what bit depth to use depends on the amount of available RAM. If you want to learn more, this is a good explanation of analog to digital conversion.
+
+  After conversion, the next step is to extract useful features from the audio. You can extract many features, so you must focus on the specific problem you want to solve. Here are some critical features used for audio classification with ML:
+
+  Time domain features are extracted directly from the raw audio (waveform). Examples are the amplitude envelope, and the root mean square energy. Time domain features are not enough to represent the sound because they do not include frequency information.
+
+  Frequency domain features are also called the spectrum. Examples include band energy ratio, spectral flux, and spectral bandwidth. These features lack time representation. You extract them from a time domain representation through Fourier transform. Fourier transform converts a waveform from a function of time to a function of frequency. Learn more about Fourier Transforms here.
+
+  Time and frequency domain features extract a spectrogram from the waveform using a short-time Fourier transform, like Spectrogram or Mel Spectrogram. The spectrogram shows both the frequency and time domain. Spectrograms represent frequency linearly, but humans perceive sounds logarithmically. This means that humans can tell the difference between lower frequencies like 500-100 Hertz (Hz) but find it harder to differentiate between sounds at a higher frequency, from 10,000 Hz to 15,000 Hz. Learn more about how humans respond to various sound ranges here. This difficulty is why the Mel-scale was introduced. A Mel Spectrogram is a spectrogram on the Mel-scale, which measures how different pitches sound to the listener. It maps pitches that, to listeners, sound equidistant.
+
+}
+
+
+\subsection{Technical objectives with SNNs}
+\subsection{Feasibility}
+\subsubsection{Describing uncertainties}
+Uncertainty are due to the dynamic nature of audio signals, varying acoustic environments, and the complexity of distinguishing between diverse sound patterns. Additionally, challenges in precisely modeling the temporal aspects of auditory processing and the understanding of spiking neuron dynamics contribute to many uncertainties in the feasibility of the project. Moreover the training of Spiking Neural Networks in order to attain a good accuracy is difficult due to the inherent non- linearity and sparsity of spikes.
+
+
+\subsubsection{Looking for a working model}
+
+Many model for sound classification already exist. In particular, for AudioSet, there are already multiple pre-trained deep neural network, for example YamNet. However, it is more difficult to find open source SNNs, as they are less widespread than other types of neural networks.
+
+
+\subsubsection{Estimate computation time}
+
+
+
+\section{Theoretical study}
+\subsection{Theoretical study on SNN}
 {\color{blue}
   Key concepts
 
@@ -166,95 +310,57 @@ Spiking Neural Network (SNN) is a variant of artificial neural network that try 
   This encoding has been employed in both unsupervised and supervised learning approaches, such as SpikeProp and the Chronotron, among others. Information about a stimulus is encoded in the order in which neurons within a group generate their first spikes, which is closely connected to rank-order coding.
 }
 
+There are multiple ways to train a SNN:
 
-\subsubsection{Advantages / Disadvantages}
+• Shadow training: A non-spiking ANN is trained and converted into an SNN by interpreting the activations as
+a firing rate or spike time
 
-{\color{blue}
-  SNNs offer the following benefits
+• Backpropagation using spikes: The SNN is natively trained using error backpropagation, typically through
+time as is done with sequential models
 
-  - Energy efficiency: SNNs are highly energy efficient because they only consume energy when a spike is generated, unlike "classical" neural networks which consume energy continuously. This makes them ideal for low-power embedded devices.
-
-  - Event-driven processing: While ANNs typically operate on a fixed time interval, SNNs only process information when there is an input spike. This makes them highly efficient at processing information in an event-driven environment, such as processing visual or auditory data.
-
-  - Temporal coding: SNNs are able to process information based on the timing of spikes, allowing them to encode temporal information and be temporally accurate. This is particularly useful for tasks that require the processing of sequential data, such as speech or gesture recognition.
-
-  - Robustness to noise: SNNs are inherently robust to noise and can effectively filter out irrelevant information. This makes them useful in environments where noise is a common problem, such as medical imaging or environmental monitoring.
-
-  - Neuroplasticity: SNNs are able to adapt to new inputs and change their behaviour over time, much like the brain. This allows them to learn and adapt to new tasks and environments, making them highly versatile.
+• Local learning rules: Weight updates are a function of signals that are spatially and temporally local to the
+weight, rather than from a global signal as in error backpropagation
 
 
-  Disadvantages:
-
-  - SNNs are difficult to train.
-  - There is currently no learning algorithm designed specifically for this task.
-  - Building a small SNN is impractical.
-}
-
-
-
-\subsubsection{snnTorch}
-We will primarily work in Python and use the snnTorch package to work on SNNs. snnTorch is a Python package for performing gradient-based learning with spiking neural networks. snnTorch is built on top of Pytorch and takes advantage of its GPU-accelerated tensor computation. Pre-defined spiking neuron models are integrated into the PyTorch framework and can be treated as recurrent activation units.
-
-\subsection{Neural networks applied to audio classification}
-\subsubsection{Definition}
-{\color{blue}
-  Audio classification is a machine learning and signal processing task that involves categorizing or labeling audio data into different predefined classes or categories. The goal is to automatically assign a label to an audio segment based on its content or characteristics. This can be useful in various applications such as speech recognition, music genre classification, environmental sound analysis, and more.
-
-  Applications:
-
-  Speech Recognition: Identifying spoken words or phrases in audio recordings.
-  Music Genre Classification: Categorizing music into different genres, such as rock, pop, jazz, etc.
-  Environmental Sound Analysis: Detecting and classifying sounds in the environment, such as sirens, footsteps, or car engines.
-  Anomaly Detection: Identifying unusual or unexpected sounds in a given context.
-}
-\subsubsection{How it works}
-{\color{blue}
-  The process of audio classification typically involves the following steps
-
-  Data collection: Collecting a dataset of audio samples, each labeled with its corresponding class or category.
-
-  Feature extraction: Transforming the raw audio data into a set of relevant features that can be used to represent the content of the audio. Common features include spectrogram representations, Mel Frequency Cepstral Coefficients (MFCCs), and other time or frequency domain features.
-
-  Model training: Using machine learning algorithms or deep learning architectures to train a model on the extracted features and their corresponding labels. Apart from neural networks, others algorithms can be used for audio classification such as support vector machines, decision trees, or random forests for example.
-
-  Validation and testing: Evaluate the performance of the trained model on a separate set of data that it has not seen before. This helps evaluate the model's ability to generalize to new, unseen examples.
-
-  Deployment: Integrate the trained model into applications or systems that require real-time or batch audio classification.
-}
-
-
-
-\subsubsection{Advantages / Disadvantages}
-\subsection{Relevance of this choice}
-\subsubsection{Defining the project's pros and cons}
-\subsubsection{Cases of use to define the relevance of the project}
-
-\section{State of the art}
-\subsection{Finding what already exists}
-\subsubsection{In a simple neural network}
-\paragraph{Trained on the same data set or not}
-\subsubsection{In SNN}
-\paragraph{Trained on the same data set or not}
-\subsubsection{Existing libraries, existing models}
-\subsection{Results obtained as a basis for comparison}
-
-\section{Technical objectives of the project}
-\subsection{Technical objectives achievable with pre-existing ANNs}
-\subsection{Technical objectives with data}
-\subsection{Technical objectives with SNNs}
-\subsection{Feasibility}
-\subsubsection{Describing uncertainties}
-\subsubsection{Looking for a working model}
-\subsubsection{Estimate computation time}
-
-\section{Theoretical study}
-\subsection{Theoretical study on SNN}
-\subsection{Investigative approach}
 
 \section{Matching with available resources}
 \subsection{Work time}
+
+data collection/extraction:
+
+- from csv/Youtube to mp3 : 1-2 days
+
+data preprocessing:
+
+-data cleaning/enhancement/augmentation: 3-4
+
+models implementation:
+
+-understanding snnTorch basic: 1-2 days
+
+-finding pretrained/creating and tuning models: 4 days
+
+training/tuning:
+
+- training: weeks
+
+- extracting information: weeks
+
+working on the DOWs and presentation:
+
+- DOWs writing: continous work, 1-2 hours each day
+
+- slides for oral presentation: 2-3 days
+
 \subsection{Computer resources}
+
+Hardware: 2 laptops
+
+Software: Google Colab (primarily)
+
 \subsection{Human resources}
+
+We will work in parallel most of the time, each one focusing on a different aspect to gain time when it is possible.
 
 \pagebreak
 
@@ -266,13 +372,21 @@ We will primarily work in Python and use the snnTorch package to work on SNNs. s
 
 \begin{itemize}
   \item Google AudioSet : \url{https://research.google.com/audioset/}
-  \label{item:google-audioset}
-  
+        \label{item:google-audioset}
+
 \end{itemize}
 
 
 
 \subsection{Code}
+
+\begin{itemize}
+  \item Sparsity through Spiking Convolutional Neural Network (SCNN) for Audio Classification at the Edge : \url{https://github.com/CongSheng/SpikingConvNN-AudioClassification/tree/main}
+        \label{item:SCNN-audio-classification}
+  \item Multilayer Spiking Neural Network for audio samples classification using SpiNNaker : \url{https://github.com/jpdominguez/Multilayer-SNN-for-audio-samples-classification-using-SpiNNaker}
+        \label{item:spinnaker-audio-classification}
+
+\end{itemize}
 
 \subsection{Links}
 
