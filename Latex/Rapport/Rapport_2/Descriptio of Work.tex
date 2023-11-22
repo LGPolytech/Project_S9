@@ -15,7 +15,6 @@
 \usepackage{url}
 \usepackage[toc,page]{appendix}
 
-
 % Define colors
 \usepackage{xcolor}
 \definecolor{myblue}{RGB}{33, 66, 99}
@@ -99,7 +98,8 @@ This type of neural network is theoretically less energy consuming than some ANN
 
 Our project focuses on a specific problem within the broader domain of audio classification.
 
-Adopting an exploratory approach, we will begin this DoW with a more detailed presentation of the dataset used and its construction. After a brief introduction of our topic, we will review the state of the art in the field of SNNs and audio classification. We will then present the technical goals of our project and a simple theoretical study of SNNs. Finally, we will present the resources we have at our disposal to carry out this project, as well as a description of the work to be done. Finally, we will propose a schedule for the project.
+Adopting an exploratory approach, we will begin this DoW with a brief introduction of our topic, followed by a detailed presentation of the dataset used and its construction. We will review the state of the art in the field of SNNs and audio classification. We will then present the technical goals of our project and a simple theoretical study of SNNs. Finally, we will present the resources we have at our disposal to carry out this project, as well as a description of the work to be done. Finally, we will propose a schedule for the project.
+
 
 
 
@@ -136,6 +136,8 @@ $$
     0 & \text{otherwise}
   \end{cases}
 $$
+
+
 
 \subsubsection{Advantages / Disadvantages}
 
@@ -205,12 +207,11 @@ Cons:
 
 \begin{itemize}
   \item SNNs are new to us, we need to understand the package snnTorch.
-  \item Training SNNs is harder,
+  \item Training SNNs is harder, and we will need to find the most efficient encodings/decodings, training method, and parameters.
 \end{itemize}
 
 \subsubsection{Cases of use to define the relevance of the project}
 Our final goal is primarily to compare the efficiency and energy use of SNNs compared to others networks (CNNs, RNNs, LSTMs...) in audio classification, and to evaluate if SNNs are a good solution in our case.
-
 
 
 \section{Data used}
@@ -247,10 +248,10 @@ While lookin up to the data, we found that a lot of these sounds are taken out o
 Another problem we face is the fact that the data is always balanced (there exists a balanced version of the dataset) and that there are some Weak and Strong Label annotations.
 
 Strong labels are precise and indicate the exact start and end times of the event in the audio file whereas the Weak labels, only indicate the presence of a sound event somewhere in the audio file, without specifying the exact time. 
-
 \subsection{Open to other databases}
 
-In the case that we use for this classification purpose is not sufficient (for example when collecting all the data related to a unique label), We might try to complete it with other open-source label databases such as \href{https://www.freesound.org/}{Freesound} (\href{https://urbansounddataset.weebly.com/}{link2}), or \href{https://www.kaggle.com/}{Kaggle}.
+In the case that we use for this classification purpose is not sufficient (for example when collecting all the data related to a unique label), We might try to complete it with other open-source label databases such as \href{https://www.freesound.org/}{Freesound} or \href{https://www.kaggle.com/}{Kaggle}.
+
 
 \section{State of the art}
 
@@ -280,105 +281,110 @@ We found the following models:
 
 The results we may get from the aforementioned networks may serve as a basis of comparison for some of them.
 
+
 \section{Technical objectives of the project}
 \subsection{Technical objectives achievable with pre-existing ANNs}
 
-
-
+We should find pre-trained ANN's that can attain a good accuracy with AudioSet.
 
 \subsection{Technical objectives with data}
-{\color{blue}
-  How AI and ML Understand and Classify Audio
 
-  In its raw form, a sound is an analog signal — to process it, we have to convert it to digital. Analog signals are continuous waves. An analog wave has a discrete value at any given point in time. It’s impossible to convert every value to a digital representation because there are infinite points in a continuous wave. You must convert the audio signal to digital through sampling and quantization.
-
-  Sampling means recoding these points at specific time intervals or frequencies. This interval is the sample rate. The higher the sample rate, the less information lost and the fewer errors. However, if the sample rate is too high, it increases the audio file size without significantly improving the audio.
-
-  Quantization means rounding the amplitude sampled at each interval to the nearest bit. The greater the bit depth, the lower the quantization. The larger the bit depth, the more memory it takes, so what bit depth to use depends on the amount of available RAM. If you want to learn more, this is a good explanation of analog to digital conversion.
+  In its raw form, a sound is an analog signal, needing to be converted to digital. Analog signals are continuous waves. An analog wave has a discrete value at any given point in time. It’s impossible to convert every value to a digital representation because there are infinite points in a continuous wave. You must convert the audio signal to digital through sampling and quantization. In our case, since we extract the audio from Youtube, the conversion step is already done.
 
   After conversion, the next step is to extract useful features from the audio. You can extract many features, so you must focus on the specific problem you want to solve. Here are some critical features used for audio classification with ML:
 
   Time domain features are extracted directly from the raw audio (waveform). Examples are the amplitude envelope, and the root mean square energy. Time domain features are not enough to represent the sound because they do not include frequency information.
 
-  Frequency domain features are also called the spectrum. Examples include band energy ratio, spectral flux, and spectral bandwidth. These features lack time representation. You extract them from a time domain representation through Fourier transform. Fourier transform converts a waveform from a function of time to a function of frequency. Learn more about Fourier Transforms here.
+  Frequency domain features are also called the spectrum. Examples include band energy ratio, spectral flux, and spectral bandwidth. These features lack time representation. They are extracted from a time domain representation through Fourier transform. Fourier transform converts a waveform from a function of time to a function of frequency.
 
-  Time and frequency domain features extract a spectrogram from the waveform using a short-time Fourier transform, like Spectrogram or Mel Spectrogram. The spectrogram shows both the frequency and time domain. Spectrograms represent frequency linearly, but humans perceive sounds logarithmically. This means that humans can tell the difference between lower frequencies like 500-100 Hertz (Hz) but find it harder to differentiate between sounds at a higher frequency, from 10,000 Hz to 15,000 Hz. Learn more about how humans respond to various sound ranges here. This difficulty is why the Mel-scale was introduced. A Mel Spectrogram is a spectrogram on the Mel-scale, which measures how different pitches sound to the listener. It maps pitches that, to listeners, sound equidistant.
-
-}
+  Time and frequency domain features extract a spectrogram from the waveform using a short-time Fourier transform, like Spectrogram or Mel Spectrogram. The spectrogram shows both the frequency and time domain. Spectrograms represent frequency linearly, but humans perceive sounds logarithmically. This means that humans can tell the difference between lower frequencies like 500-100 Hertz (Hz) but find it harder to differentiate between sounds at a higher frequency, from 10,000 Hz to 15,000 Hz. This difficulty is why the Mel-scale was introduced. A Mel Spectrogram is a spectrogram on the Mel-scale, which measures how different pitches sound to the listener. It maps pitches that, to listeners, sound equidistant.
 
 
 \subsection{Technical objectives with SNNs}
+
+We need to either find a pre-trainedmodel our create it ourselves. We found a framework for the creation a SNN for robust sound classification.${\cite{model_framework}}$
+
+
 \subsection{Feasibility}
 \subsubsection{Describing uncertainties}
-Uncertainty are due to the dynamic nature of audio signals, varying acoustic environments, and the complexity of distinguishing between diverse sound patterns. Additionally, challenges in precisely modeling the temporal aspects of auditory processing and the understanding of spiking neuron dynamics contribute to many uncertainties in the feasibility of the project. Moreover the training of Spiking Neural Networks in order to attain a good accuracy is difficult due to the inherent non- linearity and sparsity of spikes.
+Uncertainties are mostly due to the dynamic nature of audio signals, varying acoustic environments, and the complexity of distinguishing between diverse sound patterns. Additionally, challenges in precisely modeling the temporal aspects of auditory processing and the understanding of spiking neuron dynamics contribute to many uncertainties in the feasibility of the project. Moreover the training of Spiking Neural Networks in order to attain a good accuracy is difficult due to the inherent non- linearity and sparsity of spikes.
+
+Regarding uncertainties about the data the dealing with Youtube, means some audio may not be in right format (a 5s video where we extract a 10s audio for example), and some might not even be available (users deleting their video), which might lead tto unbalanced data.
 
 
 \subsubsection{Looking for a working model}
 
 Many model for sound classification already exist. In particular, for AudioSet, there are already multiple pre-trained deep neural network, for example YamNet. However, it is more difficult to find open source SNNs, as they are less widespread than other types of neural networks.
 
-
 \subsubsection{Estimate computation time}
 
+Importation of data and training are the most consuming task. We don't know yet how long a training will be. As for the importation of audio, we estimate a little more than 10 seconds on average for the importation of a single audio sample without parallelization, we expect to import between 1.000 and 10.000 audio samples.
 
 
 \section{Theoretical study}
 \subsection{Theoretical study on SNN}
 
+There are multiple archetypes of spiking, each model as its specifity, and while it seems interestig to restraint ourselves to the LIF (Leaky Fire and Integrate) which seems the more interestin, it may be relevant to analyze some types of model to evaluate their efficiency. ${\cite{firing_comparison}}$
 
-We will need to choose multiple parameters regarding our neural network, like the encoding and the type of training.
+We will need to choose multiple parameters regarding our neural network, like the encoding, the type of training.
 
-Neural coding schemes are used to convert input pixels into spikes that are transmitted to the excitatory neurons. There are four main neural coding schemes: rate coding, time-to-first spike coding, phase coding, and burst coding.
-
-
+Neural coding schemes are used to convert input pixels into spikes that are transmitted to the excitatory neurons. There are four main neural coding schemes: rate coding, time-to-first spike coding, phase coding, and burst coding.${\cite{codings}}$
 
 There are also multiple ways to train a SNN:
 
-• Shadow training: A non-spiking ANN is trained and converted into an SNN by interpreting the activations as
-a firing rate or spike time
+• Shadow training: A non-spiking ANN is trained and converted into an SNN by interpreting the activations as a firing rate or spike time.
 
-• Backpropagation using spikes: The SNN is natively trained using error backpropagation, typically through
-time as is done with sequential models
+• Backpropagation using spikes: The SNN is natively trained using error backpropagation, typically through time as is done with sequential models.
 
-• Local learning rules: Weight updates are a function of signals that are spatially and temporally local to the
-weight, rather than from a global signal as in error backpropagation
+• Local learning rules: Weight updates are a function of signals that are spatially and temporally local to the weight, rather than from a global signal as in error backpropagation.
 
 
 
 \section{Matching with available resources}
 \subsection{Work time}
 
-data collection/extraction:
 
-- from csv/Youtube to mp3 : 1-2 days
+\begin{center}
+\begin{tabular}{ |p{5cm}||p{3cm}|p{3cm}|p{2cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Schedule} \\
+ \hline
+ Task& Duration  & When & Who\\
+ \hline
+\textbf{Data collection/extraction}&&& \\
+From csv/Youtube to mp3 & 1-2 days& 22/11-24/11 & Loai\\
+&&&\\
+\textbf{Data preprocessing}&&&\\
+cleaning/enhancement/&&&\\
+augmentation& 3-4 days&24/11-28/11&\\
+&&&\\
+\textbf{Models implementation}&&&\\
+understanding snnTorch basics&1-2 days &24/11-25/11&\\
+&&&\\
+finding pretrained/creating and tuning models & 4-5 days & 26/11-01/12 &\\
+&&&\\
+\textbf{Training/tuning}&&&\\
+training&multiple weeks&&\\
+&&&\\
+extracting/synthetizing info&multiple weeks&&\\
+&&&\\
+\textbf{Working on the DOWs and presentation}&&&\\
+DOWs writing: continous work& 2 hours x 2 per week & &\\
+&&&\\
+slides for oral presentation& 2-3 days&27/11-29/11&\\
+ \hline
+\end{tabular}
+\end{center}
 
-data preprocessing:
 
--data cleaning/enhancement/augmentation: 3-4
-
-models implementation:
-
--understanding snnTorch basic: 1-2 days
-
--finding pretrained/creating and tuning models: 4 days
-
-training/tuning:
-
-- training: weeks
-
-- extracting information: weeks
-
-working on the DOWs and presentation:
-
-- DOWs writing: continous work, 1-2 hours each day
-
-- slides for oral presentation: 2-3 days
 
 \subsection{Computer resources}
 
-Hardware: 2 laptops
-
-Software: Google Colab (primarily)
+We will work with the following:
+\begin{itemize}
+  \item Hardwares: 2 laptops 
+  \item Softwares: Google Colab (primarily), Kaggle
+\end{itemize}
 
 \subsection{Human resources}
 

@@ -31,12 +31,12 @@
 \contentsline {section}{\numberline {6}Theoretical study}{8}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Theoretical study on SNN}{8}{subsection.6.1}%
 \contentsline {section}{\numberline {7}Matching with available resources}{8}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Work time}{8}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Computer resources}{8}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Human resources}{8}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Appendix}{9}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Data}{9}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Existing models}{9}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Code}{9}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Links}{9}{subsection.8.4}%
-\contentsline {section}{References}{10}{subsection.8.4}%
+\contentsline {subsection}{\numberline {7.1}Work time}{9}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Computer resources}{9}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Human resources}{9}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Appendix}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Data}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Existing models}{10}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Code}{10}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Links}{10}{subsection.8.4}%
+\contentsline {section}{References}{11}{subsection.8.4}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.20)  22 NOV 2023 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.20)  22 NOV 2023 18:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -334,7 +334,7 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 \c@@ppsavesec=\count292
 \c@@ppsaveapp=\count293
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 52.
+Package hyperref Info: Option `colorlinks' set `true' on input line 51.
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count294
@@ -342,24 +342,24 @@ File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 ) (./Descriptio of Work.aux)
 \openout1 = `"Descriptio of Work.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -420,7 +420,7 @@ Package grfext Info: Graphics extension search list:
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 54.
+Package hyperref Info: Link coloring ON on input line 53.
  (./Descriptio of Work.out) (./Descriptio of Work.out)
 \@outlinefile=\write3
 \openout3 = `"Descriptio of Work.out"'.
@@ -428,7 +428,7 @@ Package hyperref Info: Link coloring ON on input line 54.
 <./image/bi.png, id=171, 2168.1pt x 1219.55624pt>
 File: ./image/bi.png Graphic file (type png)
 <use ./image/bi.png>
-Package pdftex.def Info: ./image/bi.png  used on input line 80.
+Package pdftex.def Info: ./image/bi.png  used on input line 79.
 (pdftex.def)             Requested size: 448.10246pt x 252.05763pt.
  [1
 
@@ -440,7 +440,7 @@ Package pdftex.def Info: ./image/bi.png  used on input line 80.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 
+l.86 
       [1]
 <image/def1.png, id=228, 594.22pt x 451.6875pt>
 File: image/def1.png Graphic file (type png)
@@ -458,35 +458,46 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2]
 
-LaTeX Warning: Hyper reference `item:snntorch-lib' on page 3 undefined on input line 167.
+LaTeX Warning: Hyper reference `item:snntorch-lib' on page 3 undefined on input line 169.
 
 [3 <./image/def1.png> <./image/def2.png>]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 200.
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 202.
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [4{d:/TEX/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6] [7] [8]
-Overfull \hbox (83.79169pt too wide) in paragraph at lines 405--407
+) [4{d:/TEX/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6]
+
+LaTeX Warning: Citation `model_framework' on page 7 undefined on input line 305.
+
+[7]
+
+LaTeX Warning: Citation `firing_comparison' on page 8 undefined on input line 327.
+
+
+LaTeX Warning: Citation `codings' on page 8 undefined on input line 331.
+
+[8] [9]
+Overfull \hbox (83.79169pt too wide) in paragraph at lines 411--413
 \OT1/cmtt/m/n/10.95 / / github . com / jpdominguez / Multilayer-[]SNN-[]for-[]audio-[]samples-[]classification-[]using-[]SpiNNaker$[][]
  []
 
 
-Overfull \hbox (14.07541pt too wide) in paragraph at lines 408--409
+Overfull \hbox (14.07541pt too wide) in paragraph at lines 414--415
 [][]$\OT1/cmtt/m/n/10.95 https : / / github . com / urancon / stereospike$[][] \OT1/cmss/m/n/10.95 - [][]$\OT1/cmtt/m/n/10.95 https : / / ieeexplore . ieee . org / document /
  []
 
 
-Overfull \hbox (59.48727pt too wide) in paragraph at lines 414--415
+Overfull \hbox (59.48727pt too wide) in paragraph at lines 420--421
 []\OT1/cmss/m/n/10.95 Rethink CNNs for Au-dio Clas-si-fi-ca-tion : [][]$\OT1/cmtt/m/n/10.95 https : / / github . com / kamalesh0406 / Audio-[]Classification /
  []
 
-[9] (./Descriptio of Work.bbl
+[10] (./Descriptio of Work.bbl
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 4.
 
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 4.
-) [10] (./Descriptio of Work.aux)
+) [11] (./Descriptio of Work.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
@@ -499,18 +510,18 @@ Package rerunfilecheck Info: File `"Descriptio of Work".out' has not changed.
 (rerunfilecheck)             Checksum: DB21B4A3C4305D70A90338E55D90AFBB;7096.
  ) 
 Here is how much of TeX's memory you used:
- 11439 strings out of 474267
- 177455 string characters out of 5749458
- 1941558 words of memory out of 5000000
- 33427 multiletter control sequences out of 15000+600000
+ 11442 strings out of 474267
+ 177520 string characters out of 5749458
+ 1949558 words of memory out of 5000000
+ 33429 multiletter control sequences out of 15000+600000
  565347 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,935b,473s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,869b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb>
-Output written on "Descriptio of Work.pdf" (11 pages, 3563465 bytes).
+Output written on "Descriptio of Work.pdf" (12 pages, 3565494 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 350 compressed objects within 4 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 352 compressed objects within 4 object streams
+ 54 named destinations out of 1000 (max. 500000)
  352 words of extra memory for PDF output out of 10000 (max. 10000000)
 
