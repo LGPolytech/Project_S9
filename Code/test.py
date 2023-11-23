@@ -13,5 +13,6 @@ audio_stream = youtube.streams.get_audio_only()
 # Download the audio stream
 filename = audio_stream.download()
 
-# Play the audio file
-playsound(filename)
+# Get size of the file
+filesize = audio_stream.filesize
+print("File size: " + str(filesize) + " bytes")
