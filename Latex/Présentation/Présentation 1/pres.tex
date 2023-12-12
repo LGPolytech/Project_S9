@@ -2,10 +2,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
-\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{multicol}
+\usepackage{graphicx}
 
 % Set the theme
 \usetheme{Warsaw}
@@ -32,6 +32,7 @@
 \author[T. Courrege, L. Gandeel]{Téo Courrege\\Loaï Gandeel}
 \date{\today}
 
+
 % Customize title page
 \setbeamertemplate{title page}{
   \begin{centering}
@@ -50,10 +51,11 @@
   \begin{frame}{Outline}
     \begin{multicols}{2}
       \hfill % This will push the table of contents to the right side
-      \tableofcontents[currentsection]
+      \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
     \end{multicols}
   \end{frame}
 }
+
 
 \begin{document}
 
@@ -63,17 +65,72 @@
 
 \section{Introduction}
 
-\begin{frame}{Introduction}
+
+\section{Theoretical Study}
+
+\subsection{Theoretical Study of SNN}
+
+\begin{frame}
+  \frametitle{Comparison: ANN vs SNN}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{image/perceptrons.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{image/def1.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Specificities of SNNs}
   \begin{itemize}
-    \item Presentation of the Project: Explaining the motivation and goals of the project.
-    \item Sound Detection and Classification: Overview of the importance of sound detection and classification, especially in the context of Spiking Neural Networks (SNNs).
-    \item Spiking Neural Networks: Brief introduction to SNNs and their relevance in handling temporal dynamics in sound data.
+    \item Neurons communicates with each other by sending spikes.
+    \item More biologically realistic than ANNs.
+    \item More energy efficient than ANNs (real time processing, event driven processing, sparse representation).
+    \item Loss function is not differentiable and cannot be optimized using gradient descent for backpropagation.
   \end{itemize}
 \end{frame}
 
-\section{Data Used}
+\begin{frame}
+  \frametitle{Comparison between spiking neural models}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{image/theo1.png}
+  \end{center}
+\end{frame}
 
-\subsection{Choosing the Type of Training Data}
+\subsection{LIF Model}
+\begin{frame}
+  \frametitle{Principle of LIF}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Leaky integrate-and-fire in SNNs:
+        \item Accumulates input currents over time
+        \item Leaking a fraction of the charge per unit time
+        \item Fires when the accumulated charge surpasses a threshold.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{image/lif.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{LIF Model Equations}
+  $$ C_m \frac{d V_m}{d t} = I(t) - \frac{V_m}{R_m} $$
+  \begin{itemize}
+    \item $C_m$ is the membrane capacitance
+    \item $V_m$ is the membrane potential
+    \item $I(t)$ is the input current
+    \item $R_m$ is the membrane resistance
+  \end{itemize}
+\end{frame}
+
+\section{Data, Objectives and State of the Art}
+
+\subsection{Data}
 
 \begin{frame}{Choosing the Type of Training Data}
   \begin{itemize}
@@ -82,7 +139,7 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Feasibility}
+\subsection{Objective}
 
 \begin{frame}{Feasibility}
   \begin{itemize}
@@ -94,64 +151,8 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Open to Other Databases}
+%Technical Objectives Achievable with Pre-existing ANNs
 
-\begin{frame}{Open to Other Databases}
-  \begin{itemize}
-    \item Considering alternative databases (Freesound, Kaggle) if the selected dataset is insufficient.
-    \item Flexibility in exploring and incorporating additional open-source label databases.
-  \end{itemize}
-\end{frame}
-
-\section{State of the Art}
-
-\subsection{ANNs Used for Audio Classification}
-
-\begin{frame}{ANNs Used for Audio Classification}
-  \begin{itemize}
-    \item Overview of existing ANNs for audio classification.
-    \item Mentioning pre-trained models on Google AudioSet, rearranged Resnet, inception, densenet, and LSTM-based models.
-    \item Providing references to relevant GitHub repositories and research papers.
-  \end{itemize}
-\end{frame}
-
-\subsection{SNNs Used for Audio Classification}
-
-\begin{frame}{SNNs Used for Audio Classification}
-  \begin{itemize}
-    \item Overview of existing SNNs for audio classification.
-    \item Highlighting spiking convolutional neural networks (SCNN), multi-layer SNN using SpiNNaker, shadow training, and SNN simulators (BindsNET, NEST).
-    \item Referencing GitHub repositories and documentation for each model.
-  \end{itemize}
-\end{frame}
-
-\section{Technical Objectives of the Project}
-
-\subsection{Technical Objectives Achievable with Pre-existing ANNs}
-
-\begin{frame}{Technical Objectives Achievable with Pre-existing ANNs}
-  \begin{itemize}
-    \item Identifying pre-trained ANNs suitable for achieving good accuracy with Google AudioSet.
-  \end{itemize}
-\end{frame}
-
-\subsection{Technical Objectives with Data}
-
-\begin{frame}{Technical Objectives with Data}
-  \begin{itemize}
-    \item Discussing the conversion of analog sound signals to digital representation.
-    \item Extracting useful features from audio, including time domain features, frequency-domain features, and spectrograms.
-  \end{itemize}
-\end{frame}
-
-\subsection{Technical Objectives with SNNs}
-
-\begin{frame}{Technical Objectives with SNNs}
-  \begin{itemize}
-    \item Finding or creating a pre-trained SNN model for robust sound classification.
-    \item Referencing a framework for creating SNNs for sound classification.
-  \end{itemize}
-\end{frame}
 
 \subsection{Feasibility}
 
@@ -164,22 +165,25 @@
   \end{itemize}
 \end{frame}
 
-\section{Theoretical Study}
+\subsection{State of the Art}
 
-\subsection{Theoretical Study of SNN}
-
-\begin{frame}{Theoretical Study of SNN}
+\begin{frame}{ANNs Used for Audio Classification}
   \begin{itemize}
-    \item Exploring different archetypes of spiking neural networks, focusing on the Leaky Integrate and Fire (LIF) model.
-    \item Discussing neural coding schemes for converting input pixels into spikes.
-    \item Overview of different ways to train SNNs: shadow training, backpropagation using spikes, and local learning rules.
+    \item Overview of existing ANNs for audio classification.
+    \item Mentioning pre-trained models on Google AudioSet, rearranged Resnet, inception, densenet, and LSTM-based models.
+    \item Providing references to relevant GitHub repositories and research papers.
   \end{itemize}
 \end{frame}
 
-\section{Pre-processing}
+\begin{frame}{SNNs Used for Audio Classification}
+  \begin{itemize}
+    \item Overview of existing SNNs for audio classification.
+    \item Highlighting spiking convolutional neural networks (SCNN), multi-layer SNN using SpiNNaker, shadow training, and SNN simulators (BindsNET, NEST).
+    \item Referencing GitHub repositories and documentation for each model.
+  \end{itemize}
+\end{frame}
 
-\subsection{Data collection}
-
+\subsection{Pre-processing}
 \begin{frame}{Pre-processing}
   \begin{itemize}
     \item Collecting the data
@@ -187,8 +191,6 @@
     \item Checking that there are no errors / repetitions
   \end{itemize}
 \end{frame}
-
-\subsection{Data augmentation}
 
 \section{Spectrograms, MEL and MFCC}
 \subsection{Spectrograms}
