@@ -1,0 +1,14 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Dow}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Context : Data and objectives}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Technical Approach and SOTA}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Theoritical part}{7}{0}{2}
+\beamer@sectionintoc {3}{Pre-processing}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{Data collection}{9}{0}{3}
+\beamer@subsectionintoc {3}{2}{Data augmentation}{10}{0}{3}
+\beamer@sectionintoc {4}{Spectrograms, MEL and MFCC}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{Spectrograms}{11}{0}{4}
+\beamer@subsectionintoc {4}{2}{MEL}{12}{0}{4}
+\beamer@subsectionintoc {4}{3}{MFCC}{13}{0}{4}
+\beamer@sectionintoc {5}{Spiking Neural Networks - First results}{14}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{16}{0}{6}

@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{multicol}
 
 % Set the theme
 \usetheme{Warsaw}
@@ -28,7 +29,7 @@
 
 % Title page
 \title[Sound Detection and Classification]{\textbf{Sound Detection and Classification}\\ using Spiking Neural Networks}
-\author[T. Courrege, L. Gandeel]{\textbf{Téo Courrege}\\Lo'aï Gandeel}
+\author[T. Courrege, L. Gandeel]{Téo Courrege\\Loaï Gandeel}
 \date{\today}
 
 % Customize title page
@@ -47,9 +48,22 @@
 % Customize section page
 \AtBeginSection[]{
   \begin{frame}{Outline}
-    \tableofcontents[currentsection]
+    \begin{multicols}{2}
+      \hfill % This will push the table of contents to the right side
+      \tableofcontents[currentsection]
+    \end{multicols}
   \end{frame}
 }
+
+% SI c'est moche y'a ça aussi :
+% % Customize section page
+%\AtBeginSection[]{
+%  \begin{frame}{Outline}
+   % \begin{tiny}
+   %   \tableofcontents[currentsection]
+  %  \end{tiny}
+ % \end{frame}
+%}
 
 \begin{document}
 
@@ -61,26 +75,87 @@
 
 \begin{frame}{Introduction}
   \begin{itemize}
+    \item Presentation of the Project
     \item Sound Detection and Classification
     \item Spiking Neural Networks
   \end{itemize}
 \end{frame}
+% Reprises du DoW
 
-\section{Methodology}
+\section{Dow}
 
-\begin{frame}{Methodology}
+\subsection{Context : Data and objectives}
+
+\begin{frame}{Data}
   \begin{itemize}
-    \item Proposed Approach
-    \item Experiments
+    \item Type of Data
+    \item Goal to achieve with this data
   \end{itemize}
 \end{frame}
 
-\section{Results}
+\subsection{Technical Approach and SOTA}
 
-\begin{frame}{Results}
+\begin{frame}{Technical Approach}
   \begin{itemize}
-    \item Data Analysis
-    \item Performance Metrics
+    \item State of the art
+    \item Technical Approach
+  \end{itemize}
+\end{frame}
+
+\subsection{Theoritical part}
+
+\begin{frame}{Theoritical part}
+  \begin{itemize}
+    \item Spiking Neural Networks
+    \item Sound Detection and Classification
+  \end{itemize}
+\end{frame}
+
+
+\section{Pre-processing}
+
+\subsection{Data collection}
+
+\begin{frame}{Pre-processing}
+  \begin{itemize}
+    \item Collecting the data
+    \item Adaptation of the data
+    \item Checking that there are no errors / repetitions
+  \end{itemize}
+\end{frame}
+
+\subsection{Data augmentation}
+
+\section{Spectrograms, MEL and MFCC}
+\subsection{Spectrograms}
+
+\begin{frame}{Spectrograms}
+  \begin{itemize}
+    \item Spectrograms
+  \end{itemize}
+\end{frame}
+
+\subsection{MEL}
+
+\begin{frame}{MEL}
+  \begin{itemize}
+    \item MEL
+  \end{itemize}
+\end{frame}
+
+\subsection{MFCC}
+
+\begin{frame}{MFCC}
+  \begin{itemize}
+    \item MFCC
+  \end{itemize}
+\end{frame}
+
+\section{Spiking Neural Networks - First results}
+
+\begin{frame}{Spiking Neural Networks - First results}
+  \begin{itemize}
+    \item First results
   \end{itemize}
 \end{frame}
 
