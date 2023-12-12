@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.9)  12 DEC 2023 09:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.9)  12 DEC 2023 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -619,28 +619,28 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count345
 \l__pdf_internal_box=\box122
-)
-No file pres.aux.
+) (./pres.aux)
 \openout1 = `pres.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -694,63 +694,64 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 68.
+Package hyperref Info: Link coloring OFF on input line 58.
+ (./pres.out) (./pres.out)
 \@outlinefile=\write5
 \openout5 = `pres.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 68.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 68.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 58.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 68.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 68.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 68.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 68.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 68.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 68.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 68.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 68.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 68.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 68.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 68.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 58.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 68.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 68.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 68.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 68.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 68.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 68.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 68.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 68.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 58.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 68.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 68.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 58.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 58.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 68.
+(Font)              `pureletters' in the math version `normal' on input line 58.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 68.
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 58.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 68.
+(Font)              `pureletters' in the math version `bold' on input line 58.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 68.
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 58.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 68.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 58.
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (d:/TEX/texlive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -763,53 +764,285 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (d:/TEX/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-)
-No file pres.nav.
+) (./pres.nav)
+Overfull \vbox (2.09991pt too high) detected at line 58
+ []
+
+
+Overfull \vbox (2.09991pt too high) detected at line 62
+ []
+
 [1
 
 {d:/TEX/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/TEX/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-No file pres.toc.
-[2
+Overfull \vbox (2.09991pt too high) detected at line 64
+ []
 
-] [3
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 64
+ []
 
-]
-No file pres.toc.
-[4
 
-] [5
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
 
-] [6
-
-] [7
+ [2
 
 ]
-No file pres.toc.
-[8
+Overfull \vbox (2.09991pt too high) detected at line 72
+ []
 
-] [9
 
-]
-No file pres.toc.
-[10
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
 
-] [11
-
-] [12
-
-] [13
+ [3
 
 ]
-No file pres.toc.
-[14
+Overfull \vbox (2.09991pt too high) detected at line 74
+ []
 
-] [15
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 74
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [4
 
 ]
-No file pres.toc.
-[16
+Overfull \vbox (2.09991pt too high) detected at line 83
+ []
 
-] [17
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [5
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 95
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [6
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 104
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [7
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 106
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 106
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [8
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 116
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [9
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 126
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [10
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 128
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 128
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [11
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 136
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [12
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 145
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [13
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 154
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [14
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 165
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [15
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 167
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 167
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [16
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 177
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [17
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 179
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 179
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [18
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 189
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [19
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 193
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 193
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [20
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 200
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [21
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 208
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [22
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 216
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [23
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 218
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 218
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [24
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 224
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [25
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 226
+ []
+
+(./pres.toc)
+Overfull \vbox (37.80345pt too high) detected at line 226
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [26
+
+]
+Overfull \vbox (2.09991pt too high) detected at line 233
+ []
+
+
+Overfull \vbox (2.09991pt too high) has occurred while \output is active []
+
+ [27
 
 ]
 \tf@nav=\write6
@@ -826,29 +1059,22 @@ No file pres.toc.
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
-
-
-Package rerunfilecheck Warning: File `pres.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `pres.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  2213014ED91BA64EBFF18E4E1AE23BDA;1912.
+Package rerunfilecheck Info: File `pres.out' has not changed.
+(rerunfilecheck)             Checksum: BF61C02C5CFE80BCCE873ADED3D087AB;3985.
  ) 
 Here is how much of TeX's memory you used:
- 21882 strings out of 474267
- 421775 string characters out of 5749453
- 1933558 words of memory out of 5000000
- 43601 multiletter control sequences out of 15000+600000
- 564826 words of font info for 46 fonts, out of 8000000 for 9000
+ 22181 strings out of 474267
+ 426941 string characters out of 5749453
+ 1951558 words of memory out of 5000000
+ 43843 multiletter control sequences out of 15000+600000
+ 565585 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,526b,561s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1728.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
-Output written on pres.pdf (17 pages, 104619 bytes).
+ 128i,19n,123p,526b,731s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1728.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
+Output written on pres.pdf (27 pages, 179030 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 488 compressed objects within 5 object streams
- 49 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1755 PDF objects out of 2073 (max. 8388607)
+ 1348 compressed objects within 14 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 

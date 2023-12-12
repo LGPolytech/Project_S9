@@ -55,16 +55,6 @@
   \end{frame}
 }
 
-% SI c'est moche y'a ça aussi :
-% % Customize section page
-%\AtBeginSection[]{
-%  \begin{frame}{Outline}
-   % \begin{tiny}
-   %   \tableofcontents[currentsection]
-  %  \end{tiny}
- % \end{frame}
-%}
-
 \begin{document}
 
 \begin{frame}[plain]
@@ -75,42 +65,116 @@
 
 \begin{frame}{Introduction}
   \begin{itemize}
-    \item Presentation of the Project
-    \item Sound Detection and Classification
-    \item Spiking Neural Networks
+    \item Presentation of the Project: Explaining the motivation and goals of the project.
+    \item Sound Detection and Classification: Overview of the importance of sound detection and classification, especially in the context of Spiking Neural Networks (SNNs).
+    \item Spiking Neural Networks: Brief introduction to SNNs and their relevance in handling temporal dynamics in sound data.
   \end{itemize}
 \end{frame}
-% Reprises du DoW
 
-\section{Dow}
+\section{Data Used}
 
-\subsection{Context : Data and objectives}
+\subsection{Choosing the Type of Training Data}
 
-\begin{frame}{Data}
+\begin{frame}{Choosing the Type of Training Data}
   \begin{itemize}
-    \item Type of Data
-    \item Goal to achieve with this data
+    \item Understanding the challenges of training SNNs compared to ANNs.
+    \item Criteria for selecting data: Less computationally intensive, adaptable to pre-recorded and real-time processing.
   \end{itemize}
 \end{frame}
 
-\subsection{Technical Approach and SOTA}
+\subsection{Feasibility}
 
-\begin{frame}{Technical Approach}
+\begin{frame}{Feasibility}
   \begin{itemize}
-    \item State of the art
-    \item Technical Approach
+    \item Selection of Google AudioSet database.
+    \item Addressing copyright concerns (Creative Commons license).
+    \item Data collection/extraction: Utilizing GitHub repositories for efficient downloading, formatting, and cropping of sound files.
+    \item Assessing resource usage and parallelization impact.
+    \item Uncertainties about data quality: Contextual issues, multi-labeling, Weak and Strong Label annotations.
   \end{itemize}
 \end{frame}
 
-\subsection{Theoritical part}
+\subsection{Open to Other Databases}
 
-\begin{frame}{Theoritical part}
+\begin{frame}{Open to Other Databases}
   \begin{itemize}
-    \item Spiking Neural Networks
-    \item Sound Detection and Classification
+    \item Considering alternative databases (Freesound, Kaggle) if the selected dataset is insufficient.
+    \item Flexibility in exploring and incorporating additional open-source label databases.
   \end{itemize}
 \end{frame}
 
+\section{State of the Art}
+
+\subsection{ANNs Used for Audio Classification}
+
+\begin{frame}{ANNs Used for Audio Classification}
+  \begin{itemize}
+    \item Overview of existing ANNs for audio classification.
+    \item Mentioning pre-trained models on Google AudioSet, rearranged Resnet, inception, densenet, and LSTM-based models.
+    \item Providing references to relevant GitHub repositories and research papers.
+  \end{itemize}
+\end{frame}
+
+\subsection{SNNs Used for Audio Classification}
+
+\begin{frame}{SNNs Used for Audio Classification}
+  \begin{itemize}
+    \item Overview of existing SNNs for audio classification.
+    \item Highlighting spiking convolutional neural networks (SCNN), multi-layer SNN using SpiNNaker, shadow training, and SNN simulators (BindsNET, NEST).
+    \item Referencing GitHub repositories and documentation for each model.
+  \end{itemize}
+\end{frame}
+
+\section{Technical Objectives of the Project}
+
+\subsection{Technical Objectives Achievable with Pre-existing ANNs}
+
+\begin{frame}{Technical Objectives Achievable with Pre-existing ANNs}
+  \begin{itemize}
+    \item Identifying pre-trained ANNs suitable for achieving good accuracy with Google AudioSet.
+  \end{itemize}
+\end{frame}
+
+\subsection{Technical Objectives with Data}
+
+\begin{frame}{Technical Objectives with Data}
+  \begin{itemize}
+    \item Discussing the conversion of analog sound signals to digital representation.
+    \item Extracting useful features from audio, including time domain features, frequency-domain features, and spectrograms.
+  \end{itemize}
+\end{frame}
+
+\subsection{Technical Objectives with SNNs}
+
+\begin{frame}{Technical Objectives with SNNs}
+  \begin{itemize}
+    \item Finding or creating a pre-trained SNN model for robust sound classification.
+    \item Referencing a framework for creating SNNs for sound classification.
+  \end{itemize}
+\end{frame}
+
+\subsection{Feasibility}
+
+\begin{frame}{Feasibility}
+  \begin{itemize}
+    \item Addressing uncertainties related to dynamic audio signals, varying acoustic environments, and challenges in modeling temporal aspects.
+    \item Discussing potential challenges in training SNNs, considering non-linearity and sparsity of spikes.
+    \item Highlighting potential data uncertainties, such as varied audio formats and unavailability of certain samples.
+    \item Estimating computation time for data import and training.
+  \end{itemize}
+\end{frame}
+
+\section{Theoretical Study}
+
+\subsection{Theoretical Study of SNN}
+
+\begin{frame}{Theoretical Study of SNN}
+  \begin{itemize}
+    \item Exploring different archetypes of spiking neural networks, focusing on the Leaky Integrate and Fire (LIF) model.
+    \item Discussing neural coding schemes for converting input pixels into spikes.
+    \item Overview of different ways to train SNNs: shadow training, backpropagation using spikes, and local learning rules.
+  \end{itemize}
+\end{frame}
 
 \section{Pre-processing}
 
