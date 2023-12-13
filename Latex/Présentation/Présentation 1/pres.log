@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.9)  12 DEC 2023 22:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.12.9)  13 DEC 2023 03:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -610,36 +610,111 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \mult@nat@firstbox=\box120
 \colbreak@box=\box121
 \mc@col@check@num=\count344
-) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemeWarsaw.sty (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeshadow.sty (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty)) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty))
+) (d:/TEX/texlive/2023/texmf-dist/tex/latex/media9/media9.sty
+Package: media9 2022/08/04 v1.25 acrobat-9/X compatible media
+\g_mix_pkgresizeflag_int=\count345
+ (d:/TEX/texlive/2023/texmf-dist/tex/latex/media9/pdfbase.sty
+Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF features
+ (d:/TEX/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count346
+\l__pdf_internal_box=\box122
+)
+\g_pbs_page_int=\count347
+\g_pbs_oc_int=\count348
+) (d:/TEX/texlive/2023/texmf-dist/tex/latex/ocgx2/ocgbase.sty
+Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
+\g_ocgbase_nd_int=\count349
+)
+\l_mix_poster_box=\box123
+\g_mix_wd_dim=\dimen303
+\g_mix_ht_dim=\dimen304
+\g_mix_dp_dim=\dimen305
+\g_mix_rmcnt_int=\count350
+\l_mix_viewcnt_int=\count351
+\g@mix@page@int=\count352
+\g_mix_resizeflag_int=\count353
+\l_mix_lineno_int=\count354
+\l_mix_pbtn_box=\box124
+\g_mix_mbtncnt_int=\count355
+\mix@btn@dim=\dimen306
+) (d:/TEX/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (d:/TEX/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box125
+) (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (d:/TEX/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen307
+\pgf@nodesepend=\dimen308
+) (d:/TEX/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (d:/TEX/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen309
+\pgffor@skip=\dimen310
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+)) (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count356
+\pgfplotmarksize=\dimen311
+)
+\tikz@lastx=\dimen312
+\tikz@lasty=\dimen313
+\tikz@lastxsaved=\dimen314
+\tikz@lastysaved=\dimen315
+\tikz@lastmovetox=\dimen316
+\tikz@lastmovetoy=\dimen317
+\tikzleveldistance=\dimen318
+\tikzsiblingdistance=\dimen319
+\tikz@figbox=\box126
+\tikz@figbox@bg=\box127
+\tikz@tempbox=\box128
+\tikz@tempbox@bg=\box129
+\tikztreelevel=\count357
+\tikznumberofchildren=\count358
+\tikznumberofcurrentchild=\count359
+\tikz@fig@count=\count360
+ (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count361
+\pgfmatrixcurrentcolumn=\count362
+\pgf@matrix@numberofcolumns=\count363
+)
+\tikz@expandcount=\count364
+ (d:/TEX/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemeWarsaw.sty (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeshadow.sty (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty)) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (d:/TEX/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty))
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 32.
+(hyperref)                removing `\\' on input line 34.
 
-(d:/TEX/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count345
-\l__pdf_internal_box=\box122
-) (./pres.aux)
+(./pres.aux)
 \openout1 = `pres.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -677,81 +752,81 @@ LaTeX Font Info:    ... okay on input line 60.
 
 (d:/TEX/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count346
-\scratchdimen=\dimen303
-\scratchbox=\box123
-\nofMPsegments=\count347
-\nofMParguments=\count348
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count349
-\MPscratchDim=\dimen304
-\MPnumerator=\count350
-\makeMPintoPDFobject=\count351
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count365
+\scratchdimen=\dimen320
+\scratchbox=\box130
+\nofMPsegments=\count366
+\nofMParguments=\count367
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count368
+\MPscratchDim=\dimen321
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
+\everyMPtoPDFconversion=\toks51
 ) (d:/TEX/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 60.
+Package hyperref Info: Link coloring OFF on input line 62.
  (./pres.out) (./pres.out)
 \@outlinefile=\write5
 \openout5 = `pres.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 60.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 62.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 60.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 62.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 60.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 62.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 60.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 60.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 62.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 60.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 60.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 62.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 60.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 60.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 60.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 62.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 60.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 60.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 62.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 60.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 62.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 60.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 60.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 60.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 60.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 60.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 62.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 60.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 60.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 62.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 62.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 60.
+(Font)              `pureletters' in the math version `normal' on input line 62.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 60.
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 62.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 60.
+(Font)              `pureletters' in the math version `bold' on input line 62.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 60.
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 62.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 60.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 62.
  (d:/TEX/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (d:/TEX/texlive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -765,17 +840,17 @@ Dictionary: translator-numbers-dictionary, Language: English
 ) (d:/TEX/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./pres.nav)
-Overfull \vbox (0.612pt too high) detected at line 60
+Overfull \vbox (0.612pt too high) detected at line 62
  []
 
 
-Overfull \vbox (0.612pt too high) detected at line 64
+Overfull \vbox (0.612pt too high) detected at line 66
  []
 
 [1
 
 {d:/TEX/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/TEX/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \vbox (0.612pt too high) detected at line 66
+Overfull \vbox (0.612pt too high) detected at line 68
  []
 
 (./pres.toc)
@@ -784,76 +859,71 @@ Overfull \vbox (0.612pt too high) has occurred while \output is active []
  [2
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 69
+Overfull \vbox (0.612pt too high) detected at line 77
  []
 
-(./pres.toc)
+
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [3
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 83
+Overfull \vbox (0.612pt too high) detected at line 79
  []
 
-<image/perceptrons.png, id=253, 863.225pt x 473.77pt>
-File: image/perceptrons.png Graphic file (type png)
-<use image/perceptrons.png>
-Package pdftex.def Info: image/perceptrons.png  used on input line 83.
-(pdftex.def)             Requested size: 199.1693pt x 109.3118pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 83.
-(d:/TEX/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 83.
- (d:/TEX/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 83.
- (d:/TEX/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-)
-<image/def1.png, id=255, 594.22pt x 451.6875pt>
-File: image/def1.png Graphic file (type png)
-<use image/def1.png>
-Package pdftex.def Info: image/def1.png  used on input line 83.
-(pdftex.def)             Requested size: 199.1693pt x 151.39378pt.
-
+(./pres.toc)
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [4
 
- <./image/perceptrons.png> <./image/def1.png>]
+]
 Overfull \vbox (0.612pt too high) detected at line 93
  []
 
+<image/perceptrons.png, id=318, 863.225pt x 473.77pt>
+File: image/perceptrons.png Graphic file (type png)
+<use image/perceptrons.png>
+Package pdftex.def Info: image/perceptrons.png  used on input line 93.
+(pdftex.def)             Requested size: 199.1693pt x 109.3118pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
+(d:/TEX/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
+ (d:/TEX/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 93.
+ (d:/TEX/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
+)
+<image/def1.png, id=320, 594.22pt x 451.6875pt>
+File: image/def1.png Graphic file (type png)
+<use image/def1.png>
+Package pdftex.def Info: image/def1.png  used on input line 93.
+(pdftex.def)             Requested size: 199.1693pt x 151.39378pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [5
 
-]
-Overfull \vbox (0.612pt too high) detected at line 100
+ <./image/perceptrons.png> <./image/def1.png>]
+Overfull \vbox (0.612pt too high) detected at line 103
  []
 
-<image/theo1.png, id=345, 853.1875pt x 402.50375pt>
-File: image/theo1.png Graphic file (type png)
-<use image/theo1.png>
-Package pdftex.def Info: image/theo1.png  used on input line 100.
-(pdftex.def)             Requested size: 318.67209pt x 150.34279pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [6
 
- <./image/theo1.png>]
-Overfull \vbox (0.612pt too high) detected at line 118
+]
+Overfull \vbox (0.612pt too high) detected at line 121
  []
 
-<image/lif.png, id=389, 863.225pt x 485.815pt>
+<image/lif.png, id=411, 863.225pt x 485.815pt>
 File: image/lif.png Graphic file (type png)
 <use image/lif.png>
-Package pdftex.def Info: image/lif.png  used on input line 118.
+Package pdftex.def Info: image/lif.png  used on input line 121.
 (pdftex.def)             Requested size: 199.1693pt x 112.09091pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
@@ -861,7 +931,7 @@ Overfull \vbox (0.612pt too high) has occurred while \output is active []
  [7
 
  <./image/lif.png>]
-Overfull \vbox (0.612pt too high) detected at line 129
+Overfull \vbox (0.612pt too high) detected at line 132
  []
 
 
@@ -870,43 +940,73 @@ Overfull \vbox (0.612pt too high) has occurred while \output is active []
  [8
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 131
+Overfull \vbox (0.612pt too high) detected at line 139
+ []
+
+<image/theo1.png, id=505, 853.1875pt x 402.50375pt>
+File: image/theo1.png Graphic file (type png)
+<use image/theo1.png>
+Package pdftex.def Info: image/theo1.png  used on input line 139.
+(pdftex.def)             Requested size: 318.67209pt x 150.34279pt.
+
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [9
+
+ <./image/theo1.png>]
+Overfull \vbox (0.612pt too high) detected at line 141
  []
 
 (./pres.toc)
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
- [9
-
-]
-Overfull \vbox (0.612pt too high) detected at line 140
- []
-
-
-Overfull \vbox (0.612pt too high) has occurred while \output is active []
-
  [10
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 152
+Overfull \vbox (0.612pt too high) detected at line 158
  []
 
+<image/audio2.png, id=611, 863.225pt x 1294.8375pt>
+File: image/audio2.png Graphic file (type png)
+<use image/audio2.png>
+Package pdftex.def Info: image/audio2.png  used on input line 158.
+(pdftex.def)             Requested size: 107.55312pt x 161.32083pt.
+<image/audio.png, id=612, 803.0pt x 820.06375pt>
+File: image/audio.png Graphic file (type png)
+<use image/audio.png>
+Package pdftex.def Info: image/audio.png  used on input line 158.
+(pdftex.def)             Requested size: 131.45245pt x 134.24106pt.
+<image/audio3.png, id=613, 863.225pt x 576.1525pt>
+File: image/audio3.png Graphic file (type png)
+<use image/audio3.png>
+Package pdftex.def Info: image/audio3.png  used on input line 158.
+(pdftex.def)             Requested size: 131.45245pt x 87.72905pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [11
 
-]
-Overfull \vbox (0.612pt too high) detected at line 166
+ <./image/audio2.png> <./image/audio.png> <./image/audio3.png>]
+Overfull \vbox (0.612pt too high) detected at line 175
  []
 
+<image/copyright.png, id=661, 295.1025pt x 148.75575pt>
+File: image/copyright.png Graphic file (type png)
+<use image/copyright.png>
+Package pdftex.def Info: image/copyright.png  used on input line 175.
+(pdftex.def)             Requested size: 71.69803pt x 36.14018pt.
+<image/audioset.png, id=662, 1142.46825pt x 339.06676pt>
+File: image/audioset.png Graphic file (type png)
+<use image/audioset.png>
+Package pdftex.def Info: image/audioset.png  used on input line 175.
+(pdftex.def)             Requested size: 398.3386pt x 118.21985pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [12
 
-]
-Overfull \vbox (0.612pt too high) detected at line 176
+ <./image/copyright.png> <./image/audioset.png>]
+Overfull \vbox (0.612pt too high) detected at line 187
  []
 
 
@@ -915,16 +1015,39 @@ Overfull \vbox (0.612pt too high) has occurred while \output is active []
  [13
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 184
+Overfull \vbox (0.612pt too high) detected at line 208
  []
 
+<image/short_code.png, id=762, 2194.1975pt x 5823.7575pt>
+File: image/short_code.png Graphic file (type png)
+<use image/short_code.png>
+Package pdftex.def Info: image/short_code.png  used on input line 208.
+(pdftex.def)             Requested size: 39.83629pt x 105.65842pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [14
 
-]
-Overfull \vbox (0.612pt too high) detected at line 193
+ <./image/short_code.png>]
+Overfull \vbox (0.612pt too high) detected at line 229
+ []
+
+File: image/short_code.png Graphic file (type png)
+<use image/short_code.png>
+Package pdftex.def Info: image/short_code.png  used on input line 229.
+(pdftex.def)             Requested size: 39.83629pt x 105.65842pt.
+
+Overfull \hbox (1.98192pt too wide) in paragraph at lines 229--229
+ [][] 
+ []
+
+<image/long_code.png, id=810, 2194.1975pt x 12651.265pt>
+File: image/long_code.png Graphic file (type png)
+<use image/long_code.png>
+Package pdftex.def Info: image/long_code.png  used on input line 229.
+(pdftex.def)             Requested size: 39.83629pt x 229.52754pt.
+
+Overfull \vbox (53.45883pt too high) detected at line 229
  []
 
 
@@ -932,35 +1055,49 @@ Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [15
 
-]
-Overfull \vbox (0.612pt too high) detected at line 195
+ <./image/long_code.png>]
+Overfull \vbox (0.612pt too high) detected at line 240
  []
 
-(./pres.toc)
+
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [16
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 202
+Overfull \vbox (0.612pt too high) detected at line 242
  []
 
-
+(./pres.toc)
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [17
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 210
+Overfull \vbox (0.612pt too high) detected at line 250
  []
 
+<image/Spectrogram.png, id=961, 646.415pt x 336.25626pt>
+File: image/Spectrogram.png Graphic file (type png)
+<use image/Spectrogram.png>
+Package pdftex.def Info: image/Spectrogram.png  used on input line 250.
+(pdftex.def)             Requested size: 318.67209pt x 165.76752pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [18
 
-]
-Overfull \vbox (0.612pt too high) detected at line 218
+ <./image/Spectrogram.png>]
+Overfull \vbox (0.612pt too high) detected at line 258
+ []
+
+<image/Mel_spectro.png, id=1009, 421.575pt x 281.05pt>
+File: image/Mel_spectro.png Graphic file (type png)
+<use image/Mel_spectro.png>
+Package pdftex.def Info: image/Mel_spectro.png  used on input line 258.
+(pdftex.def)             Requested size: 278.83578pt x 185.8924pt.
+
+Overfull \vbox (17.82368pt too high) detected at line 258
  []
 
 
@@ -968,43 +1105,154 @@ Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [19
 
-]
-Overfull \vbox (0.612pt too high) detected at line 220
+ <./image/Mel_spectro.png>]
+Overfull \vbox (0.612pt too high) detected at line 266
  []
 
-(./pres.toc)
+<image/mfcc.jpg, id=1057, 1405.25pt x 459.7175pt>
+File: image/mfcc.jpg Graphic file (type jpg)
+<use image/mfcc.jpg>
+Package pdftex.def Info: image/mfcc.jpg  used on input line 266.
+(pdftex.def)             Requested size: 398.3386pt x 130.31235pt.
+
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [20
 
-]
-Overfull \vbox (0.612pt too high) detected at line 226
+ <./image/mfcc.jpg>]
+Overfull \vbox (0.612pt too high) detected at line 268
  []
 
-
+(./pres.toc)
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [21
 
 ]
-Overfull \vbox (0.612pt too high) detected at line 228
+Overfull \vbox (0.612pt too high) detected at line 289
  []
 
-(./pres.toc)
+<<APlayer.swf>><<audio/piano_original.wav>>
+<image/piano.png, id=1187, 1204.5pt x 804.00375pt>
+File: image/piano.png Graphic file (type png)
+<use image/piano.png>
+Package pdftex.def Info: image/piano.png  used on input line 289.
+(pdftex.def)             Requested size: 199.1693pt x 132.93706pt.
+
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [22
 
-]
-Overfull \vbox (0.612pt too high) detected at line 235
+ <./image/piano.png>]
+Overfull \vbox (0.612pt too high) detected at line 310
  []
 
+<<audio/piano_mfcc_reconstruction.wav>>
+<image/piano_blur1.png, id=1247, 903.375pt x 603.0028pt>
+File: image/piano_blur1.png Graphic file (type png)
+<use image/piano_blur1.png>
+Package pdftex.def Info: image/piano_blur1.png  used on input line 310.
+(pdftex.def)             Requested size: 199.1693pt x 132.94626pt.
 
 Overfull \vbox (0.612pt too high) has occurred while \output is active []
 
  [23
 
+ <./image/piano_blur1.png>]
+Overfull \vbox (0.612pt too high) detected at line 331
+ []
+
+<<audio/piano_latency_reconstruction.wav>>
+<image/piano_blur2.png, id=1309, 903.375pt x 603.0028pt>
+File: image/piano_blur2.png Graphic file (type png)
+<use image/piano_blur2.png>
+Package pdftex.def Info: image/piano_blur2.png  used on input line 331.
+(pdftex.def)             Requested size: 199.1693pt x 132.94626pt.
+
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [24
+
+ <./image/piano_blur2.png>]
+Overfull \vbox (0.612pt too high) detected at line 352
+ []
+
+<<audio/piano_rate_reconstruction.wav>>
+<image/piano_blur3.png, id=1370, 903.375pt x 603.0028pt>
+File: image/piano_blur3.png Graphic file (type png)
+<use image/piano_blur3.png>
+Package pdftex.def Info: image/piano_blur3.png  used on input line 352.
+(pdftex.def)             Requested size: 199.1693pt x 132.94626pt.
+
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [25
+
+ <./image/piano_blur3.png>]
+Overfull \vbox (0.612pt too high) detected at line 354
+ []
+
+(./pres.toc)
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [26
+
 ]
+Overfull \vbox (0.612pt too high) detected at line 368
+ []
+
+
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [27
+
+]
+Overfull \vbox (0.612pt too high) detected at line 384
+ []
+
+<image/2.jpeg, id=1521, 1027.84pt x 1027.84pt>
+File: image/2.jpeg Graphic file (type jpg)
+<use image/2.jpeg>
+Package pdftex.def Info: image/2.jpeg  used on input line 384.
+(pdftex.def)             Requested size: 199.1693pt x 199.16547pt.
+<image/1.jpeg, id=1522, 1027.84pt x 1027.84pt>
+File: image/1.jpeg Graphic file (type jpg)
+<use image/1.jpeg>
+Package pdftex.def Info: image/1.jpeg  used on input line 384.
+(pdftex.def)             Requested size: 199.1693pt x 199.16547pt.
+
+Overfull \vbox (23.09676pt too high) detected at line 384
+ []
+
+
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [28
+
+ <./image/2.jpeg> <./image/1.jpeg>]
+Overfull \vbox (0.612pt too high) detected at line 400
+ []
+
+<image/3.jpeg, id=1568, 1027.84pt x 1027.84pt>
+File: image/3.jpeg Graphic file (type jpg)
+<use image/3.jpeg>
+Package pdftex.def Info: image/3.jpeg  used on input line 400.
+(pdftex.def)             Requested size: 199.1693pt x 199.16547pt.
+<image/4.jpeg, id=1569, 1027.84pt x 1027.84pt>
+File: image/4.jpeg Graphic file (type jpg)
+<use image/4.jpeg>
+Package pdftex.def Info: image/4.jpeg  used on input line 400.
+(pdftex.def)             Requested size: 199.1693pt x 199.16547pt.
+
+Overfull \vbox (23.09676pt too high) detected at line 400
+ []
+
+
+Overfull \vbox (0.612pt too high) has occurred while \output is active []
+
+ [29
+
+ <./image/3.jpeg> <./image/4.jpeg>]
 \tf@nav=\write6
 \openout6 = `pres.nav'.
 
@@ -1020,21 +1268,21 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `pres.out' has not changed.
-(rerunfilecheck)             Checksum: 308A86B0AEAF4BD6B636537AD7A07125;2144.
+(rerunfilecheck)             Checksum: BD0F10E95267C6F87A573881295E4564;3435.
  ) 
 Here is how much of TeX's memory you used:
- 22239 strings out of 474267
- 428904 string characters out of 5749453
+ 26504 strings out of 474267
+ 531097 string characters out of 5749453
  1943558 words of memory out of 5000000
- 43901 multiletter control sequences out of 15000+600000
+ 48098 multiletter control sequences out of 15000+600000
  571123 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,123p,526b,731s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,19n,123p,540b,923s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1728.pfb><d:/TEX/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
-Output written on pres.pdf (23 pages, 454057 bytes).
+Output written on pres.pdf (29 pages, 11264057 bytes).
 PDF statistics:
- 1253 PDF objects out of 1440 (max. 8388607)
- 947 compressed objects within 10 object streams
- 63 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1681 PDF objects out of 1728 (max. 8388607)
+ 1266 compressed objects within 13 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 561 words of extra memory for PDF output out of 10000 (max. 10000000)
 

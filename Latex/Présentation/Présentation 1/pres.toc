@@ -1,16 +1,19 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Theoretical Study}{3}{0}{2}
-\beamer@subsectionintoc {2}{1}{Theoretical Study of SNN}{4}{0}{2}
+\beamer@sectionintoc {2}{Theoretical Study}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Theoretical Study of SNN}{5}{0}{2}
 \beamer@subsectionintoc {2}{2}{LIF Model}{7}{0}{2}
-\beamer@sectionintoc {3}{Data, Objectives and State of the Art}{9}{0}{3}
-\beamer@subsectionintoc {3}{1}{Data}{10}{0}{3}
-\beamer@subsectionintoc {3}{2}{Objective}{11}{0}{3}
-\beamer@subsectionintoc {3}{3}{Feasibility}{12}{0}{3}
-\beamer@subsectionintoc {3}{4}{State of the Art}{13}{0}{3}
-\beamer@subsectionintoc {3}{5}{Pre-processing}{15}{0}{3}
-\beamer@sectionintoc {4}{Spectrograms, MEL and MFCC}{16}{0}{4}
-\beamer@subsectionintoc {4}{1}{Spectrograms}{17}{0}{4}
-\beamer@subsectionintoc {4}{2}{MEL}{18}{0}{4}
-\beamer@subsectionintoc {4}{3}{MFCC}{19}{0}{4}
-\beamer@sectionintoc {5}{Spiking Neural Networks - First results}{20}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{22}{0}{6}
+\beamer@sectionintoc {3}{Data, State of the Art and Pre-processing}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Data}{11}{0}{3}
+\beamer@subsectionintoc {3}{2}{State of the Art}{13}{0}{3}
+\beamer@subsectionintoc {3}{3}{Pre-processing}{14}{0}{3}
+\beamer@sectionintoc {4}{Spectrograms, MEL and MFCC}{17}{0}{4}
+\beamer@subsectionintoc {4}{1}{Spectrogram}{18}{0}{4}
+\beamer@subsectionintoc {4}{2}{MEL spectrogram}{19}{0}{4}
+\beamer@subsectionintoc {4}{3}{Mel Frequency Cepstral Coefficients}{20}{0}{4}
+\beamer@sectionintoc {5}{Results}{21}{0}{5}
+\beamer@subsectionintoc {5}{1}{Original Audio}{22}{0}{5}
+\beamer@subsectionintoc {5}{2}{MFCC reconstruction}{23}{0}{5}
+\beamer@subsectionintoc {5}{3}{Latency reconstruction}{24}{0}{5}
+\beamer@subsectionintoc {5}{4}{Rate reconstruction}{25}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{26}{0}{6}
+\beamer@subsectionintoc {6}{1}{Achievements and Future Work}{27}{0}{6}
