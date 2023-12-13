@@ -31,3 +31,5 @@ We ended up:
 To conclude, now that we have a usable and pretty much balanced dataset as well as the basic knowledge for encoding and decoding audio signals into spikes, we can focus on some points of improvement for our project: 
 - Finishing the implementation of the spiking neural network.
 - Implementing the pre-trained traditional neural network for comparison.
+
+
