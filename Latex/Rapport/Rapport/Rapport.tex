@@ -4,6 +4,7 @@
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage{geometry}
+\usepackage{media9}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
@@ -12,7 +13,7 @@
 \usepackage{pagecolor} 
 \usepackage{multirow}
 \usepackage{wrapfig}
-\usepackage{lipsum} % for dummy text
+\usepackage{lipsum} 
 \usepackage{url}
 \usepackage[toc,page]{appendix}
 \usepackage{mdframed}
@@ -67,7 +68,7 @@
 \begin{titlepage}
   \vspace*{\stretch{1}}
   \begin{center}
-    \textcolor{white}{\textbf{\Huge Description of Work}}\\ % changed text color to white
+    \textcolor{white}{\textbf{\Huge First Report}}\\ % changed text color to white
     \vspace{1cm}
     \textcolor{white}{\Large Sound Detection and Classification\\using Spiking Neural Networks} % changed text color to white
     \vspace{3cm}
@@ -86,6 +87,10 @@
 \newpage
 
 \tableofcontents
+
+\pagebreak
+
+\listoffigures
 
 \pagebreak
 
@@ -225,50 +230,50 @@ During the last full time period, we worked on:
 
 \begin{figure}[h]
   \centering
-  \resizebox{0.85\textwidth}{!}{% Add this line, adjust 0.8 to your preference
-  \begin{ganttchart}[
-      hgrid,
-      vgrid,
-      x unit=1.0cm,
-      y unit title=0.7cm,
-      y unit chart=0.9cm,
-      title label font=\footnotesize,
-      group label font=\footnotesize,
-      milestone label font=\footnotesize,
-      bar label font=\footnotesize,
-      bar label node/.append style={align=left, text width=3cm}
-    ]{1}{12}
-  
-    \gantttitle{Days}{12} \\
-    \gantttitlelist{1,...,12}{1} \\
-  
-    \ganttgroup{\textbf{Setup and Literature Review}}{1}{1} \\
-  
-    \ganttgroup{\textbf{Working on the data}}{2}{6} \\
-    \ganttbar[bar label node/.append style={align=left},
-      bar/.append style={fill=red}]{Download, Format and Segment}{2}{5} \\
-    \ganttbar[bar label node/.append style={align=left},
-      bar/.append style={fill=blue}]{Data transformation}{2}{6} \\
-    \ganttgroup{\textbf{Verification and SnnToch}}{6}{10} \\
-    \ganttbar[bar label node/.append style={align=left},
-      bar/.append style={fill=red}]{Data Verification and debugging}{6}{9} \\
-    \ganttbar[bar label node/.append style={align=left},
-      bar/.append style={fill=blue}]{Handling SnnTorch}{7}{10} \\
-  
-    \ganttgroup{\textbf{First implementations}}{11}{12} \\
-    \ganttbar[bar label node/.append style={align=left},
-      bar/.append style={fill=red}]{Testing ANNs}{11}{12} \\
-    \ganttbar[bar label node/.append style={align=left},
-      bar/.append style={fill=blue}]{Develop Spike Encoding}{11}{12} \\
-  
-  \end{ganttchart}
+  \resizebox{0.85\textwidth}{!}{
+    \begin{ganttchart}[
+        hgrid,
+        vgrid,
+        x unit=1.0cm,
+        y unit title=0.7cm,
+        y unit chart=0.9cm,
+        title label font=\footnotesize,
+        group label font=\footnotesize,
+        milestone label font=\footnotesize,
+        bar label font=\footnotesize,
+        bar label node/.append style={align=left, text width=3cm}
+      ]{1}{12}
+
+      \gantttitle{Days}{12} \\
+      \gantttitlelist{1,...,12}{1} \\
+
+      \ganttgroup{\textbf{Setup and Literature Review}}{1}{1} \\
+
+      \ganttgroup{\textbf{Working on the data}}{2}{6} \\
+      \ganttbar[bar label node/.append style={align=left},
+        bar/.append style={fill=red}]{Download, Format and Segment}{2}{5} \\
+      \ganttbar[bar label node/.append style={align=left},
+        bar/.append style={fill=blue}]{Data transformation}{2}{6} \\
+      \ganttgroup{\textbf{Verification and SnnToch}}{6}{10} \\
+      \ganttbar[bar label node/.append style={align=left},
+        bar/.append style={fill=red}]{Data Verification and debugging}{6}{9} \\
+      \ganttbar[bar label node/.append style={align=left},
+        bar/.append style={fill=blue}]{Handling SnnTorch}{7}{10} \\
+
+      \ganttgroup{\textbf{First implementations}}{11}{12} \\
+      \ganttbar[bar label node/.append style={align=left},
+        bar/.append style={fill=red}]{Testing ANNs}{11}{12} \\
+      \ganttbar[bar label node/.append style={align=left},
+        bar/.append style={fill=blue}]{Develop Spike Encoding}{11}{12} \\
+
+    \end{ganttchart}
   }% Add this line
   \caption{Planning of the full time period}
   \label{fig:ftp1}
 \end{figure}
 
 \begin{itemize}
-  \item Téo : \textcolor{blue}{blue} 
+  \item Téo : \textcolor{blue}{blue}
   \item Loaï : \textcolor{red}{red}
 \end{itemize}
 
@@ -280,7 +285,7 @@ Since the first tasks we had to perform would not be connected until they were f
 
 \subsection{Changes in the organization}
 
-In the initial planning, there was no task related to the verification of the data nor to the debugging of part of the code. Each subpart of the preprocessing pipeline part takes a lot of time to be implemented and tested. We had to spend some time debugging the code and verifying the data. 
+In the initial planning, there was no task related to the verification of the data nor to the debugging of part of the code. Each subpart of the preprocessing pipeline part takes a lot of time to be implemented and tested. We had to spend some time debugging the code and verifying the data.
 
 %Handling the SnnTorch library also took more time than expected.
 
@@ -307,35 +312,36 @@ In the initial planning, there was no task related to the verification of the da
 
 \subsection{Computational tools}
 
-We worked on our personal computers and we used the following computational tools: 
+We worked on our personal computers and we used the following computational tools:
 
 
 \begin{figure}[h]
-\begin{center}
-  \begin{tabularx}{\textwidth}{|X|X|}
-  \hline
-  \textbf{Softwares} & \href{https://code.visualstudio.com/}{Visual Studio Code} \\
-   & \href{https://jupyter.org/}{Jupyter Notebook} \\
-   & \href{https://git-scm.com/}{Git} \\
-   & \href{https://github.com/}{Github} \\
-   & \href{https://colab.research.google.com/}{Google Colab} \\
-    & \href{https://www.anaconda.com/products/individual}{Anaconda} \\
-  \hline
-  \textbf{Programming languages} 
-   & \href{https://www.python.org/}{Python} \\
-    & \href{https://www.latex-project.org/}{Latex} \\
-  \hline
-  \textbf{Libraries} & \href{https://pytorch.org/}{Pytorch} \\
-   & \href{https://librosa.org/doc/latest/index.html}{Librosa} \\
-   & \href{https://numpy.org/}{Numpy} \\
-   & \href{https://pandas.pydata.org/}{Pandas} \\
-   & \href{https://matplotlib.org/}{Matplotlib} \\
-   & \href{https://pytorch.org/audio/stable/index.html}{sox} \\
-   & \href{https://github.com/ytdl-org/youtube-dl}{Youtube-dl} \\
-  \hline
-  \textbf{Frameworks} & \href{https://github.com/eriksoper/SnnTorch}{SnnTorch} \\
-  \hline
-  \end{tabularx}
+  \begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|}
+      \hline
+      \textbf{Softwares}  & \href{https://code.visualstudio.com/}{Visual Studio Code}     \\
+                          & \href{https://jupyter.org/}{Jupyter Notebook}                 \\
+                          & \href{https://git-scm.com/}{Git}                              \\
+                          & \href{https://github.com/}{Github}                            \\
+                          & \href{https://colab.research.google.com/}{Google Colab}       \\
+                          & \href{https://www.anaconda.com/products/individual}{Anaconda} \\
+                          & \href{https://www.overleaf.com/}{Overleaf}                    \\
+      \hline
+      \textbf{Programming languages}
+                          & \href{https://www.python.org/}{Python}                        \\
+                          & \href{https://www.latex-project.org/}{Latex}                  \\
+      \hline
+      \textbf{Libraries}  & \href{https://pytorch.org/}{Pytorch}                          \\
+                          & \href{https://librosa.org/doc/latest/index.html}{Librosa}     \\
+                          & \href{https://numpy.org/}{Numpy}                              \\
+                          & \href{https://pandas.pydata.org/}{Pandas}                     \\
+                          & \href{https://matplotlib.org/}{Matplotlib}                    \\
+                          & \href{https://pysox.readthedocs.io/en/latest/}{sox}           \\
+                          & \href{https://github.com/ytdl-org/youtube-dl}{Youtube-dl}     \\
+      \hline
+      \textbf{Frameworks} & \href{https://github.com/eriksoper/SnnTorch}{SnnTorch}        \\
+      \hline
+    \end{tabularx}
   \end{center}
   \caption{Computational tools}
 \end{figure}
@@ -348,23 +354,6 @@ We worked on our personal computers and we used the following computational tool
 
 \subsection{Changing}
 
-\subsubsection*{aide}
-
-•	Environnement informatique, logiciel, notebooks, langage de programmation, etc.
-•	Documentation (livres, articles, recherche sur le web, etc.)
-•	Des changements dans l’environnement technique ont-ils eu lieu ?
-
-\begin{itemize}
-  \item Environnement technique
-  \item Logiciels
-  \item Langages de programmation
-  \item Notebooks
-  \item Documentation
-  \item Changements dans l'environnement technique
-  \item Difficultés rencontrées
-  \item Solutions apportées
-\end{itemize}
-
 \pagebreak
 
 \section{Description du travail réalisé}
@@ -373,8 +362,140 @@ We worked on our personal computers and we used the following computational tool
 •	Quels sont vos avancées techniques et/ou théoriques ?
 •	Quels sont vos résultats ?
 
+\subsection{Audio samples}
+\begin{figure}[h]
+  \centering
+  \resizebox{0.8\textwidth}{!}{
+    \begin{minipage}{.45\textwidth}
+      \centering
+      \includemedia[
+        width=\textwidth,
+        addresource=audio/piano_original.wav,
+        flashvars={
+            source=audio/piano_original.wav
+            &autoPlay=false
+            &hideBar=false
+          },
+      ]{\fbox{Play}}{APlayer.swf}
+      \includegraphics[width=\textwidth]{image/piano.png}
+      \caption{Original Audio}
+    \end{minipage}
+    \begin{minipage}{.45\textwidth}
+      \centering
+      \includemedia[
+        width=\textwidth,
+        addresource=audio/piano_mfcc_reconstruction.wav,
+        flashvars={
+            source=audio/piano_mfcc_reconstruction.wav
+            &autoPlay=false
+            &hideBar=false
+          },
+      ]{\fbox{Play}}{APlayer.swf}
+      \includegraphics[width=\textwidth]{image/piano_blur1.png}
+      \caption{MFCC Reconstruction}
+    \end{minipage}
+  }
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \resizebox{0.8\textwidth}{!}{
+    \begin{minipage}{.45\textwidth}
+      \centering
+      \includemedia[
+        width=\textwidth,
+        addresource=audio/piano_latency_reconstruction.wav,
+        flashvars={
+            source=audio/piano_latency_reconstruction.wav
+            &autoPlay=false
+            &hideBar=false
+          },
+      ]{\fbox{Play}}{APlayer.swf}
+      \includegraphics[width=\textwidth]{image/piano_blur2.png}
+      \caption{Latency Reconstruction}
+    \end{minipage}
+    \begin{minipage}{.45\textwidth}
+      \centering
+      \includemedia[
+        width=\textwidth,
+        addresource=audio/piano_rate_reconstruction.wav,
+        flashvars={
+            source=audio/piano_rate_reconstruction.wav
+            &autoPlay=false
+            &hideBar=false
+          },
+      ]{\fbox{Play}}{APlayer.swf}
+      \includegraphics[width=\textwidth]{image/piano_blur3.png}
+      \caption{Rate Reconstruction}
+    \end{minipage}
+  }
+\end{figure}
 
 \pagebreak
+
+\subsection{Spectrograms, Mel spectrograms, MFCC}
+
+\begin{itemize}
+    \item Spectrograms
+
+Spectrograms are essential graphic tools in audio analysis. They offer a visual representation of the frequency spectrum of a sound signal as a function of time, providing detailed information on the frequency composition and temporal dynamics of an audio signal. This report explores the use of spectrograms in various contexts and highlights their importance in the analysis and understanding of audio signals.
+
+A spectrogram is generated by applying a short-time Fourier transform (STFT) to an audio signal. This technique divides the signal into small time windows, then applies a Fourier transform to each window to obtain the frequency distribution at that particular moment. The results of these transformations are then represented graphically, using colors to indicate the intensity of frequencies at different periods.
+
+
+IMAGE/ FOURIER TRANSFORM EQUATION
+
+
+Spectrograms enable in-depth analysis of the temporal characteristics of audio signals. Events such as transients, attacks and decays can be clearly identified, which is essential for understanding dynamic variations in music, speech and other forms of sound.
+
+By examining the color and intensity of areas in a spectrogram, it's easy to identify the dominant frequencies present in an audio signal. This is particularly useful for detecting anomalies, characterizing musical instruments and separating sound sources.
+
+Spectrograms are widely used in fields such as professional audio, music and linguistics. In particular, we are interested in Mel spectrograms, as well as MFCCs as input data for our neural networks.
+
+    \item Mel Spectrograms
+    
+While spectrograms offer a detailed view of the frequency spectrum of an audio signal, a significant evolution in audio analysis occurred with the introduction of Mel Spectrograms.
+
+These represent an adaptation of traditional spectrograms, using a frequency scale based on the Mel scale, which is more in line with human auditory perception. This transition to Mel Spectrograms has broadened the possibilities of analysis, offering a more faithful representation of the auditory characteristics perceived by the human ear. Let's take a closer look at this innovation and its impact on modern audio analysis.
+
+While spectrograms offer a detailed view of the frequency spectrum of an audio signal, a significant evolution in audio analysis occurred with the introduction of Mel Spectrograms. These represent an adaptation of traditional spectrograms, using a frequency scale based on the Mel scale, which is more in line with human auditory perception.
+
+IMAGE
+
+
+While Mel Spectrograms have greatly enhanced our ability to represent the frequency spectrum of an audio signal in a way that is more consistent with human perception, Mel Frequency Cepstral Coefficients (MFCC) introduce an additional dimension to audio analysis. MFCCs are an even more advanced transformation, exploiting frequency- and time-domain properties to effectively capture the discriminating characteristics of audio signals.This section explores MFCCs and their central role in the advancement of audio analysis.
+
+
+    \item MFCC
+
+MFCCs are derived directly from Mel Spectrograms and are calculated by applying a discrete cosine transform to the log-power of Mel Spectrograms. This approach captures information specific to human auditory characteristics while reducing data redundancy.MFCCs thus encapsulate frequency variations over time in a compact way, creating a set of cepstral coefficients that are widely used for automatic speech recognition and other audio signal processing tasks.
+
+Two of the main advantages of MFCCs are compactness and information discrimination. MFCCs condense information while retaining the signal's distinctive characteristics. Compact representation facilitates the storage, transmission and processing of large amounts of data
+By focusing on perceptual features rather than raw frequency, MFCCs are less sensitive to pitch variations, which improves the robustness of sound recognition.
+The calculation of MFCCs involves several steps, including Mel scale transformation, calculation of the logarithm of spectral powers, discrete cosine transformation and selection of relevant coefficients.
+
+
+
+To summarize, in order to obtain an MFCC from an audio signal, we need to :
+
+- Take the Fourier transform (STFT) of the signal.
+
+- Map the powers of the resulting spectrum onto the mel scale, multiplying it by overlapping window functions (triangular or cosinusoidal).
+
+- Take the logarithm of the amplitudes at each mel frequency.
+
+- Take the discrete cosine transform (DCT) of the list of logarithmic powers of the mel frequencies, as if it were a signal. The MFCCs are the amplitudes of the resulting spectrum.
+
+IMAGE MFCC/ EQUATION DCT/ IMAGE ET EQUATION FONCTIONS FENETRE (EN ANGLAIS WINDOW FUNCTION
+\end{itemize}
+
+
+\subsection{Signal reconstruction}
+
+
+
+\pagebreak
+
 
 \section{Difficultés rencontrées}
 
@@ -388,10 +509,6 @@ We worked on our personal computers and we used the following computational tool
 •	Mettre en valeur votre travail et les domaines où vous avez progressé.
 •	Souligner en quoi la formation suivie à Polytech Nice Sophia (ou ailleurs) vous a aidé.
 •	Que comptez-vous faire dans les prochaines semaines ?
-
-\pagebreak
-
-\listoffigures
 
 \pagebreak
 

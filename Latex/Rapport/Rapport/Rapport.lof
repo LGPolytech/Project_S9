@@ -1,4 +1,8 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces SNN input}}{3}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces SNN output}}{3}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Planning of the full time period}}{5}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Computational tools}}{7}{figure.4}%
+\contentsline {figure}{\numberline {1}{\ignorespaces SNN input}}{4}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces SNN output}}{4}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Planning of the full time period}}{6}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Computational tools}}{8}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Original Audio}}{9}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces MFCC Reconstruction}}{9}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Latency Reconstruction}}{9}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Rate Reconstruction}}{9}{figure.8}%
