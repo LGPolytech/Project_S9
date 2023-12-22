@@ -61,19 +61,38 @@ def download_audio_wrapper(segment_id, dataset_name, clip_length):
 
 
 def download_audio(query_id, dataset_name, start_seconds, clip_length, verbose=True):
+    """
+    This function downloads an audio file from YouTube, formats it, and segments it.
+    Args:
+        query_id (str): The YouTube video ID.
+        dataset_name (str): The name of the dataset. Used to create folder names.
+        start_seconds (int): The start time for the audio clip in seconds.
+        clip_length (int): The length of the audio clip in seconds.
+        verbose (bool): If True, print progress information.
+    Returns:
+        int: 1 if the audio file was successfully segmented, 0 otherwise.
+    """
+    # Create the YouTube URL
     url = "https://www.youtube.com/watch?v=" + query_id
+
+    # Create the folder names
     download_folder = dataset_name + "_downloaded"
     formatted_folder = dataset_name + "_formatted"
     segmented_folder = dataset_name + "_segmented"
+
+    # Create the file paths
     path_to_download = os.path.join(download_folder, f"Y{query_id}")
     path_to_formatted_audio = os.path.join(
         formatted_folder, f"Y{query_id}.wav")
     path_to_segmented_audio = os.path.join(
         segmented_folder, f"Y{query_id}.wav")
+
+    # Try to download the audio file
     try:
         if os.path.exists(path_to_download):
             print(f"{query_id}: Downloaded file already exists.")
         else:
+            # Set the options for youtube-dl
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'outtmpl': path_to_download,
@@ -83,13 +102,13 @@ def download_audio(query_id, dataset_name, start_seconds, clip_length, verbose=T
                 }],
                 'logger': MyLogger(),
                 'quiet': True,
-                #'verbose': True,
                 'progress_hooks': [my_hook],
-
             }
+
+            # Download the audio file
             with yt.YoutubeDL(ydl_opts) as ydl:
                 if verbose:
-                    # get the total video size in bytes
+                    # Get the total video size in bytes
                     info_dict = ydl.extract_info(url, download=False)
                     video_bytes = info_dict.get('filesize', None)
                     global pbar
@@ -102,6 +121,7 @@ def download_audio(query_id, dataset_name, start_seconds, clip_length, verbose=T
 
     path_to_download = path_to_download + ".wav"
 
+    # Try to format the audio file
     try:
         if os.path.exists(path_to_formatted_audio):
             print(f"{query_id}: Formatted file already exists.")
@@ -109,12 +129,13 @@ def download_audio(query_id, dataset_name, start_seconds, clip_length, verbose=T
             global bits, channels, sample_rate
             cmdstring = f"sox {path_to_download} -G -c {channels} -b {bits} -r {sample_rate} {path_to_formatted_audio}"
             os.system(cmdstring)
-            # Ones the audio is formatted, delete the downloaded file
+            # Once the audio is formatted, delete the downloaded file
             os.remove(path_to_download)
     except Exception as e:
-        print(f"{query_id}: Error Fomatting - {str(e)}")
+        print(f"{query_id}: Error Formatting - {str(e)}")
         return 0
 
+    # Try to segment the audio file
     try:
         if os.path.exists(path_to_segmented_audio):
             print(f"{query_id}: Trimmed file already exists.")

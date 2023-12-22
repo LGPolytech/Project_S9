@@ -1,32 +1,91 @@
-# Consignes 
+# Consignes pour rédiger le second rapport
 
-La structure du DoW est libre mais nous vous conseillons d’inclure au moins les sections suivantes :
-1. Objectif général du projet : décrire à quoi ce projet va servir et quel est le problème métier
-visé.
-2. Données utilisées : décrire assez précisément les données que vous utiliserez dans votre
-projet.
-3. Thématique choisie : bref rappel de la thématique principale choisie et sa pertinence pour le
-projet.
-4. État de l’art : proposer un état de l’art succinct mais précis qui positionne clairement votre
-projet par rapport à ce qui existe déjà (littérature, blogs, code sur GitHub, etc.)
-5. Objectifs techniques du projet : décrire les articulations techniques principales du projet et
-notamment quelles sont les approches techniques envisagées.
-6. Étude théorique : décrire une étude théorique qui sera plus particulièrement abordée dans le
-projet. Nous vous conseillons que cette étude théorique soit directement liée à la thématique
-choisie afin d’éviter une surcharge de travail.
-7. Adéquation avec les ressources disponibles : proposer une estimation des ressources
-disponibles (temps de travail des étudiants impliqués, ressources informatiques disponibles,
-etc.) pour réaliser le projet et positionner ces ressources par rapport aux objectifs techniques
-visés. Il est important de bien dimensionner le projet par rapport aux ressources disponibles.
-8. Description du démonstrateur final : décrire brièvement le démonstrateur Python qui sera
-développé pendant le projet.
-9. Planning des tâches à réaliser : proposer un planning réaliste des tâches qui composent votre
-projet. La granularité du planning doit être d’environ 2 ou 3 jours. Autrement dit, une tâche
-élémentaire du planning doit être réalisable sur environ 3 semaines lorsque le projet a lieu
-pendant les semaines de cours et sur environ la moitié d’une semaine lorsque le projet a lieu
-à plein temps. La répartition des tâches entre la réalisation du démonstrateur, l’analyse des
-données et l’étude théorique est libre mais il est conseillé de proposer une répartition
-équilibrée.
-10. Bibliographie : elle liste les principales références qui vous ont servi à rédiger le DoW et qui
-seront exploitées dans le projet (même si certaines de ces références ne sont pas encore
-maitrisées).
+## du Projet d’Études et de Recherche (PER)
+
+Le second rapport a une structure libre mais une longueur maximum de 20 pages.
+
+Ce document vous fournit quelques conseils pour construire le rapport.
+
+Vous pouvez suivre précisément ces conseils ou vous en éloigner.
+
+N’hésitez pas à mettre des illustrations dans votre rapport. Les illustrations ne sont pas comptées dans la longueur maximum du rapport. De même, les tailles des sections proposées dans la suite de ce document ne tiennent pas compte des illustrations.
+
+## Fonte conseillée
+
+Calibri taille 11.
+
+## Conseils généraux :
+
+Après avoir écrit votre rapport, vous pouvez vous poser les questions suivantes :
+
+- Les développements techniques sont-ils clairs ?
+- Les contributions sont-elles évidentes ?
+- Le style et l'orthographe sont-ils corrects ?
+- Le rapport est-t-il synthétique (i.e., pas de matière superflue nuisant à la bonne compréhension du travail) ?
+- Les figures, tables sont-elles référencées et numérotées ?
+- La liste bibliographique est-elle complète ?
+- Ai-je attentivement relu le rapport ?
+
+## Modèle du rapport
+
+Le reste du document contient la page de garde du rapport et la structure proposée.
+
+# INGÉNIEUR EN MATHÉMATIQUES APPLIQUÉES
+
+ET MODÉLISATION
+
+MINEURE SD
+
+2023-2024
+
+## RAPPORT DU PROJET D’ÉTUDES ET DE RECHERCHE
+
+**SUJET DU PER :** Contributions à l’amélioration de la vie sur la Terre
+
+**Étudiants :**
+- Sylvia SMART
+- Claude GENIUS
+
+## Structure proposée
+
+Le rapport pourrait par exemple être composé de 7 sections.
+Les sections pourraient être celles décrites ci-dessous.
+
+### Résumé du projet (environ 1 page)
+
+- Décrire le sujet et résumer votre travail
+- Bien décrire vos contributions et l’intérêt des résultats obtenus
+
+### Organisation du projet (environ 2 pages)
+
+- Quelles sont les principales tâches à réaliser ?
+- Décrire brièvement le planning du projet.
+- Décrire comment les membres de l’équipe s’organisent pour faire avancer le PER.
+- Des changements d’organisation ont-ils été nécessaires ?
+
+### Environnement technique (environ 1 page)
+
+- Environnement informatique, logiciel, notebooks, langage de programmation, etc.
+- Documentation (livres, articles, recherche sur le web, etc.)
+- Des changements dans l’environnement technique ont-ils eu lieu ?
+
+### Description du travail réalisé (environ 10 pages)
+
+- Qu’avez-vous produit depuis la fin de la première période à temps plein ?
+- Quels sont vos avancées techniques et/ou théoriques ?
+- Quels sont vos résultats ?
+
+### Difficultés rencontrées (environ 2 pages)
+
+- Description des difficultés principales rencontrées durant le projet et des solutions mises en place (si cela était possible).
+- Les commentaires lors de la première soutenance ont-ils été utiles ?
+
+### Conclusion et perspectives (environ 1 page)
+
+- Mettre en valeur votre travail et les domaines où vous avez progressé.
+- Souligner en quoi la formation suivie à Polytech Nice Sophia (ou ailleurs) vous a aidé.
+- Que comptez-vous faire dans les prochaines semaines ?
+
+### Bibliographie (environ 1 page)
+
+- Citer les documentations de référence, les articles lus, les livres utiles, les adresses des sites web, etc.
