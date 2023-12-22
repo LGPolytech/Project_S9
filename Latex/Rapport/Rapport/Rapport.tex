@@ -17,6 +17,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage{mdframed}
 \usepackage{pgfgantt}
+\usepackage{tabularx}
 
 
 % Define colors
@@ -64,22 +65,22 @@
 \ThisCenterWallPaper{0.75}{./image/spike_brain.png}
 
 \begin{titlepage}
-    \vspace*{\stretch{1}}
-    \begin{center}
-        \textcolor{white}{\textbf{\Huge Description of Work}}\\ % changed text color to white
-        \vspace{1cm}
-        \textcolor{white}{\Large Sound Detection and Classification\\using Spiking Neural Networks} % changed text color to white
-        \vspace{3cm}
-    \end{center}
-    \vspace*{\stretch{2}}
-    \begin{center}
-        \textcolor{white}{ % changed text color to white
-            \textbf{COURREGE Téo}\\
-            \textbf{GANDEEL Lo'aï}\\
-            \vspace{1cm}
-            \Large Date: \today}
-    \end{center}
-    \vspace*{\stretch{1}}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \textcolor{white}{\textbf{\Huge Description of Work}}\\ % changed text color to white
+    \vspace{1cm}
+    \textcolor{white}{\Large Sound Detection and Classification\\using Spiking Neural Networks} % changed text color to white
+    \vspace{3cm}
+  \end{center}
+  \vspace*{\stretch{2}}
+  \begin{center}
+    \textcolor{white}{ % changed text color to white
+      \textbf{COURREGE Téo}\\
+      \textbf{GANDEEL Lo'aï}\\
+      \vspace{1cm}
+      \Large Date: \today}
+  \end{center}
+  \vspace*{\stretch{1}}
 \end{titlepage}
 
 \newpage
@@ -90,7 +91,7 @@
 
 \section{Introduction}
 
-Our project addresses the challenge of applying spiking neural networks (SNNs) to audio classification in the field of spiking neural network (SNN) research. This report provides an overview of our initial progress in this area. Our project specifically addresses the problem of audio classification within the broader context of SNNs. 
+Our project addresses the challenge of applying spiking neural networks (SNNs) to audio classification in the field of spiking neural network (SNN) research. This report provides an overview of our initial progress in this area. Our project specifically addresses the problem of audio classification within the broader context of SNNs.
 
 Before delving into the details, we outline key aspects including preprocessing, data manipulation/augmentation, initial model implementations, and a look at preliminary results.
 
@@ -98,7 +99,7 @@ Using audio data primarily from the \href{https://research.google.com/audioset/}
 
 In the following sections, we will elaborate on the organizational structure of our project, the technical environment utilized, a detailed account of the work accomplished, challenges faced and solutions implemented, concluding with a reflection on our achievements and future perspectives.
 
-Chat: 
+Chat:
 
 In the following sections, this report will delve into the organization that underpin our project. A detailed examination of the technical environment, including the computational tools, software frameworks, programming languages, and relevant documentation, will shed light on the methodological underpinnings of our research.
 
@@ -113,7 +114,7 @@ Finally, the report will conclude with a discussion of our achievements, highlig
 
 \pagebreak
 
-\section{The project} 
+\section{The project}
 
 \subsection{Description of the project - Spiking Neural Networks}
 
@@ -138,7 +139,7 @@ The spiking behavior of a neuron in an SNN is modeled by a membrane potential eq
 
 %This equation describes the evolution of the membrane potential ($u$) over time, incorporating the influence of synaptic weights and input spike timings within a specified integration time window ($T_w$). The discrete output spike ($s$) is determined based on conditions related to the membrane potential, where a spike occurs if the potential surpasses both the firing threshold ($u_{th}$) and the reset potential ($u_{r_2}$).
 
-This equation was firstly formulated as : 
+This equation was firstly formulated as :
 \begin{equation}
   \tau \frac{d \: u(t)}{dt} = - [u(t) - u_{r}] + RI
   \label{eq:lif_1}
@@ -152,11 +153,13 @@ From a mathematical perspective, Equation (\ref{eq:lif_1}) represents a linear d
     \centering
     \includegraphics[width=1\textwidth]{image/def1.png}
     \caption{SNN input}
+    \label{fig:def1}
   \end{minipage}\hfill
   \begin{minipage}{0.45\textwidth}
     \centering
     \includegraphics[width=1\textwidth]{image/def2.png}
     \caption{SNN output}
+    \label{fig:def2}
   \end{minipage}
 \end{figure}
 
@@ -186,7 +189,7 @@ The fullfillment of these objectives would allow us to determine the potential o
   \item \textbf{Title:} Sound Detection and Classification using Spiking Neural Networks
   \item \textbf{Keywords:} Spiking Neural Networks, Audio Classification, AudioSet, Sound Event Detection, Sound Event Classification
   \item What is a spiking neural network?
-  \item How it works ? 
+  \item How it works ?
   \item Advantages and disadvantages of SNNs compared to other neural networks
   \item What is the goal of the project?
   \item Interrest of the project?
@@ -195,75 +198,98 @@ The fullfillment of these objectives would allow us to determine the potential o
 \pagebreak
 
 \section{Organizing the project}
-This project requiered some organization and parrallel work.
 
 \subsection{Main tasks}
 
-During the last full time period, we worked on: 
+During the last full time period, we worked on:
 
 \begin{itemize}
   \item \textbf{A preprocessing pipeline} that allows us to dowload, format and segment the audio part of the Youtube videos composing the Google Audioset audio files into images.
-  In order to be efficient, the pipeline needed to be parallelized.
-  \subitem After downloading these, it became also necessary to perform some verification on the data, which includes checking the audio file properties (sample rate, number of channels, etc.) and the labels related to the audio files.
+        In order to be efficient, the pipeline needed to be parallelized.
+        \subitem After downloading these, it became also necessary to perform some verification on the data, which includes checking the audio file properties (sample rate, number of channels, etc.) and the labels related to the audio files.
   \item \textbf{Finding some correct data augmentation techniques} that can be used to improve the performance of the SNNs.
   \item \textbf{Finding a way to encode the audio data into spikes} that can be used as input for the SNNs.
 \end{itemize}
 
-And we are still working on:
-
 \begin{itemize}
   \item \textbf{Implementing the SNNs} that will be used for the audio classification task.
-  \subitem Training the SNNs on the audio data.
+        \subitem Training the SNNs on the audio data.
   \item \textbf{Implementing the ANNs} that we would compare to the SNNs.
   \item \textbf{Comparing the performance of the SNNs and the ANNs} on the audio classification task.
 \end{itemize}
 
 
-\subsection{Planning}
+\subsection{Planning and team organization}
 
-\subsubsection{Previous work}
+\subsubsection{Previous work - full time period}
 
-\begin{ganttchart}[
-  hgrid,
-  vgrid,
-  x unit=1.0cm,
-  y unit title=0.7cm,
-  y unit chart=0.9cm,
-  title label font=\footnotesize,
-  group label font=\footnotesize,
-  milestone label font=\footnotesize,
-  bar label font=\footnotesize,
-  bar label node/.append style={align=left, text width=3cm}
-]{1}{12}
+\begin{figure}[h]
+  \centering
+  \resizebox{0.85\textwidth}{!}{% Add this line, adjust 0.8 to your preference
+  \begin{ganttchart}[
+      hgrid,
+      vgrid,
+      x unit=1.0cm,
+      y unit title=0.7cm,
+      y unit chart=0.9cm,
+      title label font=\footnotesize,
+      group label font=\footnotesize,
+      milestone label font=\footnotesize,
+      bar label font=\footnotesize,
+      bar label node/.append style={align=left, text width=3cm}
+    ]{1}{12}
+  
+    \gantttitle{Days}{12} \\
+    \gantttitlelist{1,...,12}{1} \\
+  
+    \ganttgroup{\textbf{Setup and Literature Review}}{1}{1} \\
+  
+    \ganttgroup{\textbf{Working on the data}}{2}{6} \\
+    \ganttbar[bar label node/.append style={align=left},
+      bar/.append style={fill=red}]{Download, Format and Segment}{2}{5} \\
+    \ganttbar[bar label node/.append style={align=left},
+      bar/.append style={fill=blue}]{Data transformation}{2}{6} \\
+    \ganttgroup{\textbf{Verification and SnnToch}}{6}{10} \\
+    \ganttbar[bar label node/.append style={align=left},
+      bar/.append style={fill=red}]{Data Verification and debugging}{6}{9} \\
+    \ganttbar[bar label node/.append style={align=left},
+      bar/.append style={fill=blue}]{Handling SnnTorch}{7}{10} \\
+  
+    \ganttgroup{\textbf{First implementations}}{11}{12} \\
+    \ganttbar[bar label node/.append style={align=left},
+      bar/.append style={fill=red}]{Testing ANNs}{11}{12} \\
+    \ganttbar[bar label node/.append style={align=left},
+      bar/.append style={fill=blue}]{Develop Spike Encoding}{11}{12} \\
+  
+  \end{ganttchart}
+  }% Add this line
+  \caption{Planning of the full time period}
+  \label{fig:ftp1}
+\end{figure}
 
-\gantttitle{Days}{12} \\
-\gantttitlelist{1,...,12}{1} \\
+\begin{itemize}
+  \item Téo : \textcolor{blue}{blue} 
+  \item Loaï : \textcolor{red}{red}
+\end{itemize}
 
-\ganttgroup{\textbf{Setup and Literature Review}}{1}{1} \\
+So far, we have been able to encode and decode the audio data into spikes.
 
-\ganttgroup{\textbf{Working on the data}}{2}{6} \\
-\ganttbar[bar label node/.append style={align=left}]{Loaï: Download, Format and Segment}{2}{5} \\
-\ganttbar[bar label node/.append style={align=left}]{Téo: Data transformation}{2}{6} \\
-\ganttgroup{\textbf{Verification and SnnToch}}{6}{10} \\
-\ganttbar[bar label node/.append style={align=left}]{Loaï: Data Verification}{6}{9} \\
-\ganttbar[bar label node/.append style={align=left}]{Téo: Handling SnnTorch}{7}{10} \\
+%We were also able to train an ANN on the audio data and test it on the audio classification task. 
 
-\ganttgroup{\textbf{First implementations}}{11}{12} \\
-\ganttbar[bar label node/.append style={align=left}]{Loaï: Testing ANNs}{11}{12} \\
-\ganttbar[bar label node/.append style={align=left}]{Téo: Develop Spike Encoding}{11}{12} \\
-
-
-\end{ganttchart}
-
-\subsection{Team organization}
+Since the first tasks we had to perform would not be connected until they were finished, we decided to work on them in parallel. This allowed us to be more efficient and, most importantly, to save time.
 
 \subsection{Changes in the organization}
+
+In the initial planning, there was no task related to the verification of the data nor to the debugging of part of the code. Each subpart of the preprocessing pipeline part takes a lot of time to be implemented and tested. We had to spend some time debugging the code and verifying the data. 
+
+%Handling the SnnTorch library also took more time than expected.
+
 
 \subsubsection*{aide}
 
 •	Quelles sont les principales tâches à réaliser ?
 •	Décrire brièvement le planning du projet.
-•	Décrire comment les membres de l’équipe s’organisent pour faire avancer le PER. 
+•	Décrire comment les membres de l’équipe s’organisent pour faire avancer le PER.
 •	Des changements d’organisation ont-ils été nécessaires ?
 
 
@@ -278,6 +304,49 @@ And we are still working on:
 \pagebreak
 
 \section{Technical environment}
+
+\subsection{Computational tools}
+
+We worked on our personal computers and we used the following computational tools: 
+
+
+\begin{figure}[h]
+\begin{center}
+  \begin{tabularx}{\textwidth}{|X|X|}
+  \hline
+  \textbf{Softwares} & \href{https://code.visualstudio.com/}{Visual Studio Code} \\
+   & \href{https://jupyter.org/}{Jupyter Notebook} \\
+   & \href{https://git-scm.com/}{Git} \\
+   & \href{https://github.com/}{Github} \\
+   & \href{https://colab.research.google.com/}{Google Colab} \\
+    & \href{https://www.anaconda.com/products/individual}{Anaconda} \\
+  \hline
+  \textbf{Programming languages} 
+   & \href{https://www.python.org/}{Python} \\
+    & \href{https://www.latex-project.org/}{Latex} \\
+  \hline
+  \textbf{Libraries} & \href{https://pytorch.org/}{Pytorch} \\
+   & \href{https://librosa.org/doc/latest/index.html}{Librosa} \\
+   & \href{https://numpy.org/}{Numpy} \\
+   & \href{https://pandas.pydata.org/}{Pandas} \\
+   & \href{https://matplotlib.org/}{Matplotlib} \\
+   & \href{https://pytorch.org/audio/stable/index.html}{sox} \\
+   & \href{https://github.com/ytdl-org/youtube-dl}{Youtube-dl} \\
+  \hline
+  \textbf{Frameworks} & \href{https://github.com/eriksoper/SnnTorch}{SnnTorch} \\
+  \hline
+  \end{tabularx}
+  \end{center}
+  \caption{Computational tools}
+\end{figure}
+
+\href{https://github.com/LGPolytech/Project_S9}{(Our Github repository)}
+
+
+
+\subsection{Documentation}
+
+\subsection{Changing}
 
 \subsubsection*{aide}
 
@@ -316,9 +385,13 @@ And we are still working on:
 
 \section{Conclusion et perspectives}
 
-•	Mettre en valeur votre travail et les domaines où vous avez progressé. 
+•	Mettre en valeur votre travail et les domaines où vous avez progressé.
 •	Souligner en quoi la formation suivie à Polytech Nice Sophia (ou ailleurs) vous a aidé.
 •	Que comptez-vous faire dans les prochaines semaines ?
+
+\pagebreak
+
+\listoffigures
 
 \pagebreak
 
