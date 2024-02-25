@@ -1,4 +1,14 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Mathematical description of a Spike}}{4}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Spike encodings of an image}}{5}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Dead neuron problem}}{6}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Visualization of the Heaviside step function approximation}}{6}{figure.4}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Mathematical description of a Spike\cite {eshraghian2021training}}}{4}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Spike encodings of an image \cite {eshraghian2021training}}}{5}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces MNIST\cite {eshraghian2021training} $t=0$}}{6}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces MNIST\cite {eshraghian2021training} $t=15$}}{6}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces MNIST\cite {eshraghian2021training} $t=32$}}{6}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Average of the encoding of the MNIST dataset}}{6}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Neuron models with schemes}}{7}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Comparison of the different neuron models}}{7}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces A neuron, which is enclosed by the cell membrane (big circle), receives a (positive) input current $I(t)$ which increases the electrical charge inside the cell. The cell membrane acts like a capacitor in parallel with a resistor which is in line with a battery of potential $u_{rest}$\cite {gerstner2014neuronal}}}{8}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces The cell membrane reacts to a step current (top) with a smooth voltage trace (bottom)\cite {gerstner2014neuronal}}}{8}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Neuron model basis\cite {LIAO2023126470}}}{9}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Generating spikes\cite {LIAO2023126470}}}{9}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Dead neuron problem\cite {eshraghian2021training}}}{10}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Visualization of the Heaviside step function approximation\cite {LIAO2023126470}}}{11}{figure.14}%

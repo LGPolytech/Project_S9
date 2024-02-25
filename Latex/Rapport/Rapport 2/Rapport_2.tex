@@ -6,6 +6,7 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{wallpaper}
 \usepackage{afterpage} 
@@ -15,11 +16,14 @@
 \usepackage{lipsum} 
 \usepackage{url}
 \usepackage[toc,page]{appendix}
-\usepackage{mdframed}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{pgfgantt}
 \usepackage{tabularx}
 \usepackage{graphicx}
-
+\usepackage[numbers]{natbib}
+\usepackage{url} 
+ 
 % Define colors
 \usepackage{xcolor}
 \definecolor{myblue}{RGB}{33, 66, 99}
@@ -107,7 +111,8 @@
   \begin{minipage}[b]{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{./image/spike_description.png}
-    \caption{Mathematical description of a Spike}
+    \caption{Mathematical description of a Spike\cite{eshraghian2021training}}
+    \label{fig:spike_description}
   \end{minipage}
 \end{figure}
 
@@ -119,47 +124,232 @@ In the practical implementation section, we will present a small program showcas
 
 Throughout this report, our aim is to provide a comprehensive understanding of the advancements and challenges in the realm of Spiking Neural Networks, offering insights into their unique characteristics and applications.
 
-\pagebreak 
+\pagebreak
 
-\section{Reminder on Spiking Neural Networks}
+\section{Reminder on Spikes and Spiking Neural Networks}
+
+Through this section, we aim to provide a comprehensive and visual view of the concepts and mechanisms behind Spiking Neural Networks (SNNs). We will start by revisiting the fundamental aspects of spikes and their encoding, followed by an overview of neuron models (more specifically the Leaky Integrate-and-Fire (LIF) neuron model). We will then delve into the architecture of SNNs and their convolutional variant, Convolutional Spiking Neural Networks (CSNNs).
 
 \subsection{Spikes encoding}
 
-The idea behind spikes is simple: we need to encode some data (let's say an image) into some other kind of data that has a temporal dependency. To do so, we will need to define time steps, a number of steps, and a threshold. 
+The idea behind spikes is simple: we need to encode some data (let's say an image) into some other kind of data that has a temporal dependency. To do so, we will need to define time steps, a number of steps, and a threshold.
 In a rate encoding scheme, we take the values of the pixels of the image and make them pass through a function that will output or not a spike (for example, a Bernoulli function).
+
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{./image/spikeconv.png}
-  \caption{Spike encodings of an image}
+  \caption{Spike encodings of an image \cite{eshraghian2021training}}
+  Source : \url{https://snntorch.readthedocs.io/en/latest/tutorials/tutorial_1.html}
+  \label{fig:spikeconversion}
 \end{figure}
 
-Let's say we have a white pixel (value close to $1$) and a black pixel (value close to $0$). We will then pass these values through a Bernoulli function with a threshold of $0.5$. If the value is above $0.5$, we will output a spike ($1$); if not, we will output $0$.
-In doing this same procedure for all the pixels of the image, for all the time steps until the number of steps, we will have a temporal dependency of the image that, when combined, can approximate the original image.
+\subsubsection{Rate encoding}
+
+\subsubsection*{Example}
+
+Let's say we have a white pixel (value close to $1$) and a black pixel (value close to $0$). We will then pass these values through a Bernoulli function with a threshold of $0.5$, if the value is above $0.5$, we will probably output a spike ($1$); if not, we will output $0$.
+
+This way, we end up with an approximation of the image in the form of spikes (binary values !). In order for it to be efficient, we will need encode the image multiple times. So, we will encode the image using the same method but with different time steps:
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{image/rate_gif-0.png}
+    \caption{MNIST\cite{eshraghian2021training} $t=0$}
+    \label{fig:rate_t_0}
+  \end{minipage}
+  \hfill
+  $\xrightarrow{\hspace*{0.3cm}}$
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{image/rate_gif-15.png}
+    \caption{MNIST\cite{eshraghian2021training} $t=15$}
+    \label{fig:rate_t_15}
+  \end{minipage}
+  \hfill
+  $\xrightarrow{\hspace*{0.3cm}}$
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{image/rate_gif-32.png}
+    \caption{MNIST\cite{eshraghian2021training} $t=32$}
+    \label{fig:rate_t_32}
+  \end{minipage}
+\end{figure}
+
+We would define a number of time steps $n_{\text{steps}}$ and encode the image $n_{\text{steps}}$ times. The more time steps we have, the more precise the encoding will be :
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{./image/avg_mnist_spike.png}
+    \caption{Average of the encoding of the MNIST dataset}
+    \label{fig:avg_mnist_spike}
+  \end{center}
+\end{figure}
+
+\subsubsection{Latency encoding}
+
+\subsubsection{Delta Modulation}
+
+\subsection{Spiking neuron models}
+
+Until now, we have only talked about the encoding of the data. But another important aspect of Spiking neural network would concern the transmission of spikes and their associated information to the next layer.
+
+We can basically distinguish three phases in a spiking neural network :
+\begin{itemize}
+  \item Encoding the data into spikes
+  \item Transmitting the spikes (and their associated information) to the next layer
+  \item Decoding the spikes into a meaningful output
+\end{itemize}
+
+To do so, we would need a type of neuron that "fires" spikes when it receives enough input (whatever the inputs are). One might find different kinds of neurons, each with its own characteristics and properties.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{./image/2_1_neuronmodels.png}
+    \caption{Neuron models with schemes}
+    \label{fig:neuronmodels_schemes}
+  \end{center}
+\end{figure}
+
+Bien comme ref : \url{https://neuronaldynamics.epfl.ch/online/}
+
+\subsubsection{Comparison of the different neuron models}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{./image/comparison_neuron.png}
+    \caption{Comparison of the different neuron models}
+    \label{fig:comparison_neuron}
+    Source: \url{https://www.researchgate.net/figure/Trade-off-between-biological-plausibility-with-respect-to-a-number-of-features-known-to_fig3_320409442}
+  \end{center}
+\end{figure}
+
+\subsubsection{The choice of the Leaky Integrate-and-Fire Neuron Model}
+
+Initially, the LiF model was made as a simple model to mimic the behavior of a neuron.
+\begin{quote}
+  "In order to arrive at an equation that links the momentary voltage $u_i(t) - u_{rest}$ to the input current $I(t)$, we use elementary laws from the theory of electricity. A neuron is surrounded by a cell membrane, which is a rather good insulator. If a short current pulse $I(t)$ is injected into the neuron, the additional electrical charge $q= \int I(t')dt'$ has to go somewhere: it will charge the cell membrane. The cell membrane therefore acts like a capacitor of capacity $C$. Because the insulator is not perfect, the charge will, over time, slowly leak through the cell membrane. The cell membrane can therefore be characterized by a finite leak resistance $R$.
+
+  The basic electrical circuit representing a leaky integrate-and-fire model consists of a capacitor $C$ in parallel with a resistor $R$ driven by a current $I(t)$ (cf the LiF \hyperref[fig:comparison_neuron]{"Neuron models with schemes"})"\cite{gerstner2014neuronal}
+\end{quote}
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{image/x12.png}
+    \caption{A neuron, which is enclosed by the cell membrane (big circle), receives a (positive) input current $I(t)$
+      which increases the electrical charge inside the cell. The cell membrane acts like a capacitor in parallel with a resistor which is in line with a battery of potential $u_{rest}$\cite{gerstner2014neuronal}}
+    \label{fig:neuron_real_circuit}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{image/x13.png}
+    \caption{The cell membrane reacts to a step current (top) with a smooth voltage trace (bottom)\cite{gerstner2014neuronal}}
+    \label{fig:neuron_real_circuit_trace}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{Leaky Integrate-and-Fire Neuron Model}
+
+With the Leaky Integrate-and-Fire (LIF) model been the most used in practice. It can be seen as follows :
+
+\begin{itemize}
+  \item We define a membrane potential $U_m$ that will be updated at each time step
+        \begin{equation}
+          U_m[t+1] = \underbrace{\beta U_m[t]}_\text{decay} + \underbrace{WX[t+1]}_\text{input} - \underbrace{S[t]U_{\rm thr}}_\text{reset}  \quad \text{\cite{eshraghian2021training}}
+        \end{equation}
+
+  \item We define a threshold $U_{\rm thr}$ that will be used to reset the membrane potential when it is reached
+  \item The output spike will be emitted following the following equation :
+        \begin{equation}
+          S(t) = \begin{cases}
+            1 & \text{if } U_m(t) \geq U_{\rm thr} \\
+            0 & \text{otherwise}
+          \end{cases}
+        \end{equation}
+\end{itemize}
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics{image/neuronmodel.jpg}
+        \caption{Neuron model basis\cite{LIAO2023126470}}
+        \label{fig:neuronmodel}
+      \end{center}
+    \end{figure}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \begin{center}
+      \includegraphics{image/generating_spikes.jpg}
+      \caption{Generating spikes\cite{LIAO2023126470}}
+      \label{fig:generating_spikes}
+    \end{center}
+  \end{minipage}
+\end{figure}
+
+% algo LIF
+The algorithm defining the Lif neuron model in Snntorch have the following structure :
+\begin{algorithm}
+  \caption{Snntorch : Leaky Integrate-and-Fire Neuron Model}
+  \begin{algorithmic}[1]
+    \Require $input$, $mem_0$
+    \State Initialize $beta$, $threshold$, $spike\_grad$, $surrogate\_disable$, $init\_hidden$, $inhibition$, $learn\_beta$, $learn\_threshold$, $reset\_mechanism$, $state\_quant$, $output$
+    \State Initialize $Leaky.beta$ and $Leaky.threshold$ if they are learnable
+    \For{each $input$ in $batch$}
+    \If{$reset\_mechanism = "subtract"$}
+    \EndIf
+    \State Compute $U[t+1] = \beta U[t] + I_{in}[t+1] - RU_{thr}$ if $reset\_mechanism = "subtract"$
+    \State Compute $U[t+1] = \beta U[t] + I_{syn}[t+1] - R(\beta U[t] + I_{in}[t+1])$ if $reset\_mechanism = "zero"$
+    \State Compute $spk$ and $mem_1$ for each element in the batch
+    \State Return $spk$ and $mem_1$
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+In pratcice, when using Snntorch we would create 2 arrays, one for the membrane potential and one for the spikes.
+
+TODO
+
+\subsection{Spiking Neural Networks}
+
+\subsection{Convolutional Spiking Neural Networks}
 
 \pagebreak
 
-\section{Non-differentiability issue}
+\section{SNN - Behind the scenes}
+
+\subsection{How to train a SNN}
+
+\subsection{Dead Neuron Problem}
 
 \begin{wrapfigure}{r}{0.6\textwidth}
   \centering
   \includegraphics[width=0.6\textwidth]{./image/non-differentiability.png}
-  \caption{Dead neuron problem}
+  \caption{Dead neuron problem\cite{eshraghian2021training}}
 \end{wrapfigure}
 
 To train a spiking neural network, we aim to adjust the weights based on the loss gradient, minimizing the overall loss. Backpropagation achieves this through a chain of derivatives:
 
 $$
-\frac{\partial \mathcal{L}}{\partial W} =
-\frac{\partial \mathcal{L}}{\partial S}
-\underbrace{\frac{\partial S}{\partial U}}_{\{0, \infty\}}
-\frac{\partial U}{\partial I}
-\frac{\partial I}{\partial W}
+  \frac{\partial \mathcal{L}}{\partial W} =
+  \frac{\partial \mathcal{L}}{\partial S}
+  \underbrace{\frac{\partial S}{\partial U}}_{\{0, \infty\}}
+  \frac{\partial U}{\partial I}
+  \frac{\partial I}{\partial W}
 $$
 
 Here, $\mathcal{L}$ is the loss, $W$ represents weights, $S$ is the output, $U$ is the activation function, and $I$ is the input.
 
 The challenge lies in the term $\frac{\partial S}{\partial U}$, which takes values between $0$ and $\infty$. The derivative of the Heaviside step function from the input ($U$) is the Dirac Delta function. This function is $0$ everywhere except at the threshold $\theta$, where it tends to infinity. Consequently, the gradient is often nullified to zero (or saturated if $\theta$ precisely aligns with the threshold), hindering learning. This issue is commonly known as the \textbf{dead neuron problem}. There are multiple ways to address this issue.
+
+\subsection{Shadow training}
 
 \subsection{Surrogate Gradient}
 
@@ -179,7 +369,8 @@ One way to address this non-differentiability issue would be to compute a gradie
     \vspace{0pt} % Adjust this value as needed
     \centering
     \includegraphics[width=\textwidth]{./image/approx_surrogate.png}
-    \caption{Visualization of the Heaviside step function approximation}
+    \caption{Visualization of the Heaviside step function approximation\cite{LIAO2023126470}}
+    \label{fig:approx_surrogate}
   \end{minipage}
 \end{figure}
 
@@ -188,9 +379,15 @@ One way to address this non-differentiability issue would be to compute a gradie
 In order for this to be taken into account in the loss function (and because we now have to take the time as a parameter), we have to perform an operation on the loss function for all its time steps.
 
 $$ \frac{\partial \mathcal{L}}{\partial W}=\sum_t \frac{\partial\mathcal{L}[t]}{\partial W} =
-\sum_t \sum_{s\leq t} \frac{\partial\mathcal{L}[t]}{\partial W[s]}\frac{\partial W[s]}{\partial W}$$
-
-\section{Convolutional Spiking Neural Networks}
+  \sum_t \sum_{s\leq t} \frac{\partial\mathcal{L}[t]}{\partial W[s]}\frac{\partial W[s]}{\partial W}$$
 
 \section{Practical implementation}
+
+\pagebreak
+
+% Bibliography
+\bibliographystyle{siam}
+\bibliography{ref}
+
+
 \end{document}
