@@ -24,6 +24,7 @@
 \usepackage{graphicx}
 \usepackage[numbers]{natbib}
 \usepackage{url} 
+\usepackage{subfig}
  
 % Define colors
 \usepackage{xcolor}
@@ -95,10 +96,6 @@
 \pagebreak
 
 \listoffigures
-
-\pagebreak
-
-\listoftables
 
 \pagebreak
 
@@ -433,7 +430,7 @@ $$ LCE = \sum_{i=0}^{N} y_i \log(p_i) $$
 \end{figure}
 
 
-In the general scenario, the more spikes an output neuron is firing when compared to the others, the more likely it is to be the predicted class. 
+In the general scenario, the more spikes an output neuron is firing when compared to the others, the more likely it is to be the predicted class.
 
 
 \subsection{Convolutional Spiking Neural Networks}
@@ -615,16 +612,16 @@ A feedforward SNN with the following struture :
     \centering
     \includegraphics[width=\textwidth]{./image/csnn_code.png}    \caption{CSNN code}
     \label{fig:csnn_code}
-    
+
   \end{minipage}
 \end{figure}
 
 \subsubsection{ANNs}
 
-To make some comparison, we also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively: 
+To make some comparison, we also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively:
 
 \begin{itemize}
-  \item The equivalent ANN for our CSNN model. 
+  \item The equivalent ANN for our CSNN model.
   \item RESNET50, RESNET101
   \item EFFICIENTNET-B0
   \item VGG16
@@ -642,23 +639,69 @@ When we worked with the MNIST dataset, we only worked with spiking neural networ
 
 \subsubsection*{Feedforward SNN}
 
-Firstly we issued some illustrations on what proportion of the input data (converted into spiking data) was transmitted, layer by layer. This gave us the bellow results, the fist line corresponds to the rate encoding of the input data, the second line corresponds to the spikes emitted by the first layer, and the last spike corresponds to the spikes emitted by the output layer (all stacked in an image). 
+Firstly we issued some illustrations on what proportion of the input data (converted into spiking data) was transmitted, layer by layer. This gave us the bellow results, the fist line corresponds to the rate encoding of the input data, the second line corresponds to the spikes emitted by the first layer, and the last spike corresponds to the spikes emitted by the output layer (all stacked in an image).
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{image/spikes_simple_snn.png}
-    \caption{Observation of spikes after rate encoding and after each LiF layers}
-    \label{fig:spikes_snn}
-  \end{center} 
+  \begin{minipage}{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=0.75\textwidth]{image/spikes_simple_snn.png}
+      \caption{Observation of spikes after rate encoding and after each LiF layers}
+      \label{fig:spikes_snn}
+    \end{center}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{image/mnist1_050.png}
+      \caption{Last image of a prediction of the SNN model on the MNIST dataset (not trained)}
+      \label{fig:mnist1}
+    \end{center}
+  \end{minipage}
 \end{figure}
 
-From top to bottom, we observe the clear reduction of the number of spikes emitted. Also note that this model was not trained and was only used to observe the spikes.
+From top to bottom of \hyperref[fig:mnist1]{figure 24}, we observe the clear reduction of the number of spikes emitted. Also note that this model was not trained and was only used to observe the spikes.
 
 \subsubsection*{Convolutional SNN}
 
+When training the CSNN model (having far less parameters than the previous one), we obtained the following results:
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{image/loss_MNIST.png}
+      \caption{Loss of the CSNN model on the MNIST dataset}
+      \label{fig:loss_MNIST}
+    \end{center}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth]{image/accuracy_MNIST.png}
+      \caption{Accuracy of the CSNN model on the MNIST dataset}
+      \label{fig:accuracy_MNIST}
+    \end{center}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{image/confusion_mat_MNIST.png}
+    \caption{Confusion matrix of the CSNN model on the MNIST dataset}
+    \label{fig:confusion_matrix_MNIST}
+  \end{center}
+\end{figure}
 
 
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{image/mnist2_050.png}
+    \caption{Last image of a prediction of the CSNN model on the MNIST dataset}
+    \label{fig:mnist2}
+  \end{center}
+\end{figure}
 
-\subsection{Dataset}
+In this last image, we observe that the only neuron that fired for all time steps is the one associated to the predicted class $5$. We aim now to test the model on our test dataset and as similar results as possible (in term of efficiency).
+
+\subsection{Our Dataset}
 
 We used the Google AudioSet dataset as the basis for our audio classification task. The dataset is divided into 10-second audio clips, each labeled with one or multiple classes. The classes are organized in a hierarchical structure, with the top-level classes being broad categories like "Music" or "Speech", and the lower-level classes being more specific, like "Piano" or "Saxophone".
 
@@ -666,12 +709,12 @@ It is composed of csv files, each one containing some time codes and a link to a
 
 \begin{itemize}
   \item Divide the dataset into 3 csv files, each one associated to a top-level class (Music, Animals and Sound of things)
-  \item Make sure there are no repetitions in between those classes 
+  \item Make sure there are no repetitions in between those classes
   \item Filter the dataset so that we keep "recognizable" sounds
   \item Perform some post-processing to make the dataset exploitable (outdated links, duration smaller than 10 seconds, etc.)
 \end{itemize}
 
-So we end up with 3 class files, each one containing a list of youtube links and their associated class (with most of the time other "noise" classes that are not to be taken into account for the classification task on high level classes). We then used the youtube-dl library to download the videos (parallel operations) and the soc library to extract the audio from the videos with the correct duration and format. 
+So we end up with 3 class files, each one containing a list of youtube links and their associated class (with most of the time other "noise" classes that are not to be taken into account for the classification task on high level classes). We then used the youtube-dl library to download the videos (parallel operations) and the soc library to extract the audio from the videos with the correct duration and format.
 
 We decided to use this dataset to perform some audio classification because, we though that, as the dataset is quite large and, as it is a hierarchical dataset and its categories are quite diverse, it would be a good dataset to test the capabilities of spiking convolutional neural networks.
 Furthermore, if the model we create performs well on this dataset, which is quite unbalanced and diverse, it would be a good sign that it could perform well on embedded systems, where the data has often this kind of characteristics.
@@ -691,27 +734,65 @@ Some python libraries like librosa have functions to convert directly audio in M
 \begin{itemize}
   \item Take the signal's Short Term Fourier Transform (STFT), which divides the audio signal into multiple parts and compute the Fourier Transform for each one. In practice, we use the Discrete Fourier Transform.
 
-  \begin{equation}
-  STFT: \;\left\{ x[ n ] \right\} \equiv X(m,\omega) = \sum_{n=-\infty}^{\infty} x[n]w[n-m]\mathrm{e}^{-j \omega n}
-\end{equation}
+        \begin{equation}
+          STFT: \;\left\{ x[ n ] \right\} \equiv X(m,\omega) = \sum_{n=-\infty}^{\infty} x[n]w[n-m]\mathrm{e}^{-j \omega n}
+        \end{equation}
 
   \item Map the powers of the resulting spectrum to the Mel scale, multiplying by overlapping window functions (triangular or cosine), then take the logarithm of the amplitudes at each mel frequency. The Mel scale is semi-logarithmic, to better represent actual human perception of frequencies.
-  
-  \begin{equation}
-     Mel \; scale: \; m = 2595 \log_{10}\left(1 + \frac{f}{700}\right)
-\end{equation}
-  
+
+        \begin{equation}
+          Mel \; scale: \; m = 2595 \log_{10}\left(1 + \frac{f}{700}\right)
+        \end{equation}
+
   \item Take the discrete cosine transform (DCT) of the list of logarithmic powers of the mel frequencies, as if it were a signal. The MFCCs are the amplitudes of the resulting spectrum.
-  
-  \begin{equation}
-     DCT: \; S_{u,v} = \sum_{m = 0}^{M- 1} \sum_{n = 0}^{N- 1} s(m, n)\mathrm e^{-2\mathrm i\pi \left ( \frac{um}M+ \frac{vn}N\right )}
-\end{equation}
-  
+
+        \begin{equation}
+          DCT: \; S_{u,v} = \sum_{m = 0}^{M- 1} \sum_{n = 0}^{N- 1} s(m, n)\mathrm e^{-2\mathrm i\pi \left ( \frac{um}M+ \frac{vn}N\right )}
+        \end{equation}
+
 \end{itemize}
 
 
 
 \subsection{Results and discussion}
+
+\subsubsection*{ANNs}
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Loss CNN]{\includegraphics[width=0.3\textwidth]{image/loss_cnn.png}
+    \label{fig:loss_cnn}}
+  \hfill
+  \subfloat[Accuracy CNN]{\includegraphics[width=0.3\textwidth]{image/acc_cnn.png}}
+  \label{fig:acc_cnn}
+  \hfill
+  \subfloat[Confusion matrix CNN]{\includegraphics[width=0.3\textwidth]{image/conf_mat_cnn.png}
+    \label{fig:conf_mat_cnn}}
+  \\
+  \subfloat[Loss RESNET50]{\includegraphics[width=0.3\textwidth]{image/loss_resnet.png}
+    \label{fig:loss_resnet}}
+  \hfill
+  \subfloat[Accuracy RESNET50]{\includegraphics[width=0.3\textwidth]{image/acc_resnet.png}
+    \label{fig:acc_resnet}}
+  \hfill
+  \subfloat[Confusion matrix RESNET50]{\includegraphics[width=0.3\textwidth]{image/conf_mat_resnet.png}
+    \label{fig:conf_mat_resnet}}
+  \\
+  \subfloat[loss MobileNetV2]{\includegraphics[width=0.3\textwidth]{image/loss_mobileV2.png}
+    \label{fig:loss_mobileV2}}
+  \hfill
+  \subfloat[Accuracy MobileNetV2]{\includegraphics[width=0.3\textwidth]{image/acc_mobileV2.png}}
+  \hfill
+  \subfloat[Confusion matrix MobileNetV2]{\includegraphics[width=0.3\textwidth]{image/conf_mat_mobileV2.png}}
+  \label{fig:conf_mat_mobileV2}
+  \caption{Results of the ANNs on the dataset (no data augmentation)}
+  \label{fig:results_anns}
+\end{figure}
+
+
+\subsubsection*{SNNs}
+
+We tried multiple way on training our CSNN model onto the dataset we made,
 
 
 

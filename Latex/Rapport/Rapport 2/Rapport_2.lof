@@ -1,24 +1,39 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Mathematical description of a Spike\cite {eshraghian2021training}}}{4}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Spike encodings of an image \cite {eshraghian2021training}}}{5}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces MNIST\cite {eshraghian2021training} $t=0$}}{6}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces MNIST\cite {eshraghian2021training} $t=15$}}{6}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces MNIST\cite {eshraghian2021training} $t=32$}}{6}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Average of the encoding of the MNIST dataset}}{6}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Neuron models with schemes}}{7}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Comparison of the different neuron models}}{8}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces A neuron, which is enclosed by the cell membrane (big circle), receives a (positive) input current $I(t)$ which increases the electrical charge inside the cell. The cell membrane acts like a capacitor in parallel with a resistor which is in line with a battery of potential $u_{rest}$\cite {gerstner2014neuronal}}}{9}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces The cell membrane reacts to a step current (top) with a smooth voltage trace (bottom)\cite {gerstner2014neuronal}}}{9}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Neuron model basis\cite {LIAO2023126470}}}{10}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Generating spikes\cite {LIAO2023126470}}}{10}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Definition of the variables used in the LIF model}}{10}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Simulation of the LIF model}}{11}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Result of the simulation of the LIF model}}{12}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Output layer with rate coding, target vector is a one-hot encoded vector}}{13}{figure.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces (a) CSNN model, (b) CNN model}}{13}{figure.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Dead neuron problem\cite {eshraghian2021training}}}{14}{figure.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Visualization of the Heaviside step function approximation\cite {LIAO2023126470}}}{15}{figure.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Backpropagation through time}}{16}{figure.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Simple SNN}}{17}{figure.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Simple SNN}}{17}{figure.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces CSNN code}}{18}{figure.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Observation of spikes after rate encoding and after each LiF layers}}{19}{figure.24}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Mathematical description of a Spike\cite {eshraghian2021training}}}{3}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Spike encodings of an image \cite {eshraghian2021training}}}{4}{figure.caption.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces MNIST\cite {eshraghian2021training} $t=0$}}{5}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces MNIST\cite {eshraghian2021training} $t=15$}}{5}{figure.caption.3}%
+\contentsline {figure}{\numberline {5}{\ignorespaces MNIST\cite {eshraghian2021training} $t=32$}}{5}{figure.caption.3}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Average of the encoding of the MNIST dataset}}{5}{figure.caption.4}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Neuron models with schemes}}{6}{figure.caption.5}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Comparison of the different neuron models}}{7}{figure.caption.6}%
+\contentsline {figure}{\numberline {9}{\ignorespaces A neuron, which is enclosed by the cell membrane (big circle), receives a (positive) input current $I(t)$ which increases the electrical charge inside the cell. The cell membrane acts like a capacitor in parallel with a resistor which is in line with a battery of potential $u_{rest}$\cite {gerstner2014neuronal}}}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {10}{\ignorespaces The cell membrane reacts to a step current (top) with a smooth voltage trace (bottom)\cite {gerstner2014neuronal}}}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Neuron model basis\cite {LIAO2023126470}}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Generating spikes\cite {LIAO2023126470}}}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Definition of the variables used in the LIF model}}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Simulation of the LIF model}}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Result of the simulation of the LIF model}}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Output layer with rate coding, target vector is a one-hot encoded vector}}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {17}{\ignorespaces (a) CSNN model, (b) CNN model}}{12}{figure.caption.14}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Dead neuron problem\cite {eshraghian2021training}}}{13}{figure.caption.15}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Visualization of the Heaviside step function approximation\cite {LIAO2023126470}}}{14}{figure.caption.16}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Backpropagation through time}}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Simple SNN}}{16}{figure.caption.18}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Simple SNN}}{16}{figure.caption.18}%
+\contentsline {figure}{\numberline {23}{\ignorespaces CSNN code}}{17}{figure.caption.19}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Observation of spikes after rate encoding and after each LiF layers}}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Last image of a prediction of the SNN model on the MNIST dataset (not trained)}}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Loss of the CSNN model on the MNIST dataset}}{18}{figure.caption.21}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Accuracy of the CSNN model on the MNIST dataset}}{18}{figure.caption.21}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Confusion matrix of the CSNN model on the MNIST dataset}}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Last image of a prediction of the CSNN model on the MNIST dataset}}{19}{figure.caption.23}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Results of the ANNs on the dataset (no data augmentation)}}{22}{figure.caption.24}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Loss CNN}}}{22}{subfigure.30.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Accuracy CNN}}}{22}{subfigure.30.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Confusion matrix CNN}}}{22}{subfigure.30.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Loss RESNET50}}}{22}{subfigure.30.4}%
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Accuracy RESNET50}}}{22}{subfigure.30.5}%
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Confusion matrix RESNET50}}}{22}{subfigure.30.6}%
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {loss MobileNetV2}}}{22}{subfigure.30.7}%
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {Accuracy MobileNetV2}}}{22}{subfigure.30.8}%
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {Confusion matrix MobileNetV2}}}{22}{subfigure.30.9}%
