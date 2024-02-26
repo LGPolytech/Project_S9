@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage{geometry}
@@ -148,7 +149,14 @@ In a rate encoding scheme, we take the values of the pixels of the image and mak
 
 \subsubsection*{Example}
 
-Let's say we have a white pixel (value close to $1$) and a black pixel (value close to $0$). We will then pass these values through a Bernoulli function with a threshold of $0.5$, if the value is above $0.5$, we will probably output a spike ($1$); if not, we will output $0$.
+The rate encoding will for each neuron at each time step, have a probability to fire a spike ($1$) or not ($0$) given by a Bernoulli distribution, where p is proportional to the intensity of the pixel associated with the neuron,. 
+
+
+$$P(X = x) = p^x (1 - p)^{1-x} \quad \text{for } x \in \{0, 1\}$$ 
+
+
+
+Let's say we have a white pixel (value close to $1$) and a black pixel (value close to $0$). The white pixel always emits a spike while the black pixel never fires. In the case of a grey pixel, let's say with intensity of 0.5, when the number of time steps increases, we see that the neuron fires one out of two time steps on average.
 
 This way, we end up with an approximation of the image in the form of spikes (binary values !). In order for it to be efficient, we will need encode the image multiple times. So, we will encode the image using the same method but with different time steps:
 
@@ -192,17 +200,40 @@ We would define a number of time steps $n_{\text{steps}}$ and encode the image $
 
 \subsubsection{Latency encoding}
 
-\subsubsection{Delta Modulation}
+Here the intensity of the pixel is related to the spike timing with a logarithmic dependency, a brighter pixel will spike earlier than a darker one.
+
+This encoding induces more sparsity, but is more prone to have perturbation related errors, as each spike carries way more information than with the rate encoding.
+
+
+
+\subsubsection{Decoding}
+
+For the output we need to convert spikes into something the network can interpret. Outputs neurons take input spikes and depending on the encoding chosen will have different behavior.
+
+\begin{itemize}
+  \item Rate coding: the predicted class corresponds to the output neuron with the most spikes fired.
+  \item Latency coding: the predicted class correspond to the output neuron that fire the first.
+\end{itemize}
+
+
 
 \subsection{Spiking neuron models}
 
-Until now, we have only talked about the encoding of the data. But another important aspect of Spiking neural network would concern the transmission of spikes and their associated information to the next layer.
+Another important aspect of Spiking neural network would concern the transmission of spikes and their associated information to the next layer.
 
-We can basically distinguish three phases in a spiking neural network :
+We can basically distinguish three phases in a spiking neural network, 2 of them will be explicit later on in the report : 
 \begin{itemize}
-  \item Encoding the data into spikes
-  \item Transmitting the spikes (and their associated information) to the next layer
-  \item Decoding the spikes into a meaningful output
+  \item Encoding the data into spikes : 
+  
+  Converting the input data into spikes (binary values that have approximatly the same "meaning" as the input data, but in a different form), using a specific encoding method (rate, latency, delta modulation, etc.)
+
+  \item Transmitting the spikes (and their associated information) to the next layer :
+  
+  Allowing for an information to go further in the network iff the neuron fires a spike (ie. if the feature is important enough to be transmitted to the next layer), kind of imitating the role of an activation function in an ANN.
+  
+  \item Decoding the spikes into a meaningful output :
+  
+  For a classification task, it would involve firing or not a spike in the output layer (multiple neurons of this final layer can fire at the same time). The neuron that would fire the most over time would be the one associated to the predicted class.
 \end{itemize}
 
 To do so, we would need a type of neuron that "fires" spikes when it receives enough input (whatever the inputs are). One might find different kinds of neurons, each with its own characteristics and properties.
@@ -214,8 +245,6 @@ To do so, we would need a type of neuron that "fires" spikes when it receives en
     \label{fig:neuronmodels_schemes}
   \end{center}
 \end{figure}
-
-Bien comme ref : \url{https://neuronaldynamics.epfl.ch/online/}
 
 \subsubsection{Comparison of the different neuron models}
 
@@ -253,6 +282,18 @@ Initially, the LiF model was made as a simple model to mimic the behavior of a n
     \label{fig:neuron_real_circuit_trace}
   \end{minipage}
 \end{figure}
+
+From the Ohm's law and the capacitance equation, we can derive the following equation :
+
+\begin{equation}
+  \implies RC \frac{du(t)}{dt} = -\left[u(t) - u_{rest} \right] + RI(t)
+\end{equation}
+
+Say the neuron starts at some value $u_{0}$ with no further input, i.e., $I(t)=0$. The solution of the linear differential equation is:
+
+$$u(t) = u_0e^{-\frac{t}{\tau}}$$
+
+Where $\tau = RC$ is the time constant of the neuron. This equation shows that the membrane potential decays exponentially to zero with a time constant $\tau$.
 
 \subsubsection{Leaky Integrate-and-Fire Neuron Model}
 
@@ -295,8 +336,9 @@ With the Leaky Integrate-and-Fire (LIF) model been the most used in practice. It
 \end{figure}
 
 % algo LIF
+\subsubsection*{Small code example}
 The algorithm defining the Lif neuron model in Snntorch have the following structure :
-\begin{algorithm}
+\begin{algorithm}[H]
   \caption{Snntorch : Leaky Integrate-and-Fire Neuron Model}
   \begin{algorithmic}[1]
     \Require $input$, $mem_0$
@@ -313,13 +355,97 @@ The algorithm defining the Lif neuron model in Snntorch have the following struc
   \end{algorithmic}
 \end{algorithm}
 
-In pratcice, when using Snntorch we would create 2 arrays, one for the membrane potential and one for the spikes.
+Here, the `reset\_mechanism` parameter is used to define the way the membrane potential is reset, for instead : 
+\begin{itemize}
+  \item If `reset\_mechanism` is set to "subtract", the membrane potential will be reset to $0$ when the threshold is reached 
+  \item If `reset\_mechanism` is set to "zero", the membrane potential will be reset to $\beta U[t] + I_{in}[t+1]$ when the threshold is reached
+\end{itemize}
 
-TODO
+In practice, when using Snntorch we would use 3 arrays to define this neuron model : 
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{image/def_vars.png}
+    \caption{Definition of the variables used in the LIF model}
+    \label{fig:def_vars}
+  \end{center}
+\end{figure}
+
+Where $x$ is the input, a tensor made (here) of $100$ elements, followed by an alternative of $0$ and $1$ (to mimic the spikes) randomly generated (here max of $80$). The membrane potential record $mem_{rec}$ is a list that will record the membrane potential at each time step and the spikes record $spk_{rec}$ is a list that will record the spikes at each time step.
+
+Once the initialization is done (including some other parameters $\beta = \exp{- \frac{\Delta t}{\tau}} = 0.819$ and $W = 0.4 \in \mathbb{R}$), we can run the simulation for every time step.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{image/lif_example.png}
+    \caption{Simulation of the LIF model}
+    \label{fig:lif_sim}
+  \end{center}
+\end{figure}
+
+And we get the following results :
+
+\begin{itemize}
+  \item At the top of the image the input $x$ is shown
+  \item In the middle of the image the membrane potential $mem_{rec}$ is shown
+  \item At the bottom of the image the spikes $spk_{rec}$ are shown
+\end{itemize}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{image/output_lif1.png}
+    \caption{Result of the simulation of the LIF model}
+    \label{fig:lif_res}
+  \end{center}
+\end{figure}
 
 \subsection{Spiking Neural Networks}
 
+
+
+Now that the spiking neuron model is defined, we can create a network. The network is a mix between classic layers (for example fully connected layer) and spiking layers. Firstly a spiking layer needs to encode the data into spikes, which are then processed by the other layer. In some way, spiking layers will "take the place" of activation functions in CNN. 
+
+
+
+
+
+\hfill
+
+
+\subsubsection{Loss}
+To train the model, we use the cross entropy loss. With rate encoding the spike for the correct class is encouraged to produce a spike at each time step where the other are suppressed. 
+
+To compute the loss with $N_c$ classes, first the number of spikes is counted for each output neuron. With a spike count of output layer $\vec{c}$, we compute the softmax of spike count for each neuron.
+
+$$ p_i = \frac{e^{c_i}}{\sum_{i=1}^{N_c} e^{c_i}} $$ 
+
+The cross entropy between $p_i$ and the target $y_i \in \{0, 1\}$, which is a one-hot target vector, is obtained using:
+
+$$ LCE = \sum_{i=0}^{N} y_i \log(p_i) $$
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./image/loss_cross_entropy_snn_train.png}
+    \caption{Output layer with rate coding, target vector is a one-hot encoded vector}
+    \label{fig:snn_output}
+\end{figure}
+
+
+
+
 \subsection{Convolutional Spiking Neural Networks}
+
+A convolutional Spiking neural network, or CSNN, is a particular case of SNN where the data pass into convolutional spiking layers to extract meaningful features.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./image/csnn_template.png}
+    \caption{(a) CSNN model, (b) CNN model}
+    \label{fig:csnn_template}
+\end{figure}
 
 \pagebreak
 
@@ -327,7 +453,7 @@ TODO
 
 \subsection{How to train a SNN}
 
-\subsection{Dead Neuron Problem}
+\subsubsection{Dead Neuron Problem}
 
 \begin{wrapfigure}{r}{0.6\textwidth}
   \centering
@@ -335,33 +461,41 @@ TODO
   \caption{Dead neuron problem\cite{eshraghian2021training}}
 \end{wrapfigure}
 
-To train a spiking neural network, we aim to adjust the weights based on the loss gradient, minimizing the overall loss. Backpropagation achieves this through a chain of derivatives:
+To train a spiking neural network, we aim to adjust the weights based on the loss gradient, minimizing the overall loss. Backpropagation achieves this through a chain of derivatives (for one single time step):
 
-$$
+\begin{equation}
   \frac{\partial \mathcal{L}}{\partial W} =
   \frac{\partial \mathcal{L}}{\partial S}
   \underbrace{\frac{\partial S}{\partial U}}_{\{0, \infty\}}
   \frac{\partial U}{\partial I}
   \frac{\partial I}{\partial W}
-$$
-
+\end{equation}
+  
 Here, $\mathcal{L}$ is the loss, $W$ represents weights, $S$ is the output, $U$ is the activation function, and $I$ is the input.
 
 The challenge lies in the term $\frac{\partial S}{\partial U}$, which takes values between $0$ and $\infty$. The derivative of the Heaviside step function from the input ($U$) is the Dirac Delta function. This function is $0$ everywhere except at the threshold $\theta$, where it tends to infinity. Consequently, the gradient is often nullified to zero (or saturated if $\theta$ precisely aligns with the threshold), hindering learning. This issue is commonly known as the \textbf{dead neuron problem}. There are multiple ways to address this issue.
 
 \subsection{Shadow training}
 
+In shadow training, a classic ANN is trained and converted into an SNN by interpreting the "excitation" of the activation function as a firing rate (rate coding) or spike time (latency coding). The goal is to achieve the same input-output mapping with a deep SNN as the original ANN. This is very practical because it doesn't need particular knowledge about SNNs for the training. However, it has some flaws, for example one major obstacle is that in ANNs it does not matter if activations are negative, whereas firing rates in SNNs are always positive.\cite{pfeiffer2018}
+
 \subsection{Surrogate Gradient}
 
 One way to address this non-differentiability issue would be to compute a gradient on a "relaxed" version of the non-differentiable function. This would mean approximating the Heaviside step function $S(U)$ with a differentiable function $f(U)$, such as the sigmoid function or the $\arctan$ function. For example:
 
-\begin{figure}[ht]
+\begin{figure}[H]
   \begin{minipage}[t]{0.5\textwidth}
     \vspace{40pt} % Adjust this value as needed
     $$\begin{aligned}
-        S(U) & \approx \frac{1}{1 + e^{-\beta(U - \theta)}}       \\
-             & \text{Or alternatively}                            \\
-        S(U) & \approx \frac{1}{\beta} \arctan(\beta(U - \theta))
+        %Heaviside step function
+        S(U) & = \begin{cases}
+          0 & \text{if } U < U_{\rm thr} \\
+          1 & \text{if } U \geq U_{\rm thr}
+        \end{cases} \\ \\
+        S(U) & \approx \frac{1}{1 + e^{-(U - U_{\rm thr})}}       \\
+        S(U) & \approx \frac{1}{\pi} \arctan((U - U_{\rm thr})) + \frac{1}{2} \\ 
+        % Fast sigmoid
+        S_k(U) & \approx \frac{1}{2} \frac{U - U_{\rm thr}}{\sqrt{1 + k \lvert U - U_{\rm thr} \rvert}} + \frac{1}{2}
       \end{aligned}$$
   \end{minipage}
   \hfill
@@ -374,12 +508,23 @@ One way to address this non-differentiability issue would be to compute a gradie
   \end{minipage}
 \end{figure}
 
+This solution should only account for the backpropagration process. Indeed, we only need to approximate the derivative of the Heaviside step function, not the function itself. The approximation of the function is only used to compute the gradient, and the original function is used to compute the output of the neuron.
+
 \subsubsection{Loss function treatment}
 
 In order for this to be taken into account in the loss function (and because we now have to take the time as a parameter), we have to perform an operation on the loss function for all its time steps.
 
-$$ \frac{\partial \mathcal{L}}{\partial W}=\sum_t \frac{\partial\mathcal{L}[t]}{\partial W} =
-  \sum_t \sum_{s\leq t} \frac{\partial\mathcal{L}[t]}{\partial W[s]}\frac{\partial W[s]}{\partial W}$$
+\begin{equation}
+  \frac{\partial \mathcal{L}}{\partial W}=\sum_t \frac{\partial\mathcal{L}[t]}{\partial W} =
+  \sum_t \sum_{s\leq t} \frac{\partial\mathcal{L}[t]}{\partial W[s]}\frac{\partial W[s]}{\partial W}
+\end{equation}
+
+In the above equation, we ensure causality by summing over all time steps $t$ and all previous time steps $s$. We thereby make the assumption that the weights at time $s \in \left[\|0, t \|\right]$ influence the weights at time $t$.
+
+\begin{itemize}
+  \item We define as \textit{prior influence} the influence of the weights at time $s < t$ on the weights at time $t$.
+  \item We define as \textit{immediate influence} the influence of the weights at time $t$ on the weights at time $t$.
+\end{itemize}
 
 \section{Practical implementation}
 

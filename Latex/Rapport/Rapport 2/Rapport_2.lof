@@ -5,10 +5,15 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces MNIST\cite {eshraghian2021training} $t=32$}}{6}{figure.5}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Average of the encoding of the MNIST dataset}}{6}{figure.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Neuron models with schemes}}{7}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Comparison of the different neuron models}}{7}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces A neuron, which is enclosed by the cell membrane (big circle), receives a (positive) input current $I(t)$ which increases the electrical charge inside the cell. The cell membrane acts like a capacitor in parallel with a resistor which is in line with a battery of potential $u_{rest}$\cite {gerstner2014neuronal}}}{8}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces The cell membrane reacts to a step current (top) with a smooth voltage trace (bottom)\cite {gerstner2014neuronal}}}{8}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Neuron model basis\cite {LIAO2023126470}}}{9}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Generating spikes\cite {LIAO2023126470}}}{9}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Dead neuron problem\cite {eshraghian2021training}}}{10}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Visualization of the Heaviside step function approximation\cite {LIAO2023126470}}}{11}{figure.14}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Comparison of the different neuron models}}{8}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces A neuron, which is enclosed by the cell membrane (big circle), receives a (positive) input current $I(t)$ which increases the electrical charge inside the cell. The cell membrane acts like a capacitor in parallel with a resistor which is in line with a battery of potential $u_{rest}$\cite {gerstner2014neuronal}}}{9}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces The cell membrane reacts to a step current (top) with a smooth voltage trace (bottom)\cite {gerstner2014neuronal}}}{9}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Neuron model basis\cite {LIAO2023126470}}}{10}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Generating spikes\cite {LIAO2023126470}}}{10}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Definition of the variables used in the LIF model}}{10}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Simulation of the LIF model}}{11}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Result of the simulation of the LIF model}}{12}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Output layer with rate coding, target vector is a one-hot encoded vector}}{13}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces (a) CSNN model, (b) CNN model}}{13}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Dead neuron problem\cite {eshraghian2021training}}}{14}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Visualization of the Heaviside step function approximation\cite {LIAO2023126470}}}{15}{figure.19}%
