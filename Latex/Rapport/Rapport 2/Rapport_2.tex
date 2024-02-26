@@ -25,6 +25,7 @@
 \usepackage[numbers]{natbib}
 \usepackage{url} 
 \usepackage{subfig}
+
  
 % Define colors
 \usepackage{xcolor}
@@ -68,7 +69,7 @@
 \afterpage{\nopagecolor}
 
 % Add a background image
-\ThisCenterWallPaper{0.75}{./image/ferrofluide.png}
+\ThisCenterWallPaper{0.75}{./image/spike_brain.png}
 
 \begin{titlepage}
   \vspace*{\stretch{1}}
@@ -114,13 +115,12 @@
   \end{minipage}
 \end{figure}
 
-Building upon this foundation, the current report will delve deeper into the intricacies of SNNs, specifically addressing the non-differentiability issue inherent in these networks. Non-differentiability poses a challenge in applying traditional gradient-based optimization techniques commonly used in training Artificial Neural Networks (ANNs). We will explore strategies to tackle this issue and optimize SNNs effectively.
+Building upon this foundation, the current report will delve deeper into the intricacies of SNNs, we will introduce the concept of Convolutional Spiking Neural Networks (CSNNs), extending the discussion beyond simple SNN architectures. CSNNs leverage the spatial hierarchies present in convolutional neural networks (CNNs) and integrate them with the temporal dynamics of SNNs. This fusion holds promise for tasks like image recognition, where both spatial and temporal features play crucial roles.
 
-Furthermore, we will introduce the concept of Convolutional Spiking Neural Networks (CSNNs), extending the discussion beyond simple SNN architectures. CSNNs leverage the spatial hierarchies present in convolutional neural networks (CNNs) and integrate them with the temporal dynamics of SNNs. This fusion holds promise for tasks like image recognition, where both spatial and temporal features play crucial roles.
+Furthermore, we will address the non-differentiability issue inherent in these networks. Non-differentiability poses a challenge in applying traditional gradient-based optimization techniques commonly used in training Artificial Neural Networks (ANNs). We will explore strategies to tackle this issue and optimize SNNs effectively.
 
 In the practical implementation section, we will present a small program showcasing our results. This program will include the application of CSNNs in a specific task, demonstrating the capabilities and potential advantages of this hybrid architecture.
 
-Throughout this report, our aim is to provide a comprehensive understanding of the advancements and challenges in the realm of Spiking Neural Networks, offering insights into their unique characteristics and applications.
 
 \pagebreak
 
@@ -146,10 +146,10 @@ In a rate encoding scheme, we take the values of the pixels of the image and mak
 
 \subsubsection*{Example}
 
-The rate encoding will for each neuron at each time step, have a probability to fire a spike ($1$) or not ($0$) given by a Bernoulli distribution, where p is proportional to the intensity of the pixel associated with the neuron,.
+The rate encoding will for each neuron at each time step, have a probability to fire a spike ($1$) or not ($0$) given by a Bernoulli distribution, where p is proportional to the intensity of the pixel associated with the neuron,. 
 
 
-$$P(X = x) = p^x (1 - p)^{1-x} \quad \text{for } x \in \{0, 1\}$$
+$$P(X = x) = p^x (1 - p)^{1-x} \quad \text{for } x \in \{0, 1\}$$ 
 
 
 
@@ -202,7 +202,6 @@ Here the intensity of the pixel is related to the spike timing with a logarithmi
 This encoding induces more sparsity, but is more prone to have perturbation related errors, as each spike carries way more information than with the rate encoding.
 
 
-
 \subsubsection{Decoding}
 
 For the output we need to convert spikes into something the network can interpret. Outputs neurons take input spikes and depending on the encoding chosen will have different behavior.
@@ -218,19 +217,19 @@ For the output we need to convert spikes into something the network can interpre
 
 Another important aspect of Spiking neural network would concern the transmission of spikes and their associated information to the next layer.
 
-We can basically distinguish three phases in a spiking neural network, 2 of them will be explicit later on in the report :
+We can basically distinguish three phases in a spiking neural network, 2 of them will be explicit later on in the report : 
 \begin{itemize}
-  \item Encoding the data into spikes :
-
-        Converting the input data into spikes (binary values that have approximatly the same "meaning" as the input data, but in a different form), using a specific encoding method (rate, latency, delta modulation, etc.)
+  \item Encoding the data into spikes : 
+  
+  Converting the input data into spikes (binary values that have approximatly the same "meaning" as the input data, but in a different form), using a specific encoding method (rate, latency, delta modulation, etc.)
 
   \item Transmitting the spikes (and their associated information) to the next layer :
-
-        Allowing for an information to go further in the network iff the neuron fires a spike (ie. if the feature is important enough to be transmitted to the next layer), kind of imitating the role of an activation function in an ANN.
-
+  
+  Allowing for an information to go further in the network iff the neuron fires a spike (ie. if the feature is important enough to be transmitted to the next layer), kind of imitating the role of an activation function in an ANN.
+  
   \item Decoding the spikes into a meaningful output :
-
-        For a classification task, it would involve firing or not a spike in the output layer (multiple neurons of this final layer can fire at the same time). The neuron that would fire the most over time would be the one associated to the predicted class.
+  
+  For a classification task, it would involve firing or not a spike in the output layer (multiple neurons of this final layer can fire at the same time). The neuron that would fire the most over time would be the one associated to the predicted class.
 \end{itemize}
 
 To do so, we would need a type of neuron that "fires" spikes when it receives enough input (whatever the inputs are). One might find different kinds of neurons, each with its own characteristics and properties.
@@ -283,7 +282,7 @@ Initially, the LiF model was made as a simple model to mimic the behavior of a n
 From the Ohm's law and the capacitance equation, we can derive the following equation :
 
 \begin{equation}
-  \implies RC \frac{du(t)}{dt} = -\left[u(t) - u_{rest} \right] + RI(t)
+  \implies RC \frac{du(t)}{dt} = -u(t) + RI(t)
 \end{equation}
 
 Say the neuron starts at some value $u_{0}$ with no further input, i.e., $I(t)=0$. The solution of the linear differential equation is:
@@ -352,13 +351,13 @@ The algorithm defining the Lif neuron model in Snntorch have the following struc
   \end{algorithmic}
 \end{algorithm}
 
-Here, the `reset\_mechanism` parameter is used to define the way the membrane potential is reset, for instead :
+Here, the `reset\_mechanism` parameter is used to define the way the membrane potential is reset, for instead : 
 \begin{itemize}
-  \item If `reset\_mechanism` is set to "subtract", the membrane potential will be reset to $0$ when the threshold is reached
+  \item If `reset\_mechanism` is set to "subtract", the membrane potential will be reset to $0$ when the threshold is reached 
   \item If `reset\_mechanism` is set to "zero", the membrane potential will be reset to $\beta U[t] + I_{in}[t+1]$ when the threshold is reached
 \end{itemize}
 
-In practice, when using Snntorch we would use 3 arrays to define this neuron model :
+In practice, when using Snntorch we would use 3 arrays to define this neuron model : 
 
 \begin{figure}[H]
   \begin{center}
@@ -401,7 +400,16 @@ And we get the following results :
 
 
 Now that the spiking neuron model is defined, we can create a network. The network is a mix between classic layers (for example fully connected layer) and spiking layers. Firstly a spiking layer needs to encode the data into spikes, which are then processed by the other layer. In some way, spiking layers will "take the place" of activation functions in CNN.
+The input is encoded in spikes, then processed by the network at each time step.
 
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{./image/input_network.png}
+    \caption{Network with encoded inputs}
+    \label{fig:input_network}
+  \end{center}
+\end{figure}
 
 
 
@@ -410,40 +418,44 @@ Now that the spiking neuron model is defined, we can create a network. The netwo
 
 
 \subsubsection{Loss}
-To train the model, we use the cross entropy loss. With rate encoding the spike for the correct class is encouraged to produce a spike at each time step where the other are suppressed.
+To train the model, we use the cross entropy loss. With rate encoding the spike for the correct class is encouraged to produce a spike at each time step where the other are suppressed. 
 
-To compute the loss with $N_c$ classes, first the number of spikes is counted for each output neuron. With a spike count of output layer $\vec{c}$, we compute the softmax of spike count for each neuron.
+To compute the loss with $N_c$ classes, first the number of spikes is counted for each output neuron (loss is computed for the sum of the time steps: $\mathcal{L} =\sum_{t}{\mathcal{L}[t]}$). With a spike count of output layer $\vec{c}$, we compute the softmax of spike count for each neuron.
 
-$$ p_i = \frac{e^{c_i}}{\sum_{i=1}^{N_c} e^{c_i}} $$
+$$ p_i = \frac{e^{c_i}}{\sum_{i=1}^{N_c} e^{c_i}} $$ 
 
 The cross entropy between $p_i$ and the target $y_i \in \{0, 1\}$, which is a one-hot target vector, is obtained using:
 
-$$ LCE = \sum_{i=0}^{N} y_i \log(p_i) $$
+$$ \mathcal{L}CE = \sum_{i=0}^{N} y_i \log(p_i) $$
+
+In the backpropagation, parameters are updated for each time step. Virtually, given a number of time steps $n$, we replicate the number of parameters of networks $n$ times.
 
 
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{./image/loss_cross_entropy_snn_train.png}
-  \caption{Output layer with rate coding, target vector is a one-hot encoded vector}
-  \label{fig:snn_output}
+    \centering
+    \includegraphics[width=\textwidth]{./image/loss_cross_entropy_snn_train.png}
+    \caption{Output layer with rate coding, target vector is a one-hot encoded vector}
+    \label{fig:snn_output}
 \end{figure}
 
-
-In the general scenario, the more spikes an output neuron is firing when compared to the others, the more likely it is to be the predicted class.
-
+In the general scenario, the more spikes an output neuron is firing when compared to the others, the more likely it is to be the predicted class. 
 
 \subsection{Convolutional Spiking Neural Networks}
 
 A convolutional Spiking neural network, or CSNN, is a particular case of SNN where the data pass into convolutional spiking layers to extract meaningful features.
 
+At each time step, the image is converted, into spike, then passed in he convolutional spiking layer. For each time step, weights are updated.
+
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{./image/csnn_template.png}
-  \caption{(a) CSNN model, (b) CNN model}
-  \label{fig:csnn_template}
+    \centering
+    \includegraphics[width=\textwidth]{./image/csnn_template.png}
+    \caption{(a) CSNN model, (b) CNN model}
+    \label{fig:csnn_template}
 \end{figure}
+
+
 
 \pagebreak
 
@@ -451,7 +463,7 @@ A convolutional Spiking neural network, or CSNN, is a particular case of SNN whe
 
 \subsection{How to train a SNN}
 
-\subsubsection{Dead Neuron Problem}
+\subsection{Dead Neuron Problem}
 
 \begin{wrapfigure}{r}{0.6\textwidth}
   \centering
@@ -461,13 +473,13 @@ A convolutional Spiking neural network, or CSNN, is a particular case of SNN whe
 
 To train a spiking neural network, we aim to adjust the weights based on the loss gradient, minimizing the overall loss. Backpropagation achieves this through a chain of derivatives (for one single time step):
 
-\begin{equation}
+$$
   \frac{\partial \mathcal{L}}{\partial W} =
   \frac{\partial \mathcal{L}}{\partial S}
   \underbrace{\frac{\partial S}{\partial U}}_{\{0, \infty\}}
   \frac{\partial U}{\partial I}
   \frac{\partial I}{\partial W}
-\end{equation}
+$$
 
 Here, $\mathcal{L}$ is the loss, $W$ represents weights, $S$ is the output, $U$ is the activation function, and $I$ is the input.
 
@@ -486,12 +498,12 @@ One way to address this non-differentiability issue would be to compute a gradie
     \vspace{40pt} % Adjust this value as needed
     $$\begin{aligned}
         %Heaviside step function
-        S(U)   & = \begin{cases}
-                     0 & \text{if } U < U_{\rm thr}    \\
-                     1 & \text{if } U \geq U_{\rm thr}
-                   \end{cases}                                                                  \\ \\
-        S(U)   & \approx \frac{1}{1 + e^{-(U - U_{\rm thr})}}                                                         \\
-        S(U)   & \approx \frac{1}{\pi} \arctan((U - U_{\rm thr})) + \frac{1}{2}                                       \\
+        S(U) & = \begin{cases}
+          0 & \text{if } U < U_{\rm thr} \\
+          1 & \text{if } U \geq U_{\rm thr}
+        \end{cases} \\ \\
+        S(U) & \approx \frac{1}{1 + e^{-(U - U_{\rm thr})}}       \\
+        S(U) & \approx \frac{1}{\pi} \arctan((U - U_{\rm thr})) + \frac{1}{2} \\ 
         % Fast sigmoid
         S_k(U) & \approx \frac{1}{2} \frac{U - U_{\rm thr}}{\sqrt{1 + k \lvert U - U_{\rm thr} \rvert}} + \frac{1}{2}
       \end{aligned}$$
@@ -568,14 +580,27 @@ By performing a chain rule, we can express the derivative of the loss with respe
     \end{equation*}
   \end{minipage}
 \end{figure}
-\pagebreak
+\cite{eshraghian2021training}
+
 
 \section{Practical implementation}
 
-Let us now present a small program showcasing our results.
-In this section, we aim to show some of the results we had and their meaning in the context of the project.
+\subsection{Encountered difficulties}
+
+We encountered several difficulties during the project, some of which are listed below:
+
+\begin{itemize}
+  \item The dataset was quite large and unbalanced, which made it difficult to train the models. 
+  \item Training a spiking neural requieres (virtually) to train a "new model" for each time step, which is quite ressource and time consuming. 
+  For example, we observe that training our CSNN model is equivalent in terms of time consumption to training the equivalent CNN + RESNET50 + RESNET101 + EFFICIENTNET-B0 (40 to 60 epochs each)
+  \item The memory consumption issue was also a problem, as we had to reduce the number of MFCC features or the number of time steps to make the model trainable (using the memory of 2 GPUs at the same time).
+  \item Kaggle's limitations on the number of hours to train with the GPU that we had access to (combined with the previous point, we ended up finding that the program crashed after n epochs only). Also we were not able to save all the models we trained due to Kaggle's limitations accessing the notebook. 
+\end{itemize}
 
 \subsection{Defining studied models}
+
+Let us now present a small program showcasing our results.
+In this section, we aim to show some of the results we had and their meaning in the context of the project.
 
 We defined 2 SNN models during the last full time period of the project. The first one is a simple feedforward SNN, and the second one is a convolutional SNN. We also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively:
 
@@ -612,16 +637,16 @@ A feedforward SNN with the following struture :
     \centering
     \includegraphics[width=\textwidth]{./image/csnn_code.png}    \caption{CSNN code}
     \label{fig:csnn_code}
-
+    
   \end{minipage}
 \end{figure}
 
 \subsubsection{ANNs}
 
-To make some comparison, we also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively:
+To make some comparison, we also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively: 
 
 \begin{itemize}
-  \item The equivalent ANN for our CSNN model.
+  \item The equivalent ANN for our CSNN model. 
   \item RESNET50, RESNET101
   \item EFFICIENTNET-B0
   \item VGG16
@@ -662,7 +687,7 @@ From top to bottom of \hyperref[fig:mnist1]{figure 24}, we observe the clear red
 
 \subsubsection*{Convolutional SNN}
 
-When training the CSNN model (having far less parameters than the previous one), we obtained the following results:
+When training the CSNN model (having far less parameters than the previous one), we obtained the following results.
 
 \begin{figure}[H]
   \begin{minipage}{0.5\textwidth}
@@ -682,6 +707,7 @@ When training the CSNN model (having far less parameters than the previous one),
   \end{minipage}
 \end{figure}
 
+% confusion matrix
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=\textwidth]{image/confusion_mat_MNIST.png}
@@ -689,7 +715,6 @@ When training the CSNN model (having far less parameters than the previous one),
     \label{fig:confusion_matrix_MNIST}
   \end{center}
 \end{figure}
-
 
 \begin{figure}[H]
   \begin{center}
@@ -709,16 +734,15 @@ It is composed of csv files, each one containing some time codes and a link to a
 
 \begin{itemize}
   \item Divide the dataset into 3 csv files, each one associated to a top-level class (Music, Animals and Sound of things)
-  \item Make sure there are no repetitions in between those classes
+  \item Make sure there are no repetitions in between those classes 
   \item Filter the dataset so that we keep "recognizable" sounds
   \item Perform some post-processing to make the dataset exploitable (outdated links, duration smaller than 10 seconds, etc.)
 \end{itemize}
 
-So we end up with 3 class files, each one containing a list of youtube links and their associated class (with most of the time other "noise" classes that are not to be taken into account for the classification task on high level classes). We then used the youtube-dl library to download the videos (parallel operations) and the soc library to extract the audio from the videos with the correct duration and format.
+So we end up with 3 class files, each one containing a list of youtube links and their associated class (with most of the time other "noise" classes that are not to be taken into account for the classification task on high level classes). We then used the youtube-dl library to download the videos (parallel operations) and the soc library to extract the audio from the videos with the correct duration and format. 
 
 We decided to use this dataset to perform some audio classification because, we though that, as the dataset is quite large and, as it is a hierarchical dataset and its categories are quite diverse, it would be a good dataset to test the capabilities of spiking convolutional neural networks.
 Furthermore, if the model we create performs well on this dataset, which is quite unbalanced and diverse, it would be a good sign that it could perform well on embedded systems, where the data has often this kind of characteristics.
-
 
 \subsubsection{Mel-frequency cepstral coefficients (MFCC)}
 
@@ -734,29 +758,40 @@ Some python libraries like librosa have functions to convert directly audio in M
 \begin{itemize}
   \item Take the signal's Short Term Fourier Transform (STFT), which divides the audio signal into multiple parts and compute the Fourier Transform for each one. In practice, we use the Discrete Fourier Transform.
 
-        \begin{equation}
-          STFT: \;\left\{ x[ n ] \right\} \equiv X(m,\omega) = \sum_{n=-\infty}^{\infty} x[n]w[n-m]\mathrm{e}^{-j \omega n}
-        \end{equation}
+  \begin{equation}
+  STFT: \;\left\{ x[ n ] \right\} \equiv X(m,\omega) = \sum_{n=-\infty}^{\infty} x[n]w[n-m]\mathrm{e}^{-j \omega n}
+\end{equation}
 
   \item Map the powers of the resulting spectrum to the Mel scale, multiplying by overlapping window functions (triangular or cosine), then take the logarithm of the amplitudes at each mel frequency. The Mel scale is semi-logarithmic, to better represent actual human perception of frequencies.
-
-        \begin{equation}
-          Mel \; scale: \; m = 2595 \log_{10}\left(1 + \frac{f}{700}\right)
-        \end{equation}
-
+  
+  \begin{equation}
+     Mel \; scale: \; m = 2595 \log_{10}\left(1 + \frac{f}{700}\right)
+\end{equation}
+  
   \item Take the discrete cosine transform (DCT) of the list of logarithmic powers of the mel frequencies, as if it were a signal. The MFCCs are the amplitudes of the resulting spectrum.
-
-        \begin{equation}
-          DCT: \; S_{u,v} = \sum_{m = 0}^{M- 1} \sum_{n = 0}^{N- 1} s(m, n)\mathrm e^{-2\mathrm i\pi \left ( \frac{um}M+ \frac{vn}N\right )}
-        \end{equation}
-
+  
+  \begin{equation}
+     DCT: \; S_{u,v} = \sum_{m = 0}^{M- 1} \sum_{n = 0}^{N- 1} s(m, n)\mathrm e^{-2\mathrm i\pi \left ( \frac{um}M+ \frac{vn}N\right )}
+\end{equation}
 \end{itemize}
+
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=\textwidth]{image/guitar_mfcc.png}
+    \caption{MFCC matrix, each line corresponding to a coefficient}
+    \label{fig:guitar_mfcc}
+  \end{center}
+\end{figure}
+
 
 
 
 \subsection{Results and discussion}
 
 \subsubsection*{ANNs}
+
+We trained the ANNs on the dataset, and obtained the following results:
 
 \begin{figure}[H]
   \centering
@@ -789,12 +824,38 @@ Some python libraries like librosa have functions to convert directly audio in M
   \label{fig:results_anns}
 \end{figure}
 
-
 \subsubsection*{SNNs}
 
-We tried multiple way on training our CSNN model onto the dataset we made,
+After training the CSNN on the dataset, we obtained the following results:
 
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{image/csnn_1_accuracy.png}
+    \caption{Accuracy of the CSNN model on the dataset for $50$ time step and $20$ $n_{mfcc}$}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{image/conf_mat_csnn1.png}
+    \caption{Confusion matrix of the CSNN model on the dataset for $50$ time step and $20$ $n_{mfcc}$}
+  \end{minipage}
+\end{figure}
 
+We observe a decrease in the accuracy of the model (which was expected), and a more hesitant confusion matrix. This could be due to a lack of training. However, the stagnation of the accuracy over the epochs would suggest that or the model is not learning, or the model is learning but the dataset is too unbalanced to be able to learn anything.
+
+By performing some data augmentation, we obtained an accuracy going from $60\%$ to $72\%$ (due to technical issues, we are not able to provide the corresponding confusion matrix).
+
+We then tried working on elements such as the number of MFCC or the number of time steps as these parameters are the one that drains the most memory. It turns out that reducing the number of mfcc made the model significantly less efficient, and compensating by increasing the number of time steps did not improve the results as much as expected ($\approx 40-45\%$ accuracy).
+
+\pagebreak
+
+\section{Conclusion}
+
+For the audio dataset, results are slightly better with ANNs, we made some inferences on the explanation. It may be more difficult to estimate real gradient accurately with surrogate gradient, we may need more time steps to effectively predict, the networks may not be resilient enough to perturbations. Finally, the architecture of our network might not be good enough for this task.
+
+Despite a long training and worse results than with the ANNs tested, SNNs proved themselves as an effective tool for a classifying task. Moreover, their main strength resides in the sparsity of the information passed through the network which can promote a continued use on embedded devices for example, but can be extended to every part of deep learning because SNN a way less computationally expensive to run. For example, the open-sourced code for the largest language-generating SNN ever, named SpikeGPT, which uses 22 times less energy than a similar model using typical deep learning, was released in 2023.
+\cite{zhu2023spikegpt}
 
 \pagebreak
 
