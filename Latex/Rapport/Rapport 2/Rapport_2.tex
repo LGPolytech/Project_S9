@@ -149,10 +149,10 @@ In a rate encoding scheme, we take the values of the pixels of the image and mak
 
 \subsubsection*{Example}
 
-The rate encoding will for each neuron at each time step, have a probability to fire a spike ($1$) or not ($0$) given by a Bernoulli distribution, where p is proportional to the intensity of the pixel associated with the neuron,. 
+The rate encoding will for each neuron at each time step, have a probability to fire a spike ($1$) or not ($0$) given by a Bernoulli distribution, where p is proportional to the intensity of the pixel associated with the neuron,.
 
 
-$$P(X = x) = p^x (1 - p)^{1-x} \quad \text{for } x \in \{0, 1\}$$ 
+$$P(X = x) = p^x (1 - p)^{1-x} \quad \text{for } x \in \{0, 1\}$$
 
 
 
@@ -221,19 +221,19 @@ For the output we need to convert spikes into something the network can interpre
 
 Another important aspect of Spiking neural network would concern the transmission of spikes and their associated information to the next layer.
 
-We can basically distinguish three phases in a spiking neural network, 2 of them will be explicit later on in the report : 
+We can basically distinguish three phases in a spiking neural network, 2 of them will be explicit later on in the report :
 \begin{itemize}
-  \item Encoding the data into spikes : 
-  
-  Converting the input data into spikes (binary values that have approximatly the same "meaning" as the input data, but in a different form), using a specific encoding method (rate, latency, delta modulation, etc.)
+  \item Encoding the data into spikes :
+
+        Converting the input data into spikes (binary values that have approximatly the same "meaning" as the input data, but in a different form), using a specific encoding method (rate, latency, delta modulation, etc.)
 
   \item Transmitting the spikes (and their associated information) to the next layer :
-  
-  Allowing for an information to go further in the network iff the neuron fires a spike (ie. if the feature is important enough to be transmitted to the next layer), kind of imitating the role of an activation function in an ANN.
-  
+
+        Allowing for an information to go further in the network iff the neuron fires a spike (ie. if the feature is important enough to be transmitted to the next layer), kind of imitating the role of an activation function in an ANN.
+
   \item Decoding the spikes into a meaningful output :
-  
-  For a classification task, it would involve firing or not a spike in the output layer (multiple neurons of this final layer can fire at the same time). The neuron that would fire the most over time would be the one associated to the predicted class.
+
+        For a classification task, it would involve firing or not a spike in the output layer (multiple neurons of this final layer can fire at the same time). The neuron that would fire the most over time would be the one associated to the predicted class.
 \end{itemize}
 
 To do so, we would need a type of neuron that "fires" spikes when it receives enough input (whatever the inputs are). One might find different kinds of neurons, each with its own characteristics and properties.
@@ -355,13 +355,13 @@ The algorithm defining the Lif neuron model in Snntorch have the following struc
   \end{algorithmic}
 \end{algorithm}
 
-Here, the `reset\_mechanism` parameter is used to define the way the membrane potential is reset, for instead : 
+Here, the `reset\_mechanism` parameter is used to define the way the membrane potential is reset, for instead :
 \begin{itemize}
-  \item If `reset\_mechanism` is set to "subtract", the membrane potential will be reset to $0$ when the threshold is reached 
+  \item If `reset\_mechanism` is set to "subtract", the membrane potential will be reset to $0$ when the threshold is reached
   \item If `reset\_mechanism` is set to "zero", the membrane potential will be reset to $\beta U[t] + I_{in}[t+1]$ when the threshold is reached
 \end{itemize}
 
-In practice, when using Snntorch we would use 3 arrays to define this neuron model : 
+In practice, when using Snntorch we would use 3 arrays to define this neuron model :
 
 \begin{figure}[H]
   \begin{center}
@@ -403,7 +403,7 @@ And we get the following results :
 
 
 
-Now that the spiking neuron model is defined, we can create a network. The network is a mix between classic layers (for example fully connected layer) and spiking layers. Firstly a spiking layer needs to encode the data into spikes, which are then processed by the other layer. In some way, spiking layers will "take the place" of activation functions in CNN. 
+Now that the spiking neuron model is defined, we can create a network. The network is a mix between classic layers (for example fully connected layer) and spiking layers. Firstly a spiking layer needs to encode the data into spikes, which are then processed by the other layer. In some way, spiking layers will "take the place" of activation functions in CNN.
 
 
 
@@ -413,11 +413,11 @@ Now that the spiking neuron model is defined, we can create a network. The netwo
 
 
 \subsubsection{Loss}
-To train the model, we use the cross entropy loss. With rate encoding the spike for the correct class is encouraged to produce a spike at each time step where the other are suppressed. 
+To train the model, we use the cross entropy loss. With rate encoding the spike for the correct class is encouraged to produce a spike at each time step where the other are suppressed.
 
 To compute the loss with $N_c$ classes, first the number of spikes is counted for each output neuron. With a spike count of output layer $\vec{c}$, we compute the softmax of spike count for each neuron.
 
-$$ p_i = \frac{e^{c_i}}{\sum_{i=1}^{N_c} e^{c_i}} $$ 
+$$ p_i = \frac{e^{c_i}}{\sum_{i=1}^{N_c} e^{c_i}} $$
 
 The cross entropy between $p_i$ and the target $y_i \in \{0, 1\}$, which is a one-hot target vector, is obtained using:
 
@@ -426,13 +426,14 @@ $$ LCE = \sum_{i=0}^{N} y_i \log(p_i) $$
 
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./image/loss_cross_entropy_snn_train.png}
-    \caption{Output layer with rate coding, target vector is a one-hot encoded vector}
-    \label{fig:snn_output}
+  \centering
+  \includegraphics[width=\textwidth]{./image/loss_cross_entropy_snn_train.png}
+  \caption{Output layer with rate coding, target vector is a one-hot encoded vector}
+  \label{fig:snn_output}
 \end{figure}
 
 
+In the general scenario, the more spikes an output neuron is firing when compared to the others, the more likely it is to be the predicted class. 
 
 
 \subsection{Convolutional Spiking Neural Networks}
@@ -441,10 +442,10 @@ A convolutional Spiking neural network, or CSNN, is a particular case of SNN whe
 
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./image/csnn_template.png}
-    \caption{(a) CSNN model, (b) CNN model}
-    \label{fig:csnn_template}
+  \centering
+  \includegraphics[width=\textwidth]{./image/csnn_template.png}
+  \caption{(a) CSNN model, (b) CNN model}
+  \label{fig:csnn_template}
 \end{figure}
 
 \pagebreak
@@ -470,7 +471,7 @@ To train a spiking neural network, we aim to adjust the weights based on the los
   \frac{\partial U}{\partial I}
   \frac{\partial I}{\partial W}
 \end{equation}
-  
+
 Here, $\mathcal{L}$ is the loss, $W$ represents weights, $S$ is the output, $U$ is the activation function, and $I$ is the input.
 
 The challenge lies in the term $\frac{\partial S}{\partial U}$, which takes values between $0$ and $\infty$. The derivative of the Heaviside step function from the input ($U$) is the Dirac Delta function. This function is $0$ everywhere except at the threshold $\theta$, where it tends to infinity. Consequently, the gradient is often nullified to zero (or saturated if $\theta$ precisely aligns with the threshold), hindering learning. This issue is commonly known as the \textbf{dead neuron problem}. There are multiple ways to address this issue.
@@ -488,12 +489,12 @@ One way to address this non-differentiability issue would be to compute a gradie
     \vspace{40pt} % Adjust this value as needed
     $$\begin{aligned}
         %Heaviside step function
-        S(U) & = \begin{cases}
-          0 & \text{if } U < U_{\rm thr} \\
-          1 & \text{if } U \geq U_{\rm thr}
-        \end{cases} \\ \\
-        S(U) & \approx \frac{1}{1 + e^{-(U - U_{\rm thr})}}       \\
-        S(U) & \approx \frac{1}{\pi} \arctan((U - U_{\rm thr})) + \frac{1}{2} \\ 
+        S(U)   & = \begin{cases}
+                     0 & \text{if } U < U_{\rm thr}    \\
+                     1 & \text{if } U \geq U_{\rm thr}
+                   \end{cases}                                                                  \\ \\
+        S(U)   & \approx \frac{1}{1 + e^{-(U - U_{\rm thr})}}                                                         \\
+        S(U)   & \approx \frac{1}{\pi} \arctan((U - U_{\rm thr})) + \frac{1}{2}                                       \\
         % Fast sigmoid
         S_k(U) & \approx \frac{1}{2} \frac{U - U_{\rm thr}}{\sqrt{1 + k \lvert U - U_{\rm thr} \rvert}} + \frac{1}{2}
       \end{aligned}$$
@@ -526,7 +527,193 @@ In the above equation, we ensure causality by summing over all time steps $t$ an
   \item We define as \textit{immediate influence} the influence of the weights at time $t$ on the weights at time $t$.
 \end{itemize}
 
+A recurrent system constrains the weight to be shared across all steps: $W[0]=W[1] =~... ~ = W$. Therefore, a change in $W[s]$ will have the same effect on all $W$, which implies that
+$\partial W[s]/\partial W=1$:
+
+\begin{equation}
+  \frac{\partial \mathcal{L}}{\partial W}=
+  \sum_t \sum_{s\leq t} \frac{\partial\mathcal{L}[t]}{\partial W[s]}
+\end{equation}
+
+By performing a chain rule, we can express the derivative of the loss with respect to the weights at time $s$ as:
+
+\begin{figure}[H]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{image/bptt.png}
+    \caption{Backpropagation through time}
+    \label{fig:bptt}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \begin{equation*}
+      \begin{aligned}
+        \frac{\partial \mathcal{L}[t]}{\partial W[t-1]} & =
+        \frac{\partial \mathcal{L}[t]}{\partial S[t]}
+        \underbrace{\frac{\partial \tilde{S}[t]}{\partial U[t]}}_{Eq.~(5)}
+        \underbrace{\frac{\partial U[t]}{\partial U[t-1]}}_\beta
+        \underbrace{\frac{\partial U[t-1]}{\partial I[t-1]}}_1
+        \underbrace{\frac{\partial I[t-1]}{\partial W[t-1]}}_{X[t-1]} \\
+        \frac{\partial \mathcal{L}[t]}{\partial W[t-2]} & =
+        \frac{\partial \mathcal{L}[t]}{\partial S[t]}
+        \underbrace{\frac{\partial \tilde{S}[t]}{\partial U[t]}}_{Eq.~(5)}
+        \underbrace{\frac{\partial U[t]}{\partial U[t-2]}}_{\beta^2}
+        \underbrace{\frac{\partial U[t-2]}{\partial I[t-2]}}_1
+        \underbrace{\frac{\partial I[t-2]}{\partial W[t-2]}}_{X[t-2]} \\
+                                                        & \vdots      \\
+        \frac{\partial \mathcal{L}[t]}{\partial W[0]}   & =
+        \frac{\partial \mathcal{L}[t]}{\partial S[t]}
+        \underbrace{\frac{\partial \tilde{S}[t]}{\partial U[t]}}_{Eq.~(5)}
+        \underbrace{\frac{\partial U[t]}{\partial U[0]}}_{\beta^t}
+        \underbrace{\frac{\partial U[0]}{\partial I[0]}}_1
+        \underbrace{\frac{\partial I[0]}{\partial W[0]}}_{X[0]}
+      \end{aligned}
+    \end{equation*}
+  \end{minipage}
+\end{figure}
+\pagebreak
+
 \section{Practical implementation}
+
+Let us now present a small program showcasing our results.
+In this section, we aim to show some of the results we had and their meaning in the context of the project.
+
+\subsection{Defining studied models}
+
+We defined 2 SNN models during the last full time period of the project. The first one is a simple feedforward SNN, and the second one is a convolutional SNN. We also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively:
+
+\subsubsection{SNN}
+
+\subsubsection*{Simple SNN for looking at spikes}
+
+A feedforward SNN with the following struture :
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{image/2_8_fcn.png}
+    \caption{Simple SNN}
+    \label{fig:simple_snn}
+  \end{minipage}
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{image/2_8_fcn_code.png}
+    \caption{Simple SNN}
+    \label{fig:simple_snn_code}
+  \end{minipage}
+\end{figure}
+
+\subsubsection*{CSNN}
+
+\hyperref[fig:csnn_template]{The above} convolutionnal spiking neural network :
+
+\begin{figure}[H]
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{image/csnn_template_model.png}
+  \end{minipage}
+  \begin{minipage}{0.6\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{./image/csnn_code.png}    \caption{CSNN code}
+    \label{fig:csnn_code}
+    
+  \end{minipage}
+\end{figure}
+
+\subsubsection{ANNs}
+
+To make some comparison, we also defined the same models but with the ANN architecture, and also tried some other kownn architectures for comparison. Respectively: 
+
+\begin{itemize}
+  \item The equivalent ANN for our CSNN model. 
+  \item RESNET50, RESNET101
+  \item EFFICIENTNET-B0
+  \item VGG16
+  \item Densenet 121
+  \item MobileNetV2
+\end{itemize}
+
+Please note that some parameters like the number of MFCC features may vary between the ANNs and the CSNN usage, due to memory usage issues.
+
+\pagebreak
+
+\subsection{Results on MNIST}
+
+When we worked with the MNIST dataset, we only worked with spiking neural networks.
+
+\subsubsection*{Feedforward SNN}
+
+Firstly we issued some illustrations on what proportion of the input data (converted into spiking data) was transmitted, layer by layer. This gave us the bellow results, the fist line corresponds to the rate encoding of the input data, the second line corresponds to the spikes emitted by the first layer, and the last spike corresponds to the spikes emitted by the output layer (all stacked in an image). 
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{image/spikes_simple_snn.png}
+    \caption{Observation of spikes after rate encoding and after each LiF layers}
+    \label{fig:spikes_snn}
+  \end{center} 
+\end{figure}
+
+From top to bottom, we observe the clear reduction of the number of spikes emitted. Also note that this model was not trained and was only used to observe the spikes.
+
+\subsubsection*{Convolutional SNN}
+
+
+
+
+\subsection{Dataset}
+
+We used the Google AudioSet dataset as the basis for our audio classification task. The dataset is divided into 10-second audio clips, each labeled with one or multiple classes. The classes are organized in a hierarchical structure, with the top-level classes being broad categories like "Music" or "Speech", and the lower-level classes being more specific, like "Piano" or "Saxophone".
+
+It is composed of csv files, each one containing some time codes and a link to a youtube video. In order to create an exploitable dataset out of this one, we used the following steps:
+
+\begin{itemize}
+  \item Divide the dataset into 3 csv files, each one associated to a top-level class (Music, Animals and Sound of things)
+  \item Make sure there are no repetitions in between those classes 
+  \item Filter the dataset so that we keep "recognizable" sounds
+  \item Perform some post-processing to make the dataset exploitable (outdated links, duration smaller than 10 seconds, etc.)
+\end{itemize}
+
+So we end up with 3 class files, each one containing a list of youtube links and their associated class (with most of the time other "noise" classes that are not to be taken into account for the classification task on high level classes). We then used the youtube-dl library to download the videos (parallel operations) and the soc library to extract the audio from the videos with the correct duration and format. 
+
+We decided to use this dataset to perform some audio classification because, we though that, as the dataset is quite large and, as it is a hierarchical dataset and its categories are quite diverse, it would be a good dataset to test the capabilities of spiking convolutional neural networks.
+Furthermore, if the model we create performs well on this dataset, which is quite unbalanced and diverse, it would be a good sign that it could perform well on embedded systems, where the data has often this kind of characteristics.
+
+
+\subsubsection{Mel-frequency cepstral coefficients (MFCC)}
+
+After having imported the dataset, we needed to make it usable by the networks. We chose to convert it to MFCCs.
+
+This approach is used in audio analysis to capture information specific to human auditory characteristics while reducing data redundancy. MFCCs thus encapsulate frequency variations over time in a compact way, producing a set of cepstral coefficients that are widely used for automatic speech recognition and other audio signal processing tasks.
+
+Two of the main advantages of MFCCs are compactness and information discrimination. MFCCs condense information while preserving the signal's distinctive characteristics. Compact representation facilitates storage, transmission, and processing of large amounts of data.
+By focusing on perceptual features rather than raw frequency, MFCCs are less sensitive to pitch variations, improving the robustness of sound recognition.
+
+Some python libraries like librosa have functions to convert directly audio in MFCC. These are the steps to convert an audio signal in MFCC:
+
+\begin{itemize}
+  \item Take the signal's Short Term Fourier Transform (STFT), which divides the audio signal into multiple parts and compute the Fourier Transform for each one. In practice, we use the Discrete Fourier Transform.
+
+  \begin{equation}
+  STFT: \;\left\{ x[ n ] \right\} \equiv X(m,\omega) = \sum_{n=-\infty}^{\infty} x[n]w[n-m]\mathrm{e}^{-j \omega n}
+\end{equation}
+
+  \item Map the powers of the resulting spectrum to the Mel scale, multiplying by overlapping window functions (triangular or cosine), then take the logarithm of the amplitudes at each mel frequency. The Mel scale is semi-logarithmic, to better represent actual human perception of frequencies.
+  
+  \begin{equation}
+     Mel \; scale: \; m = 2595 \log_{10}\left(1 + \frac{f}{700}\right)
+\end{equation}
+  
+  \item Take the discrete cosine transform (DCT) of the list of logarithmic powers of the mel frequencies, as if it were a signal. The MFCCs are the amplitudes of the resulting spectrum.
+  
+  \begin{equation}
+     DCT: \; S_{u,v} = \sum_{m = 0}^{M- 1} \sum_{n = 0}^{N- 1} s(m, n)\mathrm e^{-2\mathrm i\pi \left ( \frac{um}M+ \frac{vn}N\right )}
+\end{equation}
+  
+\end{itemize}
+
+
+
+\subsection{Results and discussion}
+
+
 
 \pagebreak
 

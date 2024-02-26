@@ -17,3 +17,8 @@
 \contentsline {figure}{\numberline {17}{\ignorespaces (a) CSNN model, (b) CNN model}}{13}{figure.17}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Dead neuron problem\cite {eshraghian2021training}}}{14}{figure.18}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Visualization of the Heaviside step function approximation\cite {LIAO2023126470}}}{15}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Backpropagation through time}}{16}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Simple SNN}}{17}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Simple SNN}}{17}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces CSNN code}}{18}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Observation of spikes after rate encoding and after each LiF layers}}{19}{figure.24}%
